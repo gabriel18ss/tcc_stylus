@@ -1,0 +1,81 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.pagina-home {
+
+    .barra{
+        background-color: black;
+        height: 5em;
+    }
+
+    .barra-pesquisa{
+        margin-top:2em;
+        margin-left: 40em;
+
+        width: 15em;
+        height: 1.5em;
+        border-radius: 20px;
+        border-color:white;
+    }
+
+    .faixa1{
+        background-image: url("../../../public/images/Cópia\ de\ SMART\ WATCH.png");
+        background-size:100% ;
+
+        width: 100%;
+        height: 34em;
+
+    }
+
+    .text1{
+        color:white;
+        
+        margin-left: 1em;
+        font-size: 5em;
+        width: 4em;
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    .faixa2 {
+        width: 100%;
+        height: 39em;
+    }
+
+
+    .botao1 {
+        background-color: black;
+        text-align:center;
+        color:white;
+
+        width: 14em;
+        height: 4em;
+        border-radius: 5em ;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    .faixa3 {
+        background-color:#E1E0E0 ;
+
+        width: 100%;
+        height: 60em;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .text3 {
+        width:18.5em;
+        font-size:35px ;
+
+        margin-top: 3em;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    .faixa4 {
+        background-image: url(
+            
+        );
+    }
+}
