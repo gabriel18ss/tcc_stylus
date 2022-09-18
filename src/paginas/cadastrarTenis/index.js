@@ -5,6 +5,11 @@ export default function CTE (){
     return(
         <section>
             <div className='faixa-1'>
+
+                <div >
+                    <img src="" alt=""/>
+                </div>
+
                 <h1 className='voltar-1'>voltar</h1>
             </div>
 
@@ -24,19 +29,42 @@ export default function CTE (){
             </div>
 
             <div className='faixa-3'>
+
                 <h1 className='cadastrarP'>CADASTRAR PRODUTO</h1>
-                <div className='tek-1'>
-                    <h1>Informações</h1>
-                    <h1>Quantidade</h1>
-                    <h1>Genero</h1>
-                    <h1>Nome</h1>
-                    <h1>Numero</h1>
-                    <h1>Marca</h1>
-                    <h1>preço</h1>
-                </div>
+
+                    <div className='quad'> 
 
                 <div>
-                    <button>Finalizar</button>
+                    
+                    <input className='input2'></input>
+
+                    <h1>Quantidade</h1>
+                    <input className='input3'></input>
+
+                    <h1>Genero</h1>
+                    <input className='input4'></input>
+
+                    </div>
+                    <div>
+                    <h1>Nome</h1>
+                    <input className='input5'></input>
+
+                    <h1>Numero</h1>
+                    <input className='input6'></input>
+
+                    <h1>Marca</h1>
+                    <input className='input7'></input>
+
+                    <h1>preço</h1>
+                    <input className='input8'></input>
+
+                    </div>
+               
+                    </div>
+
+                <div className='botao'>
+                    <h1>Finalizar</h1>
+                    
                 </div>                
             </div>
             </main>            
