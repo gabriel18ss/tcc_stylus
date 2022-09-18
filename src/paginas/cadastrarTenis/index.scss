@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.faixa-1{
+    display: flex;
+    flex-direction:row;
+    background-color:black;
+    padding: 15px;
+    justify-content: end;
+}
+.voltar-1{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.cadastrar-1{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.faixa-2{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    padding: 30px;
+    height: 32em;
+    padding-left: 15px;
+    
+}
+.inf{
+    color: white;
+    margin-top: 2em;
+    font-family: 'changa';
+    cursor: pointer;
+}
+.cadastrarP{
+    font-family: 'nosifer';
+    font-size: 2.6em;
+    margin-left: 6.5em;
+    margin-top: 1em;
+
+    
+}
+.faixa3{
+ padding-right: 5em;   
+ 
+}
+.tek-1{
+    
+}
