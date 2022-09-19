@@ -35,37 +35,32 @@ export default function CTE (){
                     <div className='quad'> 
 
                 <div>
-                    
                     <input className='input2'></input>
 
-                    <h1>Quantidade</h1>
-                    <input className='input3'></input>
+                        <h1>Quantidade</h1>
+                        <input className='input3'></input>
 
-                    <h1>Genero</h1>
-                    <input className='input4'></input>
+                        <h1>Genero</h1>
+                        <input className='input3'></input>
 
                     </div>
                     <div>
-                    <h1>Nome</h1>
-                    <input className='input5'></input>
+                        <h1>Nome</h1>
+                        <input className='input4'></input>
 
-                    <h1>Numero</h1>
-                    <input className='input6'></input>
+                        <h1>Numero</h1>
+                        <input className='input4'></input>
 
-                    <h1>Marca</h1>
-                    <input className='input7'></input>
+                        <h1>Marca</h1>
+                        <input className='input4'></input>
 
-                    <h1>preço</h1>
-                    <input className='input8'></input>
+                        <h1>preço</h1>
+                        <input className='input4'></input>
 
                     </div>
                
-                    </div>
-
-                <div className='botao'>
-                    <h1>Finalizar</h1>
-                    
-                </div>                
+             </div>
+                    <button className='botaoF'>Finalizar</button>
             </div>
             </main>            
         </section>

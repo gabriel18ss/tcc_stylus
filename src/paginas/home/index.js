@@ -1,12 +1,12 @@
 import './index.scss';
+import '../../componentes/barra'
+import Barra from '../../componentes/barra';
 
 
 export default function Home(){
     return(
         <section className='pagina-home'>
-            <div className='barra'>
-                <input className='barra-pesquisa'/>
-            </div>
+            <Barra/>
 
             <div className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
