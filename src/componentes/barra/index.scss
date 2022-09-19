@@ -1,3 +1,25 @@
 .comp-barra {
-    
+    .barra{
+        background-color: black;
+        height: 5em;
+
+        display:flex;
+        flex-direction: row;
+    }
+
+    .barra-pesquisa{
+        margin-top:2em;
+        margin-left: 30em;
+
+        width: 15em;
+        height: 1.5em;
+        border-radius: 20px;
+        border-color:white;
+}
+
+.logo{
+    widht:2px;
+    height:5em;
+}
+
 }
