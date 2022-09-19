@@ -79,8 +79,21 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     .faixa4 {
-        background-image: url(
-            
-        );
+        
+        height:50em;
+
+        background-size:100% ;
+    }
+
+    .text4 {
+        margin-left: 18em;
+    }
+
+    .botao4 {
+        width: 15em;
+        height: 3.5em;
+
+        border-radius:5em;
+        margin-left:42em
     }
 }

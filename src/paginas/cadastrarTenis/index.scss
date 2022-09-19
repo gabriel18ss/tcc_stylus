@@ -38,8 +38,9 @@
     flex-direction: column;
     background-image: linear-gradient(to bottom,black,#EB1C1C);
     padding: 30px;
-    height: 32em;
-    padding-left: 15px;
+    height: 30em;
+   
+    width: 20em;
     
 }
 .inf{
@@ -57,11 +58,14 @@
 
 .quad{
     display: flex;
-    border:solid 3px black;
-    padding: 5em;
+    border:solid 4px black;
+    border-radius: 20px;
+   
     width: 50em;
-    margin-left: 7em;
-    margin-bottom: 3em;    
+    margin-left: 9em;
+    margin-right: 5em;
+    padding:2em;
+
 }
 .informacoes{
     border-radius: 13px;
@@ -96,19 +100,30 @@
     height: 3em;
 
     border-radius: 1em;
+    margin-left:12em;
 }
 
 .botaoF {
-    margin-left: 30em;
+    margin-left: 33em;
+    margin-top:2.2em;
 
-    background-color: #CE3737;
-    border: #CE3737;
+    background-color: #EB1C1C;
+    border: #EB1C1C;
 
-    width: 20em;
+    width: 15em;
     height: 3em;
 
-    border-radius: 1em;
+    font-family:'Changa';
+    border-radius: 2em;
 
+}
+
+h4 {
+    font-family: 'Changa';
+}
+
+.titulo {
+    margin-left:10em;
 }
 
 

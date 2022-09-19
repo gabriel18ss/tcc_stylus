@@ -1,5 +1,4 @@
 import './index.scss';
-import '../../componentes/barra'
 import Barra from '../../componentes/barra';
 
 
@@ -7,7 +6,6 @@ export default function Home(){
     return(
         <section className='pagina-home'>
             <Barra/>
-
             <div className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
@@ -30,6 +28,11 @@ export default function Home(){
                 
                 <button>Veja</button>
             </div>
+              <div className='faixa4'>
+                <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+                
+                <button className='botao4'>Veja</button>
+             </div>
             </div>
         </section>
     )

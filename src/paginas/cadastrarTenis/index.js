@@ -1,18 +1,11 @@
 import './index.scss';
-
+import Barra from '../../componentes/barra';
 
 export default function CTE (){
     return(
         <section>
-            <div className='faixa-1'>
-
-                <div >
-                    <img src="" alt=""/>
-                </div>
-
-                <h1 className='voltar-1'>voltar</h1>
-            </div>
-
+            <Barra/>
+           
             <main className='cadastrar-1'>
 
             <div className='faixa-2'>
@@ -31,30 +24,28 @@ export default function CTE (){
             <div className='faixa-3'>
 
                 <h1 className='cadastrarP'>CADASTRAR PRODUTO</h1>
-
                     <div className='quad'> 
-
                 <div>
                     <input className='input2'></input>
 
-                        <h1>Quantidade</h1>
+                        <h4>Quantidade</h4>
                         <input className='input3'></input>
 
-                        <h1>Genero</h1>
+                        <h4>Genero</h4>
                         <input className='input3'></input>
 
                     </div>
                     <div>
-                        <h1>Nome</h1>
+                        <h4 className='titulo'>Nome</h4>
                         <input className='input4'></input>
 
-                        <h1>Numero</h1>
+                        <h4 className='titulo'>Numero</h4>
                         <input className='input4'></input>
 
-                        <h1>Marca</h1>
+                        <h4 className='titulo'>Marca</h4>
                         <input className='input4'></input>
 
-                        <h1>preço</h1>
+                        <h4 className='titulo'>preço</h4>
                         <input className='input4'></input>
 
                     </div>
