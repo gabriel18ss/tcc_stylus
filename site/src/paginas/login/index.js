@@ -4,10 +4,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/adminapi';
 import './index.scss';
-import storage from 'local-storage'
 
-import LoadingBar from 'react-top-loading-bar'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 
 
@@ -16,34 +14,27 @@ export default function Index(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro]  = useState('');
-    const [carregando, setCarregando] = useState(false);
+   
     
 
     const navigate = useNavigate();
-    const ref = useRef();
-    
 
-  async function entrarClick() {
-  ref.current.continuousStart();
-  setCarregando(true);
 
-      try{
-        const r = await login(email,senha);
-        storage('usuario-logado', r);
+async function entrarClick() {
+    try{
+    const r = await axios.post('http://localhost:5000/admin/login', { 
+        email: email,
+        senha: senha
+    });
+            navigate('/cadastrar');
 
-         setTimeout(() => {
-          navigate('/Consultar')
-         }, 3000);
+    } catch (err) {
+            if(err.response.status === 401)
+            setErro(err.response.data.erro);
+    }
+  }
 
-      } catch (err) {
-          ref.current.complete();
-          setCarregando(false);
-          if (err.response.status === 401){
-              setErro(err.response.data.erro);
-          }
-      }
-    
-       }
+
        return(
         <section className='page-login'>
             <div className='faixa-l'>
@@ -57,12 +48,12 @@ export default function Index(){
                     <input type='password' placeholder='****' value={senha} onChange={e => setSenha(e.target.value)} className='input2'></input>
 
                     <button onClick={entrarClick}  className='botao-adm'>ENTRAR</button>
+                    {erro}
                 </div>
             </div>
         </section>
     )
-
-    }
+}
 
     
     
