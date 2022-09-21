@@ -1,4 +1,5 @@
 import './index.scss';
+import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/adminapi';
@@ -43,10 +44,7 @@ export default function Index(){
       }
     
        }
-
-
-export default function LoginADM (){
-    return(
+       return(
         <section className='page-login'>
             <div className='faixa-l'>
                 <div className='fundo'>
@@ -54,13 +52,17 @@ export default function LoginADM (){
                 </div>
                 <div className='log'>
                     <h1 className='titulo-adm2'>login</h1>
-                    <input></input>
+                    <input type='text' placeholder='Informe seu e-mail' value={email} onChange={e => setEmail(e.target.value)} className='input2'/>
                 
-                    <input className='input2'></input>
+                    <input type='password' placeholder='****' value={senha} onChange={e => setSenha(e.target.value)} className='input2'></input>
 
-                    <button className='botao-adm'>ENTRAR</button>
+                    <button onClick={entrarClick}  className='botao-adm'>ENTRAR</button>
                 </div>
             </div>
         </section>
     )
-}
+
+    }
+
+    
+    
