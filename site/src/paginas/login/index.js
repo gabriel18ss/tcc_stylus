@@ -1,5 +1,6 @@
 import './index.scss';
 import axios from 'axios';
+import Barra from '../../componentes/barra'
 
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/adminapi';
@@ -37,15 +38,16 @@ async function entrarClick() {
 
        return(
         <section className='page-login'>
+            <Barra/>
             <div className='faixa-l'>
                 <div className='fundo'>
                     <h1 className='titulo-adm'>administrador</h1>
-                </div>
+            </div>
                 <div className='log'>
                     <h1 className='titulo-adm2'>login</h1>
                     <input type='text' placeholder='Informe seu e-mail' value={email} onChange={e => setEmail(e.target.value)} className='input2'/>
                 
-                    <input type='password' placeholder='****' value={senha} onChange={e => setSenha(e.target.value)} className='input2'></input>
+                    <input type='password' placeholder='Informe a sua senha' value={senha} onChange={e => setSenha(e.target.value)} className='input2'></input>
 
                     <button onClick={entrarClick}  className='botao-adm'>ENTRAR</button>
                     {erro}

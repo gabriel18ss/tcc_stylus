@@ -16,8 +16,7 @@
 
     .log {
         background-color:white ;
-        height: em;
-        width: 25em;
+       
 
         display: flex;
         flex-direction:column;
@@ -30,7 +29,7 @@
         background-size: 85%;
         background-position: 45%;
 
-        height: 39em;
+        height: 33.6em;
         width: 33em;
       
     }
@@ -40,7 +39,7 @@
         font-family:'Nosifer';
 
         margin-left: 2em;
-        margin-top:25px;
+        margin-top:22px;
 
     }
 
@@ -64,6 +63,9 @@
     .input2 {
         margin-top: 1em;
         text-align: center;
+        width:30em;
+        height:3.5em;
+    
     }
 
     .botao-adm {
@@ -71,7 +73,7 @@
         width: 13em;
 
         margin-top:3em;
-        margin-left: 8em;
+        margin-left: 9em;
 
         background-color:#F21616;
         color:white;
