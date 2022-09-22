@@ -1,7 +1,21 @@
 import './index.scss';
 import Barra from '../../componentes/barra';
 
+import { useState } from 'react';
+
 export default function CTE (){
+    //  marca:marca, genero:genero, quantidade: quantidade, valor: valor, lancamento:lancamento,tamanho:tamanho
+   
+   
+    const [marca, setMarca] = useState ('');
+    const [genero, setGenero] = useState ('');
+    const [nome, setNome] = useState ('')
+    const [quantidade, setQuantidade] = useState ('')
+    const [valor, setValor] = useState ('')
+    const [lancamento, setlancamento] = useState ('')
+    const [tamanho, setTamanho] = useState ('')
+    
+
     return(
         <section>
             <Barra/>
@@ -29,7 +43,7 @@ export default function CTE (){
                     <input className='input2'></input>
 
                         <h4>Quantidade</h4>
-                        <input className='input3'></input>
+                        <input className='input3' type='text' value={quantidade}></input>
 
                         <h4>Genero</h4>
                         <input className='input3'></input>

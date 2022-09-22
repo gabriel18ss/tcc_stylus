@@ -5,10 +5,11 @@ const server = Router();
 
 server.post('/cadastrar', async (req, resp) => {
     try {
-        const tenisParaInserir = req.body;
+        const novoTenis = req.body;
 
-        const tenis = await cadastrarTenis(tenisParaInserir);
-        resp.send(tenis);
+        const tenisInserido = await cadastrarTenis(novoTenis);
+        
+        resp.send(tenisInserido)
     } 
     catch (err) {
         resp.send(400).send({
