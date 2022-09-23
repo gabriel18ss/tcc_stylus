@@ -24,8 +24,9 @@ export default function CTE (){
     
     async function salvarClick(){
         try{
-            const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
-            toast.dark('pedido cadastrado uppppp');
+            const novoTenis = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
+            const r = alterarImagem(novoTenis, imagem);
+            await r
             
         }catch (err){
             toast.error(err.message);
@@ -33,13 +34,13 @@ export default function CTE (){
 
     }
 
-    async function escolherImagem(){
+    function escolherImagem(){
         document.getElementById('imagemCapa').click();
     }
 
-    async function mostrarImagem(){
-       return URL.createObjectURL(imagem);
-    }
+    function mostrarImagem() {
+        return URL.createObjectURL(imagem)
+   }
 
     return(
         <section>
@@ -73,10 +74,10 @@ export default function CTE (){
                     }    
 
                     {imagem &&
-                       <img src={mostrarImagem()} alt=''/>
+                       <img className='img'src={mostrarImagem()} alt=''/>
                     }    
 
-                        <input  type='file' id='imagemCapa' onChange={e => setImagem(e.target.files[0])}></input>
+                        <input className='input2' type='file' id='imagemCapa' onChange={e => setImagem(e.target.files[0])}></input>
                     </div>
 
                         <h4>Quantidade</h4>
@@ -101,6 +102,9 @@ export default function CTE (){
 
                         <h4 className='titulo'>preço</h4>
                         <input className='input4' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
+
+                        
+
 
                     </div>
                

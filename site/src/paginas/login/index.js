@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/adminapi';
 import './index.scss';
 
-import { useState } from 'react';
+import LoadingBar  from 'react-top-loading-bar'
+import { useState, useRef } from 'react';
 
 
 
@@ -19,17 +20,23 @@ export default function Index(){
     
 
     const navigate = useNavigate();
+    const ref =useRef();
 
 
 async function entrarClick() {
+    ref.current.continuousStart();
+
     try{
     const r = await axios.post('http://localhost:5000/admin/login', { 
         email: email,
         senha: senha
     });
-            navigate('/cadastrar');
+            setTimeout(() => {
+                navigate('/cadastrar');
+            }, 3000);
 
     } catch (err) {
+            ref.current.complete();
             if(err.response.status === 401)
             setErro(err.response.data.erro);
     }
@@ -38,6 +45,7 @@ async function entrarClick() {
 
        return(
         <section className='page-login'>
+             <LoadingBar color='#f11946' ref={ref} />
             <Barra/>
             <div className='faixa-l'>
                 <div className='fundo'>
