@@ -24,9 +24,8 @@ export default function CTE (){
     
     async function salvarClick(){
         try{
-            const novoTenis = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
-            const r = alterarImagem(novoTenis, imagem);
-            await r
+            const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
+            toast.dark('tenis cadastrado 👟');
             
         }catch (err){
             toast.error(err.message);
@@ -101,7 +100,7 @@ export default function CTE (){
                         <input className='input4' placeholder='informe a marca' type='text' value={marca} onChange={e => setMarca(e.target.value)}></input>
 
                         <h4 className='titulo'>preço</h4>
-                        <input className='input4' placeholder='informe o valor' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
+                        <input className='input4' placeholder='informe o' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
 
                         
 
