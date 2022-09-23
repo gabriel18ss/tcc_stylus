@@ -58,10 +58,10 @@
 
 .quad{
     display: flex;
-    border:solid 4px black;
+    border:solid 3px black;
     border-radius: 20px;
    
-    width: 50em;
+    width: 47em;
     margin-left: 9em;
     margin-right: 5em;
     padding:2em;
@@ -77,9 +77,13 @@
     border-radius: 20px;
     background-color: #D9D9D9;
     border: #D9D9D9;
-    height:13em;
+    height:10em;
     width: 20em;
     margin-right: 3em;
+}
+
+#imagemCapa {
+    visibility: hidden;
 }
 
 .input3 {

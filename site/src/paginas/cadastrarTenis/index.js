@@ -2,7 +2,10 @@ import './index.scss';
 import Barra from '../../componentes/barra';
 import storage from 'local-storage';
 
-import { cadastrarTenis } from '../../api/produtoApi.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { cadastrarTenis, alterarImagem } from '../../api/produtoApi.js';
 
 import { useState } from 'react';
 
@@ -17,20 +20,30 @@ export default function CTE (){
     const [valor, setValor] = useState ('')
     const [lancamento, setlancamento] = useState (false)
     const [tamanho, setTamanho] = useState ('')
+    const [imagem, setImagem] = useState ()
     
     async function salvarClick(){
         try{
             const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
-            alert('pedido cadastrado uppppp');
+            toast.dark('pedido cadastrado uppppp');
             
         }catch (err){
-            alert(err.message);
+            toast.error(err.message);
         }
 
     }
 
+    async function escolherImagem(){
+        document.getElementById('imagemCapa').click();
+    }
+
+    async function mostrarImagem(){
+       return URL.createObjectURL(imagem);
+    }
+
     return(
         <section>
+             <ToastContainer />
             <Barra/>
            
             <main className='cadastrar-1'>
@@ -53,7 +66,18 @@ export default function CTE (){
                 <h1 className='cadastrarP'>CADASTRAR PRODUTO</h1>
                     <div className='quad'> 
                 <div>
-                    <input className='input2'></input>
+
+                    <div className='upload-capa' onClick={escolherImagem}>
+                    {!imagem &&
+                        <img clasName='' src='' alt=''/>
+                    }    
+
+                    {imagem &&
+                       <img src={mostrarImagem()} alt=''/>
+                    }    
+
+                        <input  type='file' id='imagemCapa' onChange={e => setImagem(e.target.files[0])}></input>
+                    </div>
 
                         <h4>Quantidade</h4>
                         <input className='input3' type='text' value={quantidade} onChange={e => setQuantidade(e.target.value)}></input>
@@ -61,7 +85,7 @@ export default function CTE (){
                         <h4>Genero</h4>
                         <input className='input3' type='text' value={genero} onChange={e => setGenero(e.target.value)}></input>
 
-                        <h4 className='titulo'>lançamento</h4>
+                        <h4 className='c'>lançamento</h4>
                         <input type='checkbox'  checked={lancamento} onChange ={e => setlancamento(e.target.value)}></input>
 
                     </div>
@@ -77,9 +101,6 @@ export default function CTE (){
 
                         <h4 className='titulo'>preço</h4>
                         <input className='input4' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
-
-                        
-
 
                     </div>
                
