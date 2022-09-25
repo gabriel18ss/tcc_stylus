@@ -25,10 +25,22 @@ export default function Home(){
               
             </div>
 
-            <div className='faixa4'>
-                <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+               <div className='faixa4'>
+                  <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
                 
                 <button className='botao4'>Veja</button>
+             </div>
+
+             <div className='faixa5'>
+                <h1 className='titulo5'>Lançamento</h1>
+             </div>
+
+             <div className='faixa6'>
+                <button className='botaoMarcas'></button>
+                <button className='botaoMarcas'></button>
+                <button className='botaoMarcas'></button>
+                <button className='botaoMarcas'></button>
+               
              </div>
         </section>
     )
