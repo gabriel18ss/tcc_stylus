@@ -20,8 +20,7 @@ WHERE  ID_PRODUTO			= 1;
 
 select  * from TB_ADMIN; 
 
-select  * from TB_PRODUTO_MARCA;
-
+select  * from TB_PRODUTO_MARCA
 
 select * from TB_PRODUTO_GENERO;
 
