@@ -53,6 +53,7 @@ async function entrarClick() {
             </div>
                 <div className='log'>
                     <h1 className='titulo-adm2'>login</h1>
+                    <img className='balao' src="/images/balao.png" alt='' />
                     <input type='text' placeholder='Informe seu e-mail' value={email} onChange={e => setEmail(e.target.value)} className='input2'/>
                 
                     <input type='password' placeholder='Informe a sua senha' value={senha} onChange={e => setSenha(e.target.value)} className='input2'></input>

@@ -31,8 +31,9 @@
 
         height: 33.6em;
         width: 33em;
-      
+     
     }
+   
 
     .titulo-adm {
         font-size: 2em;
@@ -81,5 +82,24 @@
         border-color:#F21616;
 
         font-family: 'Changa';
+    }
+    .balao{
+        position: absolute;
+        left: 70em;
+        width: 100px;
+        height: 100px;
+        transform: translateY(0px);
+        animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-60px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
     }
 }

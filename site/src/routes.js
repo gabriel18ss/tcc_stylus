@@ -3,7 +3,8 @@ import Home from './paginas/home';
 import LoginADM from './paginas/login';
 import CTE from './paginas/cadastrarTenis';
 import Barra from '../src/componentes/barra';
-import UsuarioLogin from './paginas/loginUsuario'
+import UsuarioLogin from './paginas/loginUsuario';
+import TelaEnd from './paginas/endereços';
 
 export default function appRoutes() {
     return(
@@ -13,6 +14,7 @@ export default function appRoutes() {
             <Route path='/loginadm' element={<LoginADM/>}/>
             <Route path='/cadastrar' element={<CTE/>}/>
             <Route path='/loginusu' element={<UsuarioLogin/>}/>
+            <Route path='/Endereço' element={<TelaEnd/>}/>
             <Route path='/barra' element={<Barra/>}/>
         </Routes>
         </BrowserRouter>
