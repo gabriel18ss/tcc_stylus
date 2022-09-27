@@ -1,0 +1,75 @@
+.imagem{
+    width: 85.3em;
+    height: 34.8em;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 150px;
+    left: 18em;
+    width: 50em;
+    height: 25em;
+}
+
+.titulo{
+    text-align: center;
+    font-family: imprima;
+    font-size: 35px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.dig{
+
+    margin-left: 85px;
+    margin-top: 30px;
+    font-family: inter;   
+    font-size: 15px;
+   
+}
+.e-mail{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    font-family: inter;
+    font-size: 20px;
+
+    border: 3px;
+    border-color: #E3DFDF;
+    background-color: #E3DFDF;
+
+    height: 33px;
+    width: 30em;
+    margin-top: 24px;
+    padding-left: 20px;
+
+}
+
+.button{
+    margin-left: 26em;
+    margin-top: 20px;
+    height: 3em;
+    width: 9em;
+
+    cursor: pointer;
+    animation: infinite;
+    
+    background-color: #F21616;
+    border-color: #F21616;
+    border-radius: 18px ;
+    color: white;
+
+}
+.reg{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgb(71, 70, 69);
+}
+.junt{
+    text-align: center;
+    cursor: pointer;
+    
+}
