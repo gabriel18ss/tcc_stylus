@@ -1,6 +1,15 @@
 CREATE DATABASE DB_STYLUS;
 
 USE DB_STYLUS;
+CREATE TABLE TB_USUARIO (
+    ID_USUARIO INT PRIMARY KEY auto_increment,
+    NM_USUARIO      VARCHAR(200),
+    DS_EMAIL        VARCHAR(200),
+    DS_SENHA        VARCHAR(20),
+    NR_CPF          VARCHAR(20),
+    NR_CEP          VARCHAR(20),
+    DT_NASCIMENTO   VARCHAR(15)
+);
 
 CREATE TABLE TB_ADMIN (
     ID_ADMIN INT primary key auto_increment,

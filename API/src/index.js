@@ -1,7 +1,10 @@
 import 'dotenv/config'
 
+
 import adminController from './controller/adminController.js';
 import cadastrarController from './controller/cadastrarController.js';
+
+import UsuarioController from './controller/usuarioController.js';
 
 import express from 'express'
 import cors from 'cors'
@@ -17,6 +20,7 @@ server.use('/storage/capaTenis', express.static('storage/capaTenis'));
 
 server.use(adminController);
 server.use(cadastrarController);
+server.use(UsuarioController);
 
 
 
