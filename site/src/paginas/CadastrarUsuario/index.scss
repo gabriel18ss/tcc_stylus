@@ -1,0 +1,59 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.pagina-cadastro{
+   display: flex;
+}
+.imagem-1{
+    display: flex;
+    height: 38.85em;
+}
+.pagina-principal{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-left: 14em;
+ 
+}
+.titulo-1{
+    margin-top: 25px;
+}
+.input-1{
+    text-align: start;
+    border: none;
+    border-radius: 8px ;
+    border-color:#D9D9D9 ;
+    background-color: #D9D9D9;
+    padding-left: 15px;
+    width: 250%;
+    height: 40px;
+    box-shadow: 5px 5px rgb(139, 132, 132);
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 30px;
+
+   
+}
+.button-cad{
+    margin-top: 2em;
+    border-radius: 10px;
+    width: 60%;
+    height: 30px;
+    color: white;
+    border: none;
+    border-color: red;
+    background-color: red;
+
+    
+}
+.linha{
+    border: 1px solid black;
+    width: 200%;
+    margin-top: 15px;
+}
