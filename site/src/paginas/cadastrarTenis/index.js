@@ -90,16 +90,16 @@ export default function CTE (){
 
                     </div>
                     <div>
-                        <h4 className='titulo'>Nome</h4>
+                        <h4 className='titulo-cad'>Nome</h4>
                         <input className='input4' placeholder='nome do tenis' type='text' value={nome} onChange={e => setNome(e.target.value)}></input>
 
-                        <h4 className='titulo'>Numero</h4>
+                        <h4 className='titulo-cad' >Numero</h4>
                         <input className='input4' placeholder='informe o tamanho' type='number' value={tamanho} onChange={e => setTamanho(e.target.value)}></input>
 
-                        <h4 className='titulo'>Marca</h4>
+                        <h4 className='titulo-cad'>Marca</h4>
                         <input className='input4' placeholder='informe a marca' type='text' value={marca} onChange={e => setMarca(e.target.value)}></input>
 
-                        <h4 className='titulo'>preço</h4>
+                        <h4 className='titulo-cad'>preço</h4>
                         <input className='input4' placeholder='informe o' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
 
                         

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&display=swap');
+
+.page-listaProd {
+        
+
+    .barra-lateral{
+        width: 15em;
+        height: 100vh;
+        background-image: linear-gradient(to bottom,black,#EB1C1C);
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    botton{
+        color: white;
+        margin: 18px;
+        font-family: 'Changa';
+        font-size: 21px;
+    }
+
+    table {
+        border-collapse: collapse;
+
+        margin-left: 6em;
+        margin-top: 5em;
+    }
+    
+    th {
+        padding: 15px;
+        background-color: #CE3737;
+        text-align: center;
+        margin-left: 5em;
+
+        font-family: 'Lacquer';
+    }
+
+    td {
+        background-color: #979797;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .part-table {
+        display: flex;
+        flex-direction: row;
+        
+    }
+}

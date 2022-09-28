@@ -6,6 +6,7 @@ import Barra from '../src/componentes/barra';
 import UsuarioLogin from './paginas/loginUsuario';
 import CadastrarUsuario from './paginas/CadastrarUsuario';
 import TelaEnd from './paginas/endereços';
+import ListarProdutos from './paginas/listaTenis';
 
 export default function appRoutes() {
     return(
@@ -18,6 +19,7 @@ export default function appRoutes() {
             <Route path='/cadastrarUsu' element={<CadastrarUsuario/>}/>
             <Route path='/Endereço' element={<TelaEnd/>}/>
             <Route path='/barra' element={<Barra/>}/>
+            <Route path='/listaProdutos' element={<ListarProdutos/>}/>
         </Routes>
         </BrowserRouter>
     )
