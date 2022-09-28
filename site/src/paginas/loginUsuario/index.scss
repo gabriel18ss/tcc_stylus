@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .imagem{
     width: 85.3em;
     height: 34.8em;
@@ -45,13 +49,14 @@
     margin-top: 24px;
     padding-left: 20px;
 
+    box-shadow: 3px 8px rgb(173, 165, 165);
 }
 
 .button{
-    margin-left: 26em;
+    margin-left: 25em;
     margin-top: 20px;
-    height: 3em;
-    width: 9em;
+    height: 2.5em;
+    width: 10em;
 
     cursor: pointer;
     animation: infinite;
@@ -59,8 +64,12 @@
     background-color: #F21616;
     border-color: #F21616;
     border-radius: 18px ;
+    border:none;
     color: white;
-
+    
+}
+.button:hover{
+    transform: scale(1.1);
 }
 .reg{
     text-align: center;
@@ -71,7 +80,10 @@
 .junt{
     text-align: center;
     cursor: pointer;
-   
-    
-    
+    position: absolute;
+    top: 300px;
+    left: 330px;    
+}
+.junt:hover{
+    transform: scale(1.1);
 }

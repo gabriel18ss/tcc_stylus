@@ -12,7 +12,7 @@ export default function UsuarioLogin(){
                 
                 <div className='login'>
                     
-                    <h1 className='titulo'>iniciar sessão</h1>
+                    <h1 className='titulo'>Iniciar Sessão</h1>
 
                     <div className='dig'>
                     <input type='text' placeholder='E-Mail:' className='e-mail'/>
@@ -24,8 +24,10 @@ export default function UsuarioLogin(){
 
                     <button className="button">ENTRAR</button>
 
-                    <h1 className="reg">não esta registrado ?</h1>
-                    <h1 className="junt">junte-se a nos</h1>
+                    <h1 className="reg">não esta Cadastrado ?</h1>
+                    <h1 className="junt">Cadastre-se</h1>
+
+                   
                     
                 </div>
             </div>
