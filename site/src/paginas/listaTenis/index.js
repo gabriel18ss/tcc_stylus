@@ -1,8 +1,22 @@
 import Barra from '../../componentes/barra';
 import './index.scss';
 
+import { useState, useEffect } from 'react';
+import { listarTenis, buscarPorNome } from '../../api/produtoApi'
 
 export default function ListarProdutos() {
+
+    const [tenis, setTenis] = useState([]);
+
+   async function carregarTodosTenis() {
+        const resp = await listarTenis();
+    }
+
+
+    useEffect(() => {
+        carregarTodosTenis();
+    }, [])
+
     return(
         <section className='page-listaProd'>
             <Barra/>

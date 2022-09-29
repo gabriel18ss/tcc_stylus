@@ -1,8 +1,23 @@
-import {LoginU} from '../repository/usuarioRepository.js'
+import {LoginU, cadastrarUsuario} from '../repository/usuarioRepository.js'
 
 import {Router} from "express";
 const server = Router();
 
+
+server.post('/cadastrar/usuario', async (req, resp) => {
+    try {
+        const novoUsuario = req.body;
+
+        const usuarioInserido = await cadastrarUsuario(novoUsuario);
+        
+        resp.send(usuarioInserido)
+    } 
+    catch (err) {
+        resp.send(400).send({
+            erro:err.message
+        })
+    }
+})
 
 server.post('/usuario/login', async(req, resp) =>{
     try {

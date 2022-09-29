@@ -17,11 +17,11 @@ export default function CadastrarUsuario (){
                    
                     <div className='inputs'>
                     <input className="input-1" type='text' placeholder='Nome' />
-                    <input className="input-1" type='E-mail' placeholder='E-mail' />
+                    <input className="input-1" type='text' placeholder='E-mail' />
                     <input className="input-1" type='password' placeholder='Senha' />
-                    <input className="input-1" type='CPF' placeholder='CPF' />
-                    <input className="input-1" type='CEP' placeholder='CEP' />
-                    <input className="input-1" type='number' placeholder='Data de nascimento' />
+                    <input className="input-1" type='text' placeholder='CPF' />
+                    <input className="input-1" type='text' placeholder='CEP' />
+                    <input className="input-1" type='date' placeholder='Data de nascimento' />
                     </div>
 
                    

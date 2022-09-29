@@ -16,6 +16,8 @@ export async function cadastrarTenis(marca, genero, nome, quantidade, valor, lan
     return resposta.data;
 }
 
+
+
 export async function alterarImagem(id, imagem) {
     const formData = new FormData();
     formData.append('capa', imagem);
@@ -28,4 +30,14 @@ export async function alterarImagem(id, imagem) {
     
     return resposta.status;
  
+}
+
+export async function listarTenis(){
+    const resposta = await api.get ('/tenis');
+    return resposta.data;
+}
+
+export async function buscarPorNome(NOME){
+    const resposta = await api.get (`/tenis/busca?NOME=${NOME}`);
+    return resposta.data;
 }

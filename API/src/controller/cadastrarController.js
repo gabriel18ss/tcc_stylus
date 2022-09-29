@@ -1,4 +1,4 @@
-import {cadastrarTenis, alterarImagem} from '../repository/cadastrarRepository.js'
+import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome } from '../repository/cadastrarRepository.js'
 
 import multer from 'multer'
 import { Router } from 'express'
@@ -22,6 +22,8 @@ server.post('/cadastrar', async (req, resp) => {
     }
 })
 
+
+
 server.put('/cadastrar/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
         const { id } = req.params;
@@ -38,5 +40,61 @@ server.put('/cadastrar/:id/capa', upload.single('capa'), async (req, resp) => {
         })
     }
 })
+
+
+
+
+server.get('/tenis',async (req,resp)=>{
+    try {
+        const resposta = await listarTenis();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
+server.get('/tenis/busca',async (req,resp)=>{
+    try {
+        const {NOME} = req.query;
+
+        const resposta = await buscarPorNome(NOME);
+
+        if (!resposta)
+            throw new Error ('Produto não foi encontrado')
+            
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
+
+server.get('/tenis/:id',async (req,resp)=>{
+    try {
+        const {id} = req.params;
+
+        const resposta = await buscarPorId(id);
+
+        if (!resposta)
+            throw new Error ('Produto não foi encontrado')
+
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
 
 export default server;

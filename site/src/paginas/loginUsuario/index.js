@@ -1,11 +1,10 @@
 import './index.scss';
 import axios from 'axios'
-import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-
+import { useState, useEffect, useNavigate} from 'react';
 import Barra from '../../componentes/barra'
 
-export default function index(){
+export default function Index(){
+    
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
