@@ -1,6 +1,6 @@
 import { con } from './connection.js'
 
-export async function LoginUsu (email, senha) {
+export async function LoginU (email, senha) {
     const comando =
         `select ID_USUARIO			ID,
                 NM_USUARIO  		NOME,

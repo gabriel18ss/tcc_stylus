@@ -9,6 +9,7 @@ export default function Rodape(){
                 <h4>Adidas</h4>
                 <h4>Puma</h4>
                 <h4>Jordan</h4>
+                <h4>Converce</h4>
             </div>
 
             <div className='coluna2'>
@@ -16,6 +17,7 @@ export default function Rodape(){
                 <h4>Quem Somos?</h4>
                 <h4>Termos de uso</h4>
                 <h4>Política de privacidade</h4>
+                <h4>Regulamento CRM</h4>
             </div>
 
             <div className='coluna3'>
@@ -23,6 +25,12 @@ export default function Rodape(){
                 <h4>Suporte</h4>
                 <h4>Contatos</h4>
                 
+            </div>
+
+            <div>
+                <img className='redes-sociais' src="/images/facebook.png" alt="facebook" />
+                <img className='redes-sociais' src="/images/facebook.png" alt="instagram" />
+                <img className='redes-sociais' src="/images/facebook.png" alt="tiweter" />
             </div>
         </section>
     )

@@ -1,3 +1,16 @@
-.comp-rodape {
-    background-color: black;
+*{
+    margin: 0;
+    padding:0;
 }
+.comp-rodape {
+    color: white;
+    background-color: black;
+    height: 50vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    
+}
+
+
