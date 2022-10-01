@@ -1,4 +1,4 @@
-import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome } from '../repository/cadastrarRepository.js'
+import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto } from '../repository/cadastrarRepository.js'
 
 import multer from 'multer'
 import { Router } from 'express'
@@ -93,6 +93,45 @@ server.get('/tenis/:id',async (req,resp)=>{
         })
     }
 })
+
+
+
+server.delete('/tenis/:id', async (req, resp) => {
+    try{
+        const { id } = req.params;
+
+        const resposta = await deletarProduto(id);
+        if (resposta != 1)
+            throw new Error ('produto não pode ser removida');
+        else
+            resp.status (204).send();
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
+
+
+server.put('/tenis/:id', async (req, resp) => {
+    try{
+        const { id } = req.params;
+
+        const resposta = await alterarProduto(id);
+        if (resposta != 1)
+            throw new Error ('produto não pode ser alterado');
+        else
+            resp.status (204).send();
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
 
 
 

@@ -10,6 +10,8 @@ export default function ListarProdutos() {
 
    async function carregarTodosTenis() {
         const resp = await listarTenis();
+        console.log(resp);
+        setTenis(resp);
     }
 
 
@@ -33,23 +35,28 @@ export default function ListarProdutos() {
                         <th>id</th>
                         <th>nome</th>
                         <th>marca</th>
-                        <th>lançamento</th>
                         <th>genero</th>
+                        <th>valor</th>
                         <th>tamanho</th>
                         <th>unidades</th>               
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>air force</td>
-                        <td>Nike</td>
-                        <td>não</td>
-                        <td>masculino</td>
-                        <td>38</td>
-                        <td>30</td>
-                    </tr>
+
+                    {tenis.map(item => 
+                        <tr>
+                            <td>#{item.ID}</td>
+                            <td>{item.NOME}</td>
+                            <td>{item.NM_MARCA}</td>
+                            <td>{item.DS_GENERO}</td>
+                            <td>{item.VALOR}</td>
+                            <td>{item.NUMERO}</td>
+                            <td>{item.QUANTIDADE}</td>
+                        </tr>
+                    
+                    )}
+
                 </tbody>
                 </table>
         </div>

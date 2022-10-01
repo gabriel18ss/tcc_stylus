@@ -37,6 +37,7 @@ export async function listarTenis(){
     return resposta.data;
 }
 
+
 export async function buscarPorNome(NOME){
     const resposta = await api.get (`/tenis/busca?NOME=${NOME}`);
     return resposta.data;

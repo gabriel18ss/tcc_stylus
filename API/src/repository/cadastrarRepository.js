@@ -12,6 +12,8 @@ export async function cadastrarTenis(tenis) {
     return tenis;
 }
 
+
+
 export async function alterarImagem(imagem, id) {
     const comando = 
         `UPDATE TB_PRODUTO
@@ -22,6 +24,8 @@ export async function alterarImagem(imagem, id) {
     const [resposta] = await con.query(comando, [imagem, id]);
     return resposta.affectedRows;
 }
+
+
 
 export async function listarTenis(){
     const comando=
@@ -41,6 +45,8 @@ export async function listarTenis(){
     const [linhas] =await con.query(comando);
     return linhas;
 }
+
+
 
 export async function buscarPorId(id){
     const comando=
@@ -62,6 +68,8 @@ export async function buscarPorId(id){
     return linhas[0];
 }
 
+
+
 export async function buscarPorNome(NOME){
     const comando=
     `SELECT ID_PRODUTO			ID,
@@ -81,5 +89,28 @@ export async function buscarPorNome(NOME){
 
     const [linhas] =await con.query(comando, [ `%${NOME}%`]);
     return linhas;
+}
+
+
+
+export async function deletarProduto(id){
+    const comando =
+   ` DELETE FROM TB_PRODUTO
+    WHERE	ID_PRODUTO = ?`;
+
+    const [resposta] = await con.query(comando, [id]);
+    return resposta.affectedRows;
+
+
+}
+
+
+export async function alterarProduto(id, tenis){
+    const comando =
+    ``;
+
+    const [resposta] = await con.query(comando, [id, tenis]);
+    return resposta.affectedRows;
+
 }
 
