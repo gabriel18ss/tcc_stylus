@@ -1,4 +1,4 @@
-import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto } from '../repository/cadastrarRepository.js'
+import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto, alterarProduto } from '../repository/cadastrarRepository.js'
 
 import multer from 'multer'
 import { Router } from 'express'
@@ -118,8 +118,9 @@ server.delete('/tenis/:id', async (req, resp) => {
 server.put('/tenis/:id', async (req, resp) => {
     try{
         const { id } = req.params;
+        const tenis = req.body;
 
-        const resposta = await alterarProduto(id);
+        const resposta = await alterarProduto(id, tenis);
         if (resposta != 1)
             throw new Error ('produto não pode ser alterado');
         else

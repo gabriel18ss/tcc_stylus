@@ -107,9 +107,17 @@ export async function deletarProduto(id){
 
 export async function alterarProduto(id, tenis){
     const comando =
-    ``;
+    `UPDATE TB_PRODUTO
+        SET     ID_PRODUTO_MARCA			 = ?,
+                ID_PRODUTO_GENERO 			 = ?,
+                QTD_PRODUTO    		 		 = ?,
+                NM_PRODUTO      			 = ?,
+                VL_PRODUTO     				 = ?,
+                DS_LANCAMENTO  				 = ?,
+                NR_PRODUTO					 = ?
+            where ID_PRODUTO  = ? `
 
-    const [resposta] = await con.query(comando, [id, tenis]);
+    const [resposta] = await con.query(comando, [tenis.marca, tenis.genero, tenis.quantidade, tenis.nome, tenis.valor, tenis.lancamento, tenis.tamanho, id]);
     return resposta.affectedRows;
 
 }
