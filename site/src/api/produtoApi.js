@@ -12,6 +12,7 @@ export async function cadastrarTenis(marca, genero, nome, quantidade, valor, lan
         valor: valor,
         lancamento:lancamento,
         tamanho:tamanho,
+
     })
     return resposta.data;
 }
@@ -42,3 +43,11 @@ export async function buscarPorNome(NOME){
     const resposta = await api.get (`/tenis/busca?NOME=${NOME}`);
     return resposta.data;
 }
+
+
+export async function deletarProduto(id) {
+    const resposta = await api.delete (`/tenis/${id}`);
+    return resposta.status;
+}
+
+

@@ -2,11 +2,51 @@ import Barra from '../../componentes/barra';
 import './index.scss';
 
 import { useState, useEffect } from 'react';
-import { listarTenis, buscarPorNome } from '../../api/produtoApi'
+import { listarTenis, buscarPorNome, deletarProduto } from '../../api/produtoApi'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { confirmAlert } from 'react-confirm-alert'; 
+
 
 export default function ListarProdutos() {
 
-    const [tenis, setTenis] = useState([]);
+    const [tenis, setTenis] = useState([]); 
+    const [filtro, setFiltro] = useState([]);
+
+
+
+    async function deletarProdutoClick(ID, NOME){
+
+        confirmAlert({
+            title:'Remover Produto',
+            message:`Deseja remover o Produto ${NOME}?`,
+            buttons:[
+                {
+                    label:'Sim',
+                    onClick: async () => {
+                        
+                        const resposta = await deletarProduto(ID, NOME);
+                        if(filtro === '')
+                            carregarTodosTenis();
+                        else
+                            filtrar();
+                            
+                        toast.dark('Produto removido com sucesso🪚 ')
+                    }
+                },
+                {
+                    label:'Não',
+                    onClick: () => alert
+                }
+
+            ]
+        })
+
+
+    }
+      
 
    async function carregarTodosTenis() {
         const resp = await listarTenis();
@@ -14,10 +54,17 @@ export default function ListarProdutos() {
         setTenis(resp);
     }
 
+    async function filtrar() {
+        const resp = await buscarPorNome(filtro);
+        setTenis(resp); 
+    }
+
 
     useEffect(() => {
         carregarTodosTenis();
     }, [])
+
+
 
     return(
         <section className='page-listaProd'>
@@ -28,7 +75,14 @@ export default function ListarProdutos() {
                 <botton>Cadastrar</botton>
                 <botton>Produtos Cadastrados</botton>
             </div>
+
+
             <div className='tabela'>
+
+                <div className="">
+                    <input className="caixa-pesquisa" value={filtro} onChange={ e => setFiltro(e.target.value)} ></input>
+                    <img width="20px"  src="/images/analise.png" className="iconPesq" onClick={filtrar} ></img>
+                </div>
                 <table>
                 <thead>
                     <tr>
@@ -38,7 +92,8 @@ export default function ListarProdutos() {
                         <th>genero</th>
                         <th>valor</th>
                         <th>tamanho</th>
-                        <th>unidades</th>               
+                        <th>unidades</th>    
+                        <th>apagar e alterar</th>                 
                     </tr>
                 </thead>
 
@@ -53,6 +108,10 @@ export default function ListarProdutos() {
                             <td>{item.VALOR}</td>
                             <td>{item.NUMERO}</td>
                             <td>{item.QUANTIDADE}</td>
+                            <td>
+                                    <img width="20px" src="/images/caderno.png" className="iconTable" alt=""/>
+                                    <img width="20px"src="/images/lixo.png" alt="" onClick={() => deletarProdutoClick(item.ID, item.NOME)} />
+                            </td>
                         </tr>
                     
                     )}

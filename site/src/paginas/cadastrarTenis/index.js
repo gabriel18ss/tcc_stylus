@@ -20,11 +20,12 @@ export default function CTE (){
     const [valor, setValor] = useState ('')
     const [lancamento, setlancamento] = useState (false)
     const [tamanho, setTamanho] = useState ('')
+
     const [imagem, setImagem] = useState ()
     
     async function salvarClick(){
         try{
-            const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, tamanho);
+            const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho);
             toast.dark('tenis cadastrado 👟');
             
         }catch (err){

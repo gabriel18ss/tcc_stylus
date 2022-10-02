@@ -22,11 +22,30 @@
         font-size: 21px;
     }
 
+    .caixa-pesquisa{
+        margin-top: 1.5em;
+        margin-left: 7em;
+
+        width:18em;
+        height:2em;
+        border-radius:5em;
+    }
+
+    .iconPesq {
+        margin-left:5px;
+        
+    }
+
     table {
         border-collapse: collapse;
 
         margin-left: 6em;
-        margin-top: 5em;
+        margin-top: 1em;
+    }
+
+    thead {
+        
+
     }
     
     th {
@@ -48,5 +67,9 @@
         display: flex;
         flex-direction: row;
         
+    }
+
+    .iconTable {
+        margin-right:17px ;
     }
 }
