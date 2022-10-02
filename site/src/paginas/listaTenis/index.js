@@ -7,6 +7,9 @@ import { listarTenis, buscarPorNome, deletarProduto } from '../../api/produtoApi
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { confirmAlert } from 'react-confirm-alert'; 
+
+
 export default function ListarProdutos() {
 
     const [tenis, setTenis] = useState([]); 
@@ -15,12 +18,32 @@ export default function ListarProdutos() {
 
 
     async function deletarProdutoClick(ID, NOME){
-        const resposta = await deletarProduto(ID, NOME);
-        if(filtro === '')
-            carregarTodosTenis();
-        else
-            
-        toast.dark('Produto removido 🪚 ')
+
+        confirmAlert({
+            title:'Remover Produto',
+            message:`Deseja remover o Produto ${NOME}?`,
+            buttons:[
+                {
+                    label:'Sim',
+                    onClick: async () => {
+                        
+                        const resposta = await deletarProduto(ID, NOME);
+                        if(filtro === '')
+                            carregarTodosTenis();
+                        else
+                            filtrar();
+                            
+                        toast.dark('Produto removido com sucesso🪚 ')
+                    }
+                },
+                {
+                    label:'Não',
+                    onClick: () => alert
+                }
+
+            ]
+        })
+
 
     }
       
@@ -31,10 +54,17 @@ export default function ListarProdutos() {
         setTenis(resp);
     }
 
+    async function filtrar() {
+        const resp = await buscarPorNome(filtro);
+        setTenis(resp); 
+    }
+
 
     useEffect(() => {
         carregarTodosTenis();
     }, [])
+
+
 
     return(
         <section className='page-listaProd'>
@@ -45,7 +75,14 @@ export default function ListarProdutos() {
                 <botton>Cadastrar</botton>
                 <botton>Produtos Cadastrados</botton>
             </div>
+
+
             <div className='tabela'>
+
+                <div className="">
+                    <input className="caixa-pesquisa" value={filtro} onChange={ e => setFiltro(e.target.value)} ></input>
+                    <img width="20px"  src="/images/analise.png" className="iconPesq" onClick={filtrar} ></img>
+                </div>
                 <table>
                 <thead>
                     <tr>
