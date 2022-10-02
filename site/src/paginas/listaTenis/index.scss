@@ -28,6 +28,11 @@
         margin-left: 6em;
         margin-top: 5em;
     }
+
+    thead {
+        
+
+    }
     
     th {
         padding: 15px;
@@ -48,5 +53,9 @@
         display: flex;
         flex-direction: row;
         
+    }
+
+    .iconTable {
+        margin-right:17px ;
     }
 }

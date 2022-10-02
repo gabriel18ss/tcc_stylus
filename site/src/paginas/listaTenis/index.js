@@ -2,11 +2,28 @@ import Barra from '../../componentes/barra';
 import './index.scss';
 
 import { useState, useEffect } from 'react';
-import { listarTenis, buscarPorNome } from '../../api/produtoApi'
+import { listarTenis, buscarPorNome, deletarProduto } from '../../api/produtoApi'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ListarProdutos() {
 
-    const [tenis, setTenis] = useState([]);
+    const [tenis, setTenis] = useState([]); 
+    const [filtro, setFiltro] = useState([]);
+
+
+
+    async function deletarProdutoClick(ID, NOME){
+        const resposta = await deletarProduto(ID, NOME);
+        if(filtro === '')
+            carregarTodosTenis();
+        else
+            
+        toast.dark('Produto removido 🪚 ')
+
+    }
+      
 
    async function carregarTodosTenis() {
         const resp = await listarTenis();
@@ -38,7 +55,8 @@ export default function ListarProdutos() {
                         <th>genero</th>
                         <th>valor</th>
                         <th>tamanho</th>
-                        <th>unidades</th>               
+                        <th>unidades</th>    
+                        <th>apagar e alterar</th>                 
                     </tr>
                 </thead>
 
@@ -53,6 +71,10 @@ export default function ListarProdutos() {
                             <td>{item.VALOR}</td>
                             <td>{item.NUMERO}</td>
                             <td>{item.QUANTIDADE}</td>
+                            <td>
+                                    <img width="20px" src="/images/caderno.png" className="iconTable" alt=""/>
+                                    <img width="20px"src="/images/lixo.png" alt="" onClick={() => deletarProdutoClick(item.ID, item.NOME)} />
+                            </td>
                         </tr>
                     
                     )}
