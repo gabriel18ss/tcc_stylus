@@ -2,6 +2,8 @@ import './index.scss';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import {useNavigate} from 'react-router-dom';
+
 import { cadastrarUsuario } from '../../api/usuarioApi.js';
 
 import { useState } from 'react';
@@ -15,14 +17,34 @@ export default function CadastrarUsuario (){
     const [nascimento, setNascimento] = useState('');
 
 
+    const navigate = useNavigate();
+    async function voltarClick(){
+        try{
+            setTimeout(() => {
+                navigate('/usurio/login')
+             }, 3000);
+        }catch(err){
+            toast.error(err.message);
+        }
+    }
+ 
+
+
     async function salvarClick(){
         try{
             const r = await cadastrarUsuario(nome, email, senha, cpf, cep, nascimento);
             toast.dark('Usuario Cadastrado 🥳 ');
             
-        }catch (err){
+        }
+        
+        catch (err){
             toast.error(err.message);
         }
+
+        setTimeout(() => {
+           navigate('/usuario/login')
+        }, 3000);
+        
 
     }
 
@@ -36,7 +58,7 @@ export default function CadastrarUsuario (){
 
                 <div className='pagina-principal'>
 
-                   <b className="voltar">voltar</b>
+                   <b className="voltar" onClick={voltarClick}>voltar</b>
                  
                     <h1 className="titulo-1">Criar uma conta</h1>
                    

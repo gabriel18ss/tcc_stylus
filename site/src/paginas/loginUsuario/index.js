@@ -2,7 +2,7 @@ import './index.scss';
 import axios from 'axios'
 import { useState, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { ToastContainer,  toast } from 'react-toastify';
 import { loginU } from '../../api/usuarioApi';
 import LoadingBar  from 'react-top-loading-bar'
 
@@ -17,10 +17,20 @@ export default function Index(){
     const navigate = useNavigate();
     const ref = useRef();  
 
-    async function entrarClick(){
+
+    async function clickCadastrar(){
+        try{
+            setTimeout(() => {
+                navigate('/usuario/cadastrar')
+             }, 3000);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+    async function entrarClick () {
         ref.current.continuousStart()
 
-    
         const r = await axios.post('http://localhost:5000/usuario/login', {
             email:email,
             senha:senha
@@ -62,7 +72,7 @@ export default function Index(){
                     <button className="button" onClick={entrarClick} >ENTRAR</button>
 
                     <h1 className="reg">não esta Cadastrado ?</h1>
-                    <h1 className="junt">Cadastre-se</h1>
+                    <h1 className="junt" onClick={clickCadastrar}>Cadastre-se</h1>
 
                     <div>
                        
