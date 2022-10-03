@@ -15,10 +15,10 @@ export default function appRoutes() {
         <BrowserRouter>
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/loginadm' element={<LoginADM/>}/>
+            <Route path='/adm/login' element={<LoginADM/>}/>
             <Route path='/cadastrar' element={<CTE/>}/>
-            <Route path='/loginusu' element={<Index/>}/>
-            <Route path='/cadastrarUsu' element={<CadastrarUsuario/>}/>
+            <Route path='/usuario/login' element={<Index/>}/>
+            <Route path='/usuario/cadastrar' element={<CadastrarUsuario/>}/>
             <Route path='/Endereço' element={<TelaEnd/>}/>
             <Route path='/barra' element={<Barra/>}/>
             <Route path='/rodape' element={<Rodape/>}/>
