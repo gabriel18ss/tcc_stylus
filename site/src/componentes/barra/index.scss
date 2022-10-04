@@ -19,58 +19,62 @@ background-color: black;
 .search-box{
    position: absolute;
    left: 10%;
-   top: 5px;
-   background-color: white;
-   height: 20px;
+   top: 7px;
+   background-color: rgb(255, 255, 255);
+   height: 17px;
    border-radius: 40px;
    padding: 10px;
 }
 .search.bnt{
-    color: #a7ddf8;
-    float: right;
-    width:40px;
-   
-    border-radius: 50%;
-    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 2s;
 }
 .search-txt{
     border: none;
     background: none;
     outline: none;
-    float: left;
+    float: right;
+    text-align: center;
     padding: 0;
     color: rgb(0, 0, 0);
     font-size: 14px;
-    transition: 0.4s;
-    line-height: 20px;
+    transition: 1s;
+    line-height: 15px;
     width: 0px;
-    text-align: center;
+}
+.lupa{
+  height: 20px;
 }
 .search-box:hover > .search-txt{
-    width: 240px;
+    width: 210px;
     padding: 0 6px;
 }
-.search-box:hover > .search.bnt{
-    background: rgb(255, 255, 255);
 
-}
+
 .sacola{
     height: 27px;
     position: absolute;
     left: 72em;
     top: 15px;
+    cursor: pointer;
    
+}
+.sacola:hover{
+    margin-top: -5px;
+    height: 30px;
 }
 .user{
     height: 27px;
     position: absolute;
     left: 75em;
     top: 15px;
+    cursor: pointer;
    
+}
+.user:hover{
+    margin-top: -5px;
+    height: 30px;
 }
 
 
