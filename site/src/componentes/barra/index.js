@@ -29,7 +29,14 @@ export default function Barra(props){
                   <input type='text' className='search-txt' placeholder='Pesquisar...'/>
                   <a className='search-bnt' href="#"></a>
                     <img src="pesquisa.png" alt="" />
+
              
+                </div>
+                <div>
+                    <img className='sacola' src="/images/sacolabranca.png" alt='sacola'/>
+                </div>
+                <div>
+                <img className='user' src="/images/user-branco.png" alt='usuario'/>
                 </div>
         
         </section>

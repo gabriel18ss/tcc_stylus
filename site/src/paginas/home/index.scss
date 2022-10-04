@@ -30,15 +30,16 @@
         background-size:100% ;
 
         width: 100%;
-        height: 34em;
+        height: 60vh;
 
     }
 
     .text1{
+        text-align: center;
         color:white;
         
         margin-left: 1em;
-        font-size: 5em;
+        font-size: 3em;
         width: 4em;
 
         font-family: 'Nosifer';
@@ -58,6 +59,19 @@
         width: 14em;
         height: 4em;
         border-radius: 5em ;
+        position: absolute;
+        left: 42.5%;
+        top: 135%;
+        border: none;
+        cursor: pointer;
+        
+        
+    }
+    .botao1:hover{
+        transform: scale(1.1);
+        transform: translateY(-10px);
+        animation: float 3
+        s ease-in-out infinite;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,6 +160,7 @@
 .botaoMarcas{
     background-color:black;
     border-radius: 50%;
+    border: none;
 
     
     justify-content:center;

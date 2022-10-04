@@ -3,6 +3,7 @@ import {useState,useEffect } from 'react';
 
 import './index.scss';
 import Barra from '../../componentes/barra'
+import Cards from '../../componentes/cards'
 
 
 
@@ -49,21 +50,11 @@ export default function Vitrine() {
                </div>
 
             </div>
-
-            {tenis.map(item =>
-                <div className='container'>
-                <div className='cards-2'>
-                    <div >
-                        <img src="/images/tenis00.png" className='imagem-tenis' alt=""/>
-
-                        <h1 className='nome-tenis'>{item.NOME}</h1>
-                        
-                        <h1 className='preço-tenis'>{item.VALOR}</h1>
-
-                    </div>
-                </div>
-                </div>
-             )}
+            <div className='card'>
+                <Cards/>
+            </div>
+            
+           
                    </main>
               </section>
 
