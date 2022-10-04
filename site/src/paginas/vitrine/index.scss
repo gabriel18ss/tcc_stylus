@@ -8,6 +8,7 @@
 }
 .vitrine{
     display: flex;
+    max-width: 100vh;
    
 }
 
@@ -37,51 +38,10 @@
 
 /////////////////////////////////////////
 
-.container{
+.card{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 50px;
-    width:230px;
-    padding: 20px;
-   
-}
-.container .cards-2{
-    position: relative;
-    padding: 10px;
-    width: 150px;
-    background-color: #ffff;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 30px;
-    overflow: hidden;
-    transition: 0.5s;
-    text-align: center;
-    box-shadow: 5px 5px 5px   rgb(153, 148, 148);
-    cursor: pointer;
-  
-}
-.container .cards-2:hover{
-    background-color: #8990eb;
-    color: #ffff;
-    margin-top: -5px;
-    box-shadow: 2px 20px 25px #8990eb;
-}
+    flex-direction: row;
+    flex-wrap: flex;
 
-.cards-2{
-    display: flex;
-    justify-content: center;
-    min-height: 10vh;
-    height: 200px;
-    flex-wrap: wrap; 
-}
-.imagem-tenis{
-    height: 100px;
-}
-.nome-tenis{
-    font-size: 15px;
-}
-.preço-tenis{
-    font-size: 15px;
+
 }

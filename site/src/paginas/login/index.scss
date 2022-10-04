@@ -15,14 +15,17 @@
     }
 
     .log {
-        background-color:white ;
+        
+        opacity: 80%;
        
 
         display: flex;
         flex-direction:column;
 
         margin-left: 12em;
-        margin-top:9em
+        margin-top:9em;
+       
+        
     }
     .fundo {
         background-image: url("../../../public/images/peakpx.jpg");

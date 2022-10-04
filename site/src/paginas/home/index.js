@@ -1,5 +1,7 @@
 import './index.scss';
 import Barra from '../../componentes/barra';
+import Cards from '../../componentes/cards';
+
 
 
 export default function Home(){
@@ -9,7 +11,9 @@ export default function Home(){
             <div className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
-
+            <div className='card'>
+                <Cards/>
+            </div>
             <div className='faixa2'>
                <button className='botao1'>Outros</button>
             </div>
