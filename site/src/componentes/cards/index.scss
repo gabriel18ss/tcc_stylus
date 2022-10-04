@@ -21,13 +21,15 @@
     text-align: center;
     box-shadow: 5px 5px 5px   rgb(153, 148, 148);
     cursor: pointer;
+    transition: 0.5s;
+  
 }
 .container .cards-2:hover{
     background-color: #a6a6b4;
     color: rgb(255, 255, 255);
     margin-top: -5px;
     box-shadow: 2px 20px 25px #a6a6b4;
-    transition: 0.8s;
+   transform-origin: 1s;
 }
 
 .cards-2{
