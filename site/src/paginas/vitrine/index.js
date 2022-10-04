@@ -6,18 +6,21 @@ import Barra from '../../componentes/barra'
 
 
 
-export default function Vitrine(){
+export default function Vitrine() {
 
-async function carregarTodosTenis(){
-    const [tenis, setTenis] = useState([]);
+    const [tenis, setTenis] = useState([]); 
+    
 
-    const resp = await listarTenis();
-    console.log(resp);
-    setTenis(resp);
-} 
-useEffect(() => {
-    carregarTodosTenis();
-},[])
+    async function carregarTodosTenis() {
+        const resp = await listarTenis();
+        console.log(resp);
+        setTenis(resp);
+    }
+
+    useEffect(() => {
+        carregarTodosTenis();
+    }, [])
+
 
     return(
         <section >
@@ -48,18 +51,18 @@ useEffect(() => {
             </div>
 
             {tenis.map(item =>
-            <div className='container'>
-            <div className='cards-2'>
-                <div >
-                    <img src="/images/tenis00.png" className='imagem-tenis' alt=""/>
+                <div className='container'>
+                <div className='cards-2'>
+                    <div >
+                        <img src="/images/tenis00.png" className='imagem-tenis' alt=""/>
 
-                    <h1 className='nome-tenis'>{item.nome.substr(0,1)}</h1>
+                        <h1 className='nome-tenis'>{item.NOME}</h1>
+                        
+                        <h1 className='preço-tenis'>{item.VALOR}</h1>
 
-                    <h1 className='preço-tenis'>{item.valor}</h1>
-
+                    </div>
                 </div>
-            </div>
-            </div>
+                </div>
              )}
                    </main>
               </section>
