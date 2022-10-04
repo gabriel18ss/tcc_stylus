@@ -18,11 +18,16 @@ export default function Barra(props){
     return(
         <section className='comp-barra'>
             <div className='barra'>
+
                 <div>
                     <img className='logo' src="/images/logo.jpeg" alt="" onClick={logoClick}/>
                 </div>
-                <div>
-                  <input className='barra-pesquisa'/>
+
+                <div className='search-box'>
+
+                  <input type={'text'} className='barra-pesquisa' placeholder='Pesquisar...'/>
+
+               <a className='search-bnt' href="#"></a>
                 </div>
              
             </div>

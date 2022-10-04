@@ -1,28 +1,25 @@
 .comp-barra {
     .barra{
-        background-color: black;
+        background-color: rgb(241, 229, 229);
         height: 4em;
 
         display:flex;
         flex-direction: row;
     }
-
-    .barra-pesquisa{
-        margin-top:2em;
-        margin-left: 30em;
-
-        width: 15em;
-        height: 1.5em;
-        border-radius: 20px;
-        border-color:white;
-}
-
 .logo{
    
     height:4em;
     cursor: pointer;
 }
 
+.search-box{
+    display: flex;
+    align-items: center;
+    
+    background: #353b48;
+    border-radius:40px ;
+    
+}
 
 
 }
