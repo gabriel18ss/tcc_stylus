@@ -30,6 +30,9 @@ server.put('/:id/capa', upload.single('capa'), async (req, resp) => {
         const imagem = req.file.path;
 
         const resposta = await alterarImagem(imagem, id);
+        if (resposta != 1)
+            throw new Error('A imagem não foi salva.');
+
         resp.status(204).send();
         if (resposta != 1)
             throw new Error('A imagem não foi salva.');

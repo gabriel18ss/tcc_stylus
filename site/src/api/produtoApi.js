@@ -23,12 +23,14 @@ export async function enviarImagem(id, imagem){
 
     const formData = new FormData();
     formData.append('capa', imagem);
+    
 
     const resposta = await api.put(`/${id}/capa`, formData,{
         headers: {
             "Content-type": "multipart/form-data" 
         },
     });
+    console.log(resposta);
 
     return resposta.status;
 }

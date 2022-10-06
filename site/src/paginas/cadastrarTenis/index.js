@@ -94,7 +94,7 @@ export default function CTE (){
                        <img src={mostrarImagem()} className='img' alt=''/>
                     }    
 
-                        <input className='input2' type='file' id='imagemCapa' onChange={e => setImagem(e.target.files[0])}></input>
+                        <input className='input2' type='file'id='imagemCapa' onChange={e => setImagem(e.target.files[0])} />
                     </div>
 
                         <h4>Quantidade</h4>
