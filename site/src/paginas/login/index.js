@@ -32,7 +32,7 @@ async function entrarClick() {
         senha: senha
     });
             setTimeout(() => {
-                navigate('/cadastrar');
+                navigate('/adm/cadastrar');
             }, 3000);
 
     } catch (err) {

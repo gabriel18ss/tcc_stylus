@@ -24,7 +24,7 @@ server.post('/cadastrar', async (req, resp) => {
 
 
 
-server.put('/cadastrar/:id/capa', upload.single('capa'), async (req, resp) => {
+server.put('/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
         const { id } = req.params;
         const imagem = req.file.path;
@@ -81,7 +81,7 @@ server.get('/tenis/:id',async (req,resp)=>{
     try {
         const {id} = req.params;
 
-        const resposta = await buscarPorId(id);
+        const resposta = await buscarPorId(Number(id));
 
         if (!resposta)
             throw new Error ('Produto não foi encontrado')

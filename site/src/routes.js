@@ -5,6 +5,7 @@ import CTE from './paginas/cadastrarTenis';
 import Barra from '../src/componentes/barra';
 import Index from './paginas/loginUsuario';
 import Vitrine from './paginas/vitrine';
+import Menu from  './componentes/menu';
 
 import CadastrarUsuario from './paginas/CadastrarUsuario';
 import TelaEnd from './paginas/endereços';
@@ -17,7 +18,8 @@ export default function appRoutes() {
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/adm/login' element={<LoginADM/>}/>
-            <Route path='/cadastrar' element={<CTE/>}/>
+            <Route path='/adm/cadastrar' element={<CTE/>}/>
+            <Route path='/adm/alterar/:idParams' element={<CTE/>}/>
             <Route path='/usuario/login' element={<Index/>}/>
             <Route path='/usuario/cadastrar' element={<CadastrarUsuario/>}/>
             <Route path='/Endereço' element={<TelaEnd/>}/>
@@ -25,6 +27,7 @@ export default function appRoutes() {
             <Route path='/rodape' element={<Rodape/>}/>
             <Route path='/listaProdutos' element={<ListarProdutos/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
+            <Route path='/menu' element={<Menu/>}/>
         </Routes>
         </BrowserRouter>
     )

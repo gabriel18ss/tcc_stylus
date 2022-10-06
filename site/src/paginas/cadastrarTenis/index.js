@@ -1,13 +1,16 @@
 import './index.scss';
 import Barra from '../../componentes/barra';
+import Menu from '../../componentes/menu';
+
 import storage from 'local-storage';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { cadastrarTenis, alterarImagem } from '../../api/produtoApi.js';
+import { cadastrarTenis, alterarImagem, enviarImagem, buscarPorId} from '../../api/produtoApi.js';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 
 export default function CTE (){
     //  marca:marca, genero:genero, quantidade: quantidade, valor: valor, lancamento:lancamento,tamanho:tamanho
@@ -19,14 +22,40 @@ export default function CTE (){
     const [quantidade, setQuantidade] = useState ('')
     const [valor, setValor] = useState ('')
     const [lancamento, setlancamento] = useState (false)
-    const [tamanho, setTamanho] = useState ('')
+    const [tamanho, setTamanho] = useState ('');
 
-    const [imagem, setImagem] = useState ()
+    const [imagem, setImagem] = useState ();
+    const [id, setId] = useState(0);
+
+
+    const { idParams } = useParams();
+
+    useEffect(() => {
+        if(idParams) {
+            carregarTenis();
+        }
+    }, [])
+
+   async function carregarTenis() {
+        const resposta = await buscarPorId(idParams);
+        setMarca(resposta.ID_PRODUTO_MARCA);
+        setGenero(resposta.DS_GENERO);
+        setNome(resposta.NOME);
+        setQuantidade(resposta.QUANTIDADE);
+        setValor(resposta.VALOR);
+      
+        setTamanho(resposta.NUMERO);
+        setId(resposta.ID);
+       
+    }
     
     async function salvarClick(){
         try{
-            const r = await cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho);
+            const usuario = storage('usuario-logado').id;
+            const novoTenis = await cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho, usuario);
+            const r = enviarImagem(novoTenis.id, imagem);
             toast.dark('tenis cadastrado 👟');
+            console.log();
             
         }catch (err){
             toast.error(err.message);
@@ -34,13 +63,13 @@ export default function CTE (){
 
     }
 
-    function escolherImagem(){
+    function escolherImagem() {
         document.getElementById('imagemCapa').click();
     }
 
     function mostrarImagem() {
-        return URL.createObjectURL(imagem)
-   }
+        return URL.createObjectURL(imagem);
+    }
 
     return(
         <section>
@@ -48,19 +77,7 @@ export default function CTE (){
             <Barra/>
            
             <main className='cadastrar-1'>
-
-            <div className='faixa-2'>
-
-                 <div className='inf'>
-                    <h1>Pedidos</h1>
-
-                    <h1>Cadastrar</h1>
-
-                    <h1>inicio</h1>
-        
-                </div>
-
-            </div>
+            <Menu/>
 
             <div className='faixa-3'>
 
@@ -74,7 +91,7 @@ export default function CTE (){
                     }    
 
                     {imagem &&
-                       <img className='img'src={mostrarImagem()} alt=''/>
+                       <img src={mostrarImagem()} className='img' alt=''/>
                     }    
 
                         <input className='input2' type='file' id='imagemCapa' onChange={e => setImagem(e.target.files[0])}></input>
@@ -87,7 +104,7 @@ export default function CTE (){
                         <input className='input3' placeholder='informe o genero' type='text' value={genero} onChange={e => setGenero(e.target.value)}></input>
 
                         <h4 className='c'>lançamento</h4>
-                        <input type='checkbox'  checked={lancamento} onChange ={e => setlancamento(e.target.value)}></input>
+                        <input type='checkbox'  checked={lancamento} onChange ={e => setlancamento(e.target.checked)}></input>
 
                     </div>
                     <div>

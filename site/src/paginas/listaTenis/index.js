@@ -1,5 +1,6 @@
-import Barra from '../../componentes/barra';
 import './index.scss';
+import Barra from '../../componentes/barra';
+import Menu from '../../componentes/menu';
 
 import { useState, useEffect } from 'react';
 import { listarTenis, buscarPorNome, deletarProduto } from '../../api/produtoApi'
@@ -70,11 +71,7 @@ export default function ListarProdutos() {
         <section className='page-listaProd'>
             <Barra/>
         <div className='part-table'>
-            <div className='barra-lateral'>
-                <botton>Inicio</botton>
-                <botton>Cadastrar</botton>
-                <botton>Produtos Cadastrados</botton>
-            </div>
+            <Menu/>
 
 
             <div className='tabela'>
