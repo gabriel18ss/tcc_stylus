@@ -8,6 +8,7 @@ import { listarTenis, buscarPorNome, deletarProduto } from '../../api/produtoApi
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert'; 
 
 
@@ -16,7 +17,11 @@ export default function ListarProdutos() {
     const [tenis, setTenis] = useState([]); 
     const [filtro, setFiltro] = useState([]);
 
-
+    const navigate = useNavigate();
+    
+    function editarProduto(id){
+        navigate(`/adm/alterar/${id}`)
+    }
 
     async function deletarProdutoClick(ID, NOME){
 
@@ -106,7 +111,7 @@ export default function ListarProdutos() {
                             <td>{item.NUMERO}</td>
                             <td>{item.QUANTIDADE}</td>
                             <td>
-                                    <img width="20px" src="/images/caderno.png" className="iconTable" alt=""/>
+                                    <img width="20px" src="/images/caderno.png" className="iconTable" alt=""  onClick={() => editarProduto(item.ID)} /> 
                                     <img width="20px"src="/images/lixo.png" alt="" onClick={() => deletarProdutoClick(item.ID, item.NOME)} />
                             </td>
                         </tr>

@@ -7,14 +7,12 @@ import storage from 'local-storage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { cadastrarTenis, alterarImagem, enviarImagem, buscarPorId} from '../../api/produtoApi.js';
+import { cadastrarTenis, enviarImagem, alterarTenis, buscarPorId, buscarImagem} from '../../api/produtoApi.js';
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
 export default function CTE (){
-    //  marca:marca, genero:genero, quantidade: quantidade, valor: valor, lancamento:lancamento,tamanho:tamanho
-   
    
     const [marca, setMarca] = useState ('');
     const [genero, setGenero] = useState ('');
@@ -45,20 +43,41 @@ export default function CTE (){
         setValor(resposta.VALOR);
       
         setTamanho(resposta.NUMERO);
+        setImagem(resposta.IMG_PRODUTO);
         setId(resposta.ID);
        
     }
     
     async function salvarClick(){
         try{
-            const usuario = storage('usuario-logado').id;
-            const novoTenis = await cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho, usuario);
-            const r = enviarImagem(novoTenis.id, imagem);
-            toast.dark('tenis cadastrado 👟');
-            console.log();
+            if (!imagem)
+                throw new Error('Escolha a capa do Produto');
+
+            const usuario = storage('usuario-logado').ID;
+            
+            if (id === 0){
+                const novoTenis = await cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho, usuario);
+                const r = enviarImagem(novoTenis.id, imagem);
+                setId(novoTenis.id); 
+
+                toast.dark('tenis cadastrado 👟');
+
+            }
+
+            else{
+                await alterarTenis(id,  marca, genero, nome, quantidade, valor, lancamento, tamanho, usuario);
+                const r = enviarImagem(id, imagem);
+
+                toast.dark('tenis alterado   👟');
+            }
+           
+          
             
         }catch (err){
-            toast.error(err.message);
+            if(err.response)
+              toast.error(err.response.data.erro );
+            else
+              toast.error(err.message);
         }
 
     }
@@ -68,7 +87,24 @@ export default function CTE (){
     }
 
     function mostrarImagem() {
+        if (typeof (imagem) == 'object'){
         return URL.createObjectURL(imagem);
+        }
+        else {
+            return buscarImagem(imagem);
+        }
+    }
+
+    function novoClick() {
+        setId(0);
+        setMarca(0);
+        setGenero(0);
+        setNome('');
+        setQuantidade('');
+        setValor(0);
+        setTamanho(0);
+        setImagem();
+
     }
 
     return(
@@ -126,7 +162,8 @@ export default function CTE (){
                     </div>
                
              </div>
-                    <button onClick={salvarClick} className='botaoF'>Finalizar</button>
+                    <button onClick={salvarClick} className='botaoF'>{id === 0 ? 'Finalizar' : 'Alterar'}</button> &nbsp; &nbsp; 
+                    <button onClick={novoClick} className='botaoF'>Novo</button>  
             </div>
             </main>            
         </section>

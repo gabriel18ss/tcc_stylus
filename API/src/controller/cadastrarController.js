@@ -26,6 +26,9 @@ server.post('/cadastrar', async (req, resp) => {
 
 server.put('/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
+        if (!req.file)
+            throw new Error('Escolha a capa do produto.');
+
         const { id } = req.params;
         const imagem = req.file.path;
 

@@ -8,7 +8,7 @@ export async function cadastrarTenis(tenis) {
     `
     
     const [resposta] = await con.query(comando, [tenis.marca, tenis.genero, tenis.nome, tenis.quantidade, tenis.valor, tenis.lancamento, tenis.tamanho, tenis.imagem]);
-    tenis.id = resposta.insertid;
+    tenis.id = resposta.insertId;
     return tenis;
 }
 

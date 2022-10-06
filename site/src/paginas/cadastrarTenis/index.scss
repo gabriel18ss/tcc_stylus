@@ -75,7 +75,7 @@
 }
 .input2{
     border-radius: 20px;
-    background-color: #D9D9D9;
+    background-color: #000000;
     border: #D9D9D9;
     height:10em;
     width: 20em;
@@ -84,6 +84,7 @@
 
 #imagemCapa {
     visibility: hidden;
+    position: absolute;
 }
 
 input {
@@ -135,7 +136,17 @@ h4 {
 }
 
 .img {
-    height:7em;
-    width:9em;
+    height:8.5em;
+    width:11em;
+    background-color: #D9D9D9;
 }
+
+.upload-capa{
+    height:8.5em;
+    width:11em;
+    background-color: #D9D9D9;
+    border-radius: 12px;
+
+}
+
 

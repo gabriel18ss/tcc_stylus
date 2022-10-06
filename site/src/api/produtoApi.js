@@ -58,3 +58,23 @@ export async function buscarPorId(id){
     return resposta.data;
 }
 
+export async function alterarTenis(id, marca, genero, nome, quantidade, valor, lancamento, tamanho) {
+    const resposta = await api.put (`/tenis/${id}`, {
+        marca:marca,
+        genero:genero,
+        nome:nome,
+        quantidade: quantidade,
+        valor: valor,
+        lancamento:lancamento,
+        tamanho:tamanho,
+
+    })
+    return resposta.data;
+}
+
+
+export async function buscarImagem(imagem){
+    console.log(api.getUri());
+   return `${api.getUri()}/${imagem}`
+}
+
