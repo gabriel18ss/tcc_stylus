@@ -51,7 +51,7 @@ export default function Vitrine() {
 
             </div>
 
-            <div className='card'>
+            <div className='cardes'>
                 <Cards/>
             </div>
 

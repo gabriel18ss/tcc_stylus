@@ -63,6 +63,8 @@
      margin-top: -10px;
     }
     .card{
+        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         gap:74px;
     }

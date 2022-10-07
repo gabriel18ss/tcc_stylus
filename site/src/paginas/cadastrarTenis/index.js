@@ -165,6 +165,7 @@ export default function CTE (){
                     <button onClick={salvarClick} className='botaoF'>{id === 0 ? 'Finalizar' : 'Alterar'}</button> &nbsp; &nbsp; 
                     <button onClick={novoClick} className='botaoF'>Novo</button>  
             </div>
+            
             </main>            
         </section>
    )   

@@ -126,6 +126,15 @@ input {
     border-radius: 2em;
 
 }
+.botaoF:hover{
+    cursor: pointer;
+
+    background-color: #4400ff;
+    color: rgb(255, 255, 255);
+   
+    transition: 0.5s;
+}
+
 
 h4 {
     font-family: 'Changa';

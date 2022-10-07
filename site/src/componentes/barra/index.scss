@@ -5,14 +5,18 @@
 .comp-barra {
 display: flex;
 flex-direction: row;
+
 height: 4em;
+
 background-color: black;
 
 }
 .logo{
     margin-left: 15px;
+
     width: 8em;
     height:3.5em;
+
     cursor: pointer;
 }
 
@@ -20,10 +24,12 @@ background-color: black;
    position: absolute;
    left: 10%;
    top: 7px;
+
    background-color: rgb(255, 255, 255);
+   
    height: 17px;
-   border-radius: 40px;
    padding: 10px;
+   border-radius: 40px;
 }
 .search.bnt{
     display: flex;
@@ -34,14 +40,19 @@ background-color: black;
     border: none;
     background: none;
     outline: none;
+
+    font-size: 14px;
+    line-height: 15px;
     float: right;
     text-align: center;
-    padding: 0;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    transition: 1s;
-    line-height: 15px;
+
     width: 0px;
+    padding: 0;
+
+    color: rgb(0, 0, 0);
+    
+    transition: 1s;
+    
 }
 .lupa{
   height: 20px;
@@ -53,22 +64,25 @@ background-color: black;
 
 
 .sacola{
-    height: 27px;
     position: absolute;
     left: 72em;
     top: 15px;
+
+    height: 27px;
+
     cursor: pointer;
-   
 }
 .sacola:hover{
     margin-top: -5px;
     height: 30px;
 }
-.user{
-    height: 27px;
+.user{    
     position: absolute;
     left: 75em;
     top: 15px;
+
+    height: 27px;
+
     cursor: pointer;
    
 }

@@ -22,16 +22,16 @@ export default function Cards(){
 
         tenis.map(item =>
         <div className='container'>
-        <div className='cards-2'>
-            <div >
-                <img src="/images/tt.png" className='imagem-tenis' alt=""/>
-    
-                <h1 className='nome-tenis'>{item.NOME}</h1>
-                
-                <h1 className='preço-tenis'>{item.VALOR}</h1>
-    
+            <div className='cards-2'>
+                <div >
+                    <img src="/images/tt.png" className='imagem-tenis' alt=""/>
+        
+                    <h1 className='nome-tenis'>{item.NOME}</h1>
+                    
+                    <h1 className='preço-tenis'>{item.VALOR}</h1>
+        
+                </div>
             </div>
-        </div>
         </div>
      )
     )

@@ -8,7 +8,7 @@
 }
 .vitrine{
     display: flex;
-    max-width: 100vh;
+    
    
 }
 
@@ -38,10 +38,12 @@
 
 /////////////////////////////////////////
 
-.card{
+.cardes{
     display: flex;
     flex-direction: row;
-    flex-wrap: flex;
+    flex-wrap: wrap;
+    gap:74px;
+    margin-left: 70px;
 
 
 }
