@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pagina-tenis{
+    display: flex;
+}
+.imagem-tenis{
+    margin: 20px;
+    margin-left: 60px;
+
+    height: 50vh;
+}
+.informaçoes-tenis{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 90vw;
+    height: 80vh;
+
+    margin-top: 34px;
+
+    text-shadow: 1.5px 3px 5px rgb(156, 153, 153);
+}
+.tipo-tenis{
+    margin-right: 6.6em;
+
+    font-size: 30px;
+    color: rgb(63, 60, 60);
+    font-family: inter;
+}
+.preco-tenis{
+    margin-right: 3em;
+    margin-top: 1em;
+}
+.tamanho{
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 9em;
+    margin-top: 2em;
+    gap: 5px;
+
+    font-size: 15px;
+}
+.tamanho-tenis{
+    outline: 0;
+    border: none;
+
+    border: 2px solid rgba(0, 0, 0, 0.89);
+    border-radius: 20px;
+    color: rgba(255,0,0,0.89);
+
+    width: 35px;
+    padding: 10px;
+}
+.tamanho-tenis:hover{
+    border: 2.5px solid rgba(255, 0, 0, 0.89);
+    width: 70px;
+}
+
+.button-carrinho{
+    margin-top: 5em;
+    
+
+}
+.carrinho{
+    outline: 0;
+    border: none;
+
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 15px;
+    padding: 12px;
+}
+.carrinho:hover{
+    border: 2px solid rgba(255, 0, 0, 0.89);
+    background-color: rgb(255, 0, 0);
+    color: white;
+
+    cursor: pointer;
+    box-shadow: 4px 5px 8px rgb(248, 92, 92);
+}

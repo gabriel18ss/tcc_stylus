@@ -9,8 +9,10 @@ import Menu from  './componentes/menu';
 import Endereco from './paginas/endereços';
 import CadastrarUsuario from './paginas/CadastrarUsuario';
 
+
 import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
+import InfoTenis from './paginas/informacoesTenis';
 
 export default function appRoutes() {
     return(
@@ -28,6 +30,7 @@ export default function appRoutes() {
             <Route path='/listaProdutos' element={<ListarProdutos/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
+            <Route path='/info/Tenis' element={<InfoTenis/>}/>
         </Routes>
         </BrowserRouter>
     )
