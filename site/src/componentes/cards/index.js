@@ -24,7 +24,7 @@ export default function Cards(){
         <div className='container'>
             <div className='cards-2'>
                 <div >
-                    <img src="/images/tt.png" className='imagem-tenis' alt=""/>
+                    <img src="/images/tt.png" className='imagem-teni' alt=""/>
         
                     <h1 className='nome-tenis'>{item.NOME}</h1>
                     

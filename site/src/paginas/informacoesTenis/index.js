@@ -1,5 +1,7 @@
 import './index.scss';
 import Barras from '../../componentes/barra';
+import Car from '../../componentes/cards';
+import Rodapes from '../../componentes/rodape';
 
 
 export default function InfoTenis(){
@@ -36,9 +38,23 @@ export default function InfoTenis(){
                 <div className='button-carrinho'>
                     <button className='carrinho'>adicionar ao carrinho</button>
                 </div>
-    
-            </div>
 
+            </div>
+            </main>
+            <hr className='linha-01'/>
+            <main>
+
+                <div>
+                <h1 className='titulo-01'>voce tambem pode <br/> gostar</h1>
+                </div>
+                
+                <div className='cards-tenis'>
+                    <Car/>
+                </div>
+
+                <div>
+                    <Rodapes/>
+                </div>
             </main>
         </section>
     )

@@ -24,7 +24,6 @@
     box-shadow: 5px 5px 5px   rgb(153, 148, 148);
     
     transition: 0.5s;
-  
 }
 .container .cards-2:hover{
     background-color: #a6a6b4;
@@ -33,7 +32,7 @@
     
     margin-top: -5px;
    
-   transform-origin: 1s;
+    transform-origin: 1s;
 }
 
 .cards-2{
@@ -43,8 +42,10 @@
     min-height: 10vh;
     height: 200px;
 }
-.imagem-tenis{
-    height: 100px;
+.imagem-teni{
+    margin: 20px;
+
+    height: 17vh;
 }
 .nome-tenis{
     font-size: 15px;
