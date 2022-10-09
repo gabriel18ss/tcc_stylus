@@ -8,6 +8,7 @@ import Vitrine from './paginas/vitrine';
 import Menu from  './componentes/menu';
 import Endereco from './paginas/cadastrar endereco';
 import CadastrarUsuario from './paginas/CadastrarUsuario';
+import Dados from './paginas/dadosUsuario';
 
 
 import ListarProdutos from './paginas/listaTenis';
@@ -31,6 +32,7 @@ export default function appRoutes() {
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/info/Tenis' element={<InfoTenis/>}/>
+            <Route path='usuario/dados' element={<Dados/>}/>
         </Routes>
         </BrowserRouter>
     )

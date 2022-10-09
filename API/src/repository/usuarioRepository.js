@@ -34,3 +34,17 @@ export async function cadastrarEndereco(endereco){
     endereco.id = resposta.insertId;
     return endereco;
 }
+
+export async function listarDados(id){
+    const comando=
+    `select ID_USUARIO        id,
+            NM_USUARIO        nome,
+            DS_EMAIL        email,
+            DS_CPF            cpf,
+            DS_CEP            cep,
+            DS_NASCIMENTO    nascimento
+    from TB_USUARIO
+    where ID_USUARIO = ?`
+    const [linhas] =await con.query(comando, [id]);
+    return linhas[0];
+}
