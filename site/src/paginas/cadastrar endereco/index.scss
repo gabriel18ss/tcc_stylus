@@ -1,7 +1,15 @@
-.endereco{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-family:'Changa';
 }
 
 .end-input{
@@ -9,9 +17,17 @@
     flex-direction: column;
 }
 
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .end-h1{
     font-family: 'nosifer';
     font-size: 2.2em;
+
+
 }
 
 .inputs{
@@ -34,7 +50,7 @@
     width: 40em;
     border-radius: 7px;
     border: none;
-    margin-right: 32em;
+    margin-right: 7em;
     
 }
 
@@ -48,15 +64,16 @@
     border: none;
 }
 
-.input3{
+.inputs3{
     display: flex;
     flex-direction: row;
+    margin-right: 6em;
 }
 
-.inputs-2{
+.inputs-2   {
     display: flex;
     flex-direction: row;
-    margin-right: 25em;
+    margin-right: 12em;
 }
 
 .bnc-input{

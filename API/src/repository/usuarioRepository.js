@@ -24,3 +24,13 @@ export async function LoginU (email, senha) {
          return linhas[0];
         
 }
+
+export async function cadastrarEndereco(endereco){
+    const comando =
+    `insert into TB_ENDERECO(DS_CEP, DS_BAIRRO, DS_CIDADE, DS_ESTADO, NM_RUA, NR_ENDERECO, DS_COMPLEMENTO)
+                            values(?, ?, ?, ?, ?, ?, ?)`
+
+    const [resposta] = await con.query (comando, [endereco.cep, endereco.bairro, endereco.cidade, endereco.estado, endereco.rua, endereco.numero, endereco.complemento]);
+    endereco.id = resposta.insertId;
+    return endereco;
+}
