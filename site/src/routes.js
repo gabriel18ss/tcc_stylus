@@ -9,7 +9,7 @@ import Menu from  './componentes/menu';
 import Endereco from './paginas/cadastrar endereco';
 import CadastrarUsuario from './paginas/CadastrarUsuario';
 import Dados from './paginas/dadosUsuario';
-
+import ListarEndereco from './paginas/endereçoUsuario';
 
 import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
@@ -33,6 +33,7 @@ export default function appRoutes() {
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/info/:id/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
+            <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
         </Routes>
         </BrowserRouter>
     )

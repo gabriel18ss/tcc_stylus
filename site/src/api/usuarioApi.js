@@ -41,3 +41,8 @@ export async function cadastrarEnd(cep, bairro, cidade, estado, rua, numero, com
     })
     return resposta.data;
 }
+
+export async function listaEndereco(){
+    const resposta = await api.get ('/endereco');
+    return resposta.data;
+}
