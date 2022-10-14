@@ -1,5 +1,5 @@
 import './index.scss';
-import {listarTenis} from '../../api/produtoApi';
+import {listarTenis, buscarImagem} from '../../api/produtoApi';
 import {useState,useEffect } from 'react';
 
 export default function Cards(){
@@ -24,7 +24,7 @@ export default function Cards(){
         <div className='container'>
             <div className='cards-2'>
                 <div >
-                    <img src="/images/tt.png" className='imagem-teni' alt=""/>
+                    <img src={buscarImagem(tenis.imagem)} className='imagem-teni' alt=""/>
         
                     <h1 className='nome-tenis'>{item.NOME}</h1>
                     

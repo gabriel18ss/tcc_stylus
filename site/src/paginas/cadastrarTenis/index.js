@@ -43,7 +43,7 @@ export default function CTE (){
         setValor(resposta.VALOR);
       
         setTamanho(resposta.NUMERO);
-        setImagem(resposta.IMG_PRODUTO);
+        setImagem(resposta.IMAGEM);
         setId(resposta.ID);
        
     }
@@ -88,7 +88,7 @@ export default function CTE (){
 
     function mostrarImagem() {
         if (typeof (imagem) == 'object'){
-        return URL.createObjectURL(imagem);
+            return URL.createObjectURL(imagem);
         }
         else {
             return buscarImagem(imagem);
@@ -97,11 +97,11 @@ export default function CTE (){
 
     function novoClick() {
         setId(0);
-        setMarca(0);
-        setGenero(0);
+        setMarca('');
+        setGenero('');
         setNome('');
         setQuantidade('');
-        setValor(0);
+        setValor('');
         setTamanho(0);
         setImagem();
 

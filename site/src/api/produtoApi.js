@@ -73,8 +73,7 @@ export async function alterarTenis(id, marca, genero, nome, quantidade, valor, l
 }
 
 
-export async function buscarImagem(imagem){
-    console.log(api.getUri());
-   return `${api.getUri()}/${imagem}`
+export function buscarImagem(imagem) {
+    return `${api.getUri()}/${imagem}`
 }
 
