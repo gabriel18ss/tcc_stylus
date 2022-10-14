@@ -38,12 +38,12 @@ export default function ListarProdutos() {
                             carregarTodosTenis();
                         else
                             filtrar();
-                            
+                                           
                         toast.dark('Produto removido com sucesso🪚 ')
                     }
                 },
                 {
-                    label:'Não',
+                    label:'Não', 
                     onClick: () => alert
                 }
 
