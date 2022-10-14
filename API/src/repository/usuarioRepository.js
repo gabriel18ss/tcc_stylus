@@ -48,3 +48,18 @@ export async function listarDados(id){
     const [linhas] =await con.query(comando, [id]);
     return linhas[0];
 }
+
+export async function listarENDERECO(){
+    const comando=
+    `SELECT     ID_ENDERECO			ID,
+                DS_RUA				RUA,
+                DS_CEP				CEP,
+                DS_CIDADE			CIDADE,
+                DS_ESTADO			ESTADO,
+                DS_BAIRRO			BAIRRO,
+                DS_NUMERO			NUMERO,
+                DS_COMPLEMENTO		COMPLEMENTO
+    FROM TB_ENDERECO`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}

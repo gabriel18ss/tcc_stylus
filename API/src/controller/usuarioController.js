@@ -1,4 +1,4 @@
-import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados} from '../repository/usuarioRepository.js'
+import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarENDERECO} from '../repository/usuarioRepository.js'
 
 import {Router} from "express";
 const server = Router();
@@ -66,6 +66,17 @@ server.get('/dados/:id',async (req,resp)=>{
         })
     }
 
+})
+
+server.get('/endereco',async (req,resp)=>{
+    try {
+        const resposta = await listarENDERECO();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
 })
 
 export default server;

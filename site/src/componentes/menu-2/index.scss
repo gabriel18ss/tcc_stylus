@@ -1,0 +1,27 @@
+.menu-1{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom,#A50505,#ffffff);
+    padding: 40px;
+    height: 100vh;
+    width: 12em;
+}
+
+.h1-bemvindo{
+    color: #ffffff;
+    font-family: 'nosifer';
+    font-size: 21px;
+
+}
+
+.h1-nome{
+    font-family: 'nosifer';
+    font-size: 21px;
+    text-align: center;
+}
+
+.h2-menu{
+    margin-top: 1em;
+    text-align: center;
+
+}
