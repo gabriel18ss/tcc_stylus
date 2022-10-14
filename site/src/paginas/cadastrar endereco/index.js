@@ -43,7 +43,7 @@ export default function Endereco(){
            <div className='inputs3'>
                <div className='end-input'>
                    <h3 className='end-h3'>Rua</h3>
-                   <input className='input-endereco' type='text' value={bairro} onChange={e => setRua(e.target.value)} />
+                   <input className='input-endereco' type='text' value={rua} onChange={e => setRua(e.target.value)} />
                </div>
                <div>
                    <h3 className='end-h3'>CEP</h3>
@@ -77,7 +77,7 @@ export default function Endereco(){
 
                <div className='ec-input'>
                    <h3>Bairro</h3>
-                   <input className='input-bairro' type='text' value={rua} onChange={e => setBairro(e.target.value)} />
+                   <input className='input-bairro' type='text' value={bairro} onChange={e => setBairro(e.target.value)} />
             
                </div>
            </div>

@@ -19,16 +19,16 @@ export default function ListarEndereco() {
     }, [])
 
     return(
-        <section>
+        <section className="listarend">
             <div>
                 <Barra/>
             </div>
-            <div>
+            <div className="end">
                 <div>
                     <Menu2/>
                 </div>
                 <div>
-                    <table className="tb-endereco">
+                <table className="tb-endereco">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -43,7 +43,7 @@ export default function ListarEndereco() {
                         <tbody>
                             {endereco.map(item =>
                                 <tr>
-                                    <td>#{item.ID}</td>
+                                    <td>{item.ID}</td>
                                     <td>{item.RUA}</td>
                                     <td>{item.NUMERO}</td>
                                     <td>{item.ESTADO}</td>
