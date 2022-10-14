@@ -1,6 +1,7 @@
 import './index.scss';
 import {listarTenis, buscarImagem} from '../../api/produtoApi';
 import {useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cards(){
 
@@ -18,10 +19,17 @@ export default function Cards(){
         carregarTodosTenis();
     }, [])
 
+
+    const navigate = useNavigate();
+
+    function AbrirInformaçoes(id){
+        navigate('/info/' + id + '/tenis/')
+    }
+
     return(
 
         tenis.map(item =>
-        <div className='container'>
+        <div className='container' onClick={() => AbrirInformaçoes(item.id)}>
             <div className='cards-2'>
                 <div >
                     <img src={buscarImagem(tenis.imagem)} className='imagem-teni' alt=""/>
