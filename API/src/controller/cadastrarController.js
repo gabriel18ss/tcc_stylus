@@ -24,12 +24,18 @@ server.post('/cadastrar', async (req, resp) => {
 
 
 
-server.put('/cadastrar/:id/capa', upload.single('capa'), async (req, resp) => {
+server.put('/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
+        if (!req.file)
+            throw new Error('Escolha a capa do produto.');
+
         const { id } = req.params;
         const imagem = req.file.path;
 
         const resposta = await alterarImagem(imagem, id);
+        if (resposta != 1)
+            throw new Error('A imagem não foi salva.');
+
         resp.status(204).send();
         if (resposta != 1)
             throw new Error('A imagem não foi salva.');
@@ -81,7 +87,7 @@ server.get('/tenis/:id',async (req,resp)=>{
     try {
         const {id} = req.params;
 
-        const resposta = await buscarPorId(id);
+        const resposta = await buscarPorId(Number(id));
 
         if (!resposta)
             throw new Error ('Produto não foi encontrado')

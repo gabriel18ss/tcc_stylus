@@ -50,13 +50,13 @@ export default function Vitrine() {
                </div>
 
             </div>
-            <div className='card'>
+
+            <div className='cardes'>
                 <Cards/>
             </div>
-            
-           
-                   </main>
-              </section>
+
+        </main>
+        </section>
 
     )
 }

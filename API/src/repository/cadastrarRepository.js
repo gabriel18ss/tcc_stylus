@@ -8,7 +8,7 @@ export async function cadastrarTenis(tenis) {
     `
     
     const [resposta] = await con.query(comando, [tenis.marca, tenis.genero, tenis.nome, tenis.quantidade, tenis.valor, tenis.lancamento, tenis.tamanho, tenis.imagem]);
-    tenis.id = resposta.insertid;
+    tenis.id = resposta.insertId;
     return tenis;
 }
 
@@ -36,7 +36,8 @@ export async function listarTenis(){
         NM_PRODUTO       	NOME,
         VL_PRODUTO       	VALOR,
         DS_LANCAMENTO   	LANCAMENTO,
-        NR_PRODUTO			NUMERO
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
     FROM TB_PRODUTO
     INNER JOIN TB_PRODUTO_MARCA
     ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
@@ -57,7 +58,8 @@ export async function buscarPorId(id){
         NM_PRODUTO       	NOME,
         VL_PRODUTO       	VALOR,
         DS_LANCAMENTO   	LANCAMENTO,
-        NR_PRODUTO			NUMERO
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
     FROM TB_PRODUTO
     INNER JOIN TB_PRODUTO_MARCA
     ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA

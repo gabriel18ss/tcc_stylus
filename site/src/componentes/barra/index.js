@@ -15,6 +15,17 @@ export default function Barra(props){
             toast.error(err.message);
         }
     }
+
+
+    async function usuarioPng(){
+        try{
+            setTimeout(() => {
+                navigate('/usuario/login')
+             }, 3000);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
     return(
         <section className='comp-barra'>
             <div>
@@ -26,17 +37,20 @@ export default function Barra(props){
             </div>
 
                 <div className='search-box'>
-                  <input type='text' className='search-txt' placeholder='Pesquisar...'/>
-                  <a className='search-bnt' href="#"></a>
-                    <img src="pesquisa.png" alt="" />
 
-             
+                  <input type='text' className='search-txt' placeholder='Pesquisar...'/>
+
+                  <a className='search-bnt' href="#">
+                  <img className='lupa' src="/images/pesquisarAzul.png" alt="" />
+                  </a>
+                
                 </div>
                 <div>
                     <img className='sacola' src="/images/sacolabranca.png" alt='sacola'/>
                 </div>
+                
                 <div>
-                <img className='user' src="/images/user-branco.png" alt='usuario'/>
+                <img onClick={usuarioPng} className='user' src="/images/user-branco.png" alt='usuario'/>
                 </div>
         
         </section>

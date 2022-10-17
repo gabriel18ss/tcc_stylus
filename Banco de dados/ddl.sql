@@ -23,6 +23,9 @@ VALUES('Junior', 'junior@gmail.com', '1234', '111111','04849', '2004-10-10');
 INSERT INTO TB_PRODUTO_TAMANHO (DS_TAMANHO)
 VALUES(41);
 
+INSERT INTO TB_ENDERECO(NM_RUA, DS_CEP, DS_CIDADE, DS_ESTADO, DS_BAIRRO, NR_ENDERECO, DS_COMPLEMENTO)
+VALUES('Bernardo de Claraval', '04832-000', 'São Paulo', 'São Paulo', 'Jardim Pousso Alegre', '403', 'Igreja São Judas');
+
 
 -- alterar imagem
 UPDATE TB_PRODUTO

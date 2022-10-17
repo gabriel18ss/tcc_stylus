@@ -43,11 +43,23 @@
         margin-top: 1em;
     }
 
-    thead {
-        
+    tbody {
+        display:block;
+        height:600px;
+        overflow:auto;
 
     }
+
+    thead, tbody tr {
+        display:table;
+        width:80%;
+        table-layout:fixed;
+
+        font-family: 'Changa';
+    }
     
+    
+
     th {
         padding: 15px;
         background-color: #CE3737;
@@ -60,7 +72,7 @@
     td {
         background-color: #979797;
         text-align: center;
-        padding: 15px;
+        padding: 16px;
     }
 
     .part-table {

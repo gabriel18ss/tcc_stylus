@@ -29,3 +29,20 @@ export async function LoginU (email, senha){
 }
 
 
+export async function cadastrarEnd(cep, bairro, cidade, estado, rua, numero, complemento) {
+    const resposta = await api.post('cadastrar/endereco',{
+        cep:cep,
+        bairro:bairro,
+        cidade:cidade,
+        estado:estado,
+        rua:rua,
+        numero:numero,
+        complemento:complemento
+    })
+    return resposta.data;
+}
+
+export async function listaEndereco(){
+    const resposta = await api.get ('/endereco');
+    return resposta.data;
+}

@@ -5,72 +5,88 @@
 .comp-barra {
 display: flex;
 flex-direction: row;
-height: 3.5em;
+
+height: 4em;
+
 background-color: black;
 
 }
 .logo{
     margin-left: 15px;
+
     width: 8em;
     height:3.5em;
+
     cursor: pointer;
 }
 
 .search-box{
    position: absolute;
    left: 10%;
-   top: 5px;
-   background-color: white;
-   height: 20px;
-   border-radius: 40px;
+   top: 10px;
+
+   background-color: rgb(255, 255, 255);
+   
+   height: 17px;
    padding: 10px;
+   border-radius: 40px;
 }
 .search.bnt{
-    color: #a7ddf8;
-    float: right;
-    width:40px;
-   
-    border-radius: 50%;
-    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 2s;
 }
 .search-txt{
     border: none;
     background: none;
     outline: none;
-    float: left;
-    padding: 0;
-    color: rgb(0, 0, 0);
+
     font-size: 14px;
-    transition: 0.4s;
-    line-height: 20px;
-    width: 0px;
+    line-height: 15px;
+    float: right;
     text-align: center;
+
+    width: 0px;
+    padding: 0;
+
+    color: rgb(0, 0, 0);
+    
+    transition: 1s;
+    
+}
+.lupa{
+  height: 20px;
 }
 .search-box:hover > .search-txt{
-    width: 240px;
+    width: 210px;
     padding: 0 6px;
 }
-.search-box:hover > .search.bnt{
-    background: rgb(255, 255, 255);
-
-}
 .sacola{
-    height: 27px;
     position: absolute;
     left: 72em;
     top: 15px;
-   
-}
-.user{
+
     height: 27px;
+
+    cursor: pointer;
+}
+.sacola:hover{
+    margin-top: -5px;
+    height: 30px;
+}
+.user{    
     position: absolute;
     left: 75em;
     top: 15px;
+
+    height: 27px;
+
+    cursor: pointer;
    
+}
+.user:hover{
+    margin-top: -5px;
+    height: 30px;
 }
 
 

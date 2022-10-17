@@ -19,18 +19,20 @@ export async function cadastrarTenis(marca, genero, nome, quantidade, valor, lan
 
 
 
-export async function alterarImagem(id, imagem) {
+export async function enviarImagem(id, imagem){
+
     const formData = new FormData();
     formData.append('capa', imagem);
+    
 
-    const resposta = await api.put(`cadastrar/${id}/capa`, formData, {
+    const resposta = await api.put(`/${id}/capa`, formData,{
         headers: {
-            "Content-Type": "multipart/form-data"
+            "Content-type": "multipart/form-data" 
         },
     });
-    
+    console.log(resposta);
+
     return resposta.status;
- 
 }
 
 export async function listarTenis(){
@@ -50,4 +52,28 @@ export async function deletarProduto(id) {
     return resposta.status;
 }
 
+
+export async function buscarPorId(id){
+    const resposta = await api.get(`/tenis/${id}`);
+    return resposta.data;
+}
+
+export async function alterarTenis(id, marca, genero, nome, quantidade, valor, lancamento, tamanho) {
+    const resposta = await api.put (`/tenis/${id}`, {
+        marca:marca,
+        genero:genero,
+        nome:nome,
+        quantidade: quantidade,
+        valor: valor,
+        lancamento:lancamento,
+        tamanho:tamanho,
+
+    })
+    return resposta.data;
+}
+
+
+export function buscarImagem(imagem) {
+    return `${api.getUri()}/${imagem}`
+}
 

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Nosifer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-family:'Changa';
+}
+
+.end-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.centro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.end-h1{
+    font-family: 'nosifer';
+    font-size: 2.2em;
+
+
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    border:solid 3px black;
+    border-radius: 20px;
+
+    width: 60em;
+    margin-left: 5em;
+    margin-right: 5em;
+    padding:2em;
+}
+
+.input-endereco{
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: 3em;
+    width: 40em;
+    border-radius: 7px;
+    border: none;
+    margin-right: 7em;
+    
+}
+
+.input-cep{
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: 3em;
+    width: 17.5em;
+    border-radius: 7px;
+    border: none;
+}
+
+.inputs3{
+    display: flex;
+    flex-direction: row;
+    margin-right: 6em;
+}
+
+.inputs-2   {
+    display: flex;
+    flex-direction: row;
+    margin-right: 12em;
+}
+
+.bnc-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.butao-1{
+    height: 3em;
+    width: 7em;
+    background-color: #FF0505;
+    color: #ffffff;
+    border-radius: 7px;
+    border: none;
+    margin-top: 1.85em;
+}
+
+.input-bairro{
+    background-color: #D9D9D9;
+    height: 3em;
+    width: 17.5em;
+    border-radius: 7px;
+    border: none;
+    margin-right: 1.8em;
+
+}
+
+.butao-2{
+    height: 3em;
+    width: 13em;
+    background-color: #FF0505;
+    color: #ffffff;
+    border-radius: 7px;
+    border: none;
+    margin-top: 3em;
+}

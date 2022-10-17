@@ -24,3 +24,42 @@ export async function LoginU (email, senha) {
          return linhas[0];
         
 }
+
+export async function cadastrarEndereco(endereco){
+    const comando =
+    `insert into TB_ENDERECO(DS_CEP, DS_BAIRRO, DS_CIDADE, DS_ESTADO, NM_RUA, NR_ENDERECO, DS_COMPLEMENTO)
+                            values(?, ?, ?, ?, ?, ?, ?)`
+
+    const [resposta] = await con.query (comando, [endereco.cep, endereco.bairro, endereco.cidade, endereco.estado, endereco.rua, endereco.numero, endereco.complemento]);
+    endereco.id = resposta.insertId;
+    return endereco;
+}
+
+export async function listarDados(id){
+    const comando=
+    `select ID_USUARIO        id,
+            NM_USUARIO        nome,
+            DS_EMAIL        email,
+            DS_CPF            cpf,
+            DS_CEP            cep,
+            DS_NASCIMENTO    nascimento
+    from TB_USUARIO
+    where ID_USUARIO = ?`
+    const [linhas] =await con.query(comando, [id]);
+    return linhas[0];
+}
+
+export async function listarENDERECO(){
+    const comando=
+    `SELECT     ID_ENDERECO			ID,
+                NM_RUA				RUA,
+                DS_CEP				CEP,
+                DS_CIDADE			CIDADE,
+                DS_ESTADO			ESTADO,
+                DS_BAIRRO			BAIRRO,
+                NR_ENDERECO			NUMERO,
+                DS_COMPLEMENTO		COMPLEMENTO
+    FROM TB_ENDERECO`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
