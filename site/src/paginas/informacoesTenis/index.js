@@ -5,11 +5,11 @@ import Rodapes from '../../componentes/rodape';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { buscarPorId, deletarProduto } from '../../api/produtoApi';
-
+import { API_URL } from '../../api/config';
 
 export default function InfoTenis(){
 
-    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [] });
+    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagens:[] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
 
@@ -26,10 +26,10 @@ export default function InfoTenis(){
     }, [])
 
     function exibirImagemPrincipal(){
-        if (tenis.imagem.legth > 0){
-            return API_URL + '/' + produto.imagem[imagemPrincipal];
+        if (tenis.imagens.legth > 0){
+            return API_URL + '/' + tenis.imagens[imagemPrincipal];
         } else{
-            return '/';
+            return '/pngwing.com (1).png';
         }
     }
 
@@ -42,7 +42,7 @@ export default function InfoTenis(){
             <main className='pagina-tenis'>
 
             <div corpo-imagem>
-                <img src="/images/nike-tenis.png" alt="imagem do tenis" className='imagem-tenis' />
+                <img src={exibirImagemPrincipal()} alt="imagem do tenis" className='imagem-tenis' />
             </div>
 
             <div className='informaçoes-tenis'>

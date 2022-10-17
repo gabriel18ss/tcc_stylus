@@ -32,7 +32,7 @@ export default function Cards(){
         <div className='container' onClick={() => AbrirInformaçoes(item.id)}>
             <div className='cards-2'>
                 <div >
-                    <img src={buscarImagem(tenis.imagem)} className='imagem-teni' alt=""/>
+                    <img src={buscarImagem(item.IMAGEM)} className='imagem-teni' alt=""/>
         
                     <h1 className='nome-tenis'>{item.NOME}</h1>
                     
