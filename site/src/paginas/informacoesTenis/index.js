@@ -2,6 +2,7 @@ import './index.scss';
 import Barras from '../../componentes/barra';
 import Car from '../../componentes/cards';
 import Rodapes from '../../componentes/rodape';
+
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { buscarPorId, deletarProduto } from '../../api/produtoApi';
@@ -12,12 +13,10 @@ export default function InfoTenis(){
     const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagens:[] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
-
-    const {id} = useParams();
+    const {ID} = useParams();
 
    async function carregarPagina(){
-       const r = await buscarPorId(id);
-
+       const r = await buscarPorId(ID);
        setTenis(r);
     }
 
@@ -27,7 +26,7 @@ export default function InfoTenis(){
 
     function exibirImagemPrincipal(){
         if (tenis.imagens.legth > 0){
-            return API_URL + '/' + tenis.imagens[imagemPrincipal];
+            return API_URL + '/' + tenis.IMAGEM[imagemPrincipal];
         } else{
             return '/pngwing.com (1).png';
         }
@@ -42,13 +41,14 @@ export default function InfoTenis(){
             <main className='pagina-tenis'>
 
             <div corpo-imagem>
-                <img src={exibirImagemPrincipal()} alt="imagem do tenis" className='imagem-tenis' />
+                <img src='' className='imagem-tenis' />
             </div>
 
             <div className='informaçoes-tenis'>
                 <h1 className='tipo-tenis'>Casual</h1>
 
-                <h1>{tenis.nome} <br/> {tenis.genero}</h1>
+                <h1>{tenis.NOME} 
+                    <br/> {tenis.GENERO}</h1>
 
                 <h2 className='preco-tenis'>
                     {tenis.valor} <br/> ou 12x de R$ 91,67

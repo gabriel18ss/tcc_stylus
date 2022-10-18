@@ -46,3 +46,23 @@ export async function listaEndereco(){
     const resposta = await api.get ('/endereco');
     return resposta.data;
 }
+
+export async function deletarEndereco(id) {
+    const resposta = await api.delete (`/endereco/${id}`);
+    return resposta.status;
+}
+
+
+export async function alterarEndereco(id, cep, bairro, cidade, estado, rua, numero, complemento) {
+    const resposta = await api.put (`/endereco/${id}`, {
+        cep:cep,
+        bairro:bairro,
+        cidade:cidade,
+        estado:estado,
+        rua:rua,
+        numero:numero,
+        complemento:complemento
+
+    })
+    return resposta.data;
+}

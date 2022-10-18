@@ -54,8 +54,9 @@ export async function deletarProduto(id) {
 }
 
 
-export async function buscarPorId(id){
-    const resposta = await api.get(`/tenis/${id}`);
+export async function buscarPorId(ID){
+    const resposta = await api.get(`/tenis/${ID}`);
+    console.log(resposta);
     return resposta.data;
 }
 
