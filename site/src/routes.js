@@ -31,7 +31,7 @@ export default function appRoutes() {
             <Route path='/listaProdutos' element={<ListarProdutos/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
-            <Route path='/info/:id/Tenis' element={<InfoTenis/>}/>
+            <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
         </Routes>

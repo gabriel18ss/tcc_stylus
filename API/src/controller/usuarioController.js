@@ -1,4 +1,4 @@
-import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarENDERECO} from '../repository/usuarioRepository.js'
+import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarENDERECO, deletarEndereco, alterarEndereco} from '../repository/usuarioRepository.js'
 
 import {Router} from "express";
 const server = Router();
@@ -78,5 +78,46 @@ server.get('/endereco',async (req,resp)=>{
         })
     }
 })
+
+
+server.delete('/endereco/:id', async (req, resp) => {
+    try{
+        const { id } = req.params;
+
+        const resposta = await deletarEndereco(id);
+        if (resposta != 1)
+            throw new Error ('Endereço não pode ser removida');
+        else
+            resp.status (204).send();
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
+
+server.put('/endereco/:id', async (req, resp) => {
+    try{
+        const { id } = req.params;
+        const endereco = req.body;
+
+        const resposta = await alterarEndereco(id, endereco);
+        if (resposta != 1)
+            throw new Error ('Endereço não pode ser alterado');
+        else
+            resp.status (204).send();
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
+
+
+
 
 export default server;

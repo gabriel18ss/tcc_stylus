@@ -63,3 +63,33 @@ export async function listarENDERECO(){
     const [linhas] =await con.query(comando);
     return linhas;
 }
+
+
+export async function deletarEndereco(id){
+    const comando =
+   ` DELETE FROM TB_ENDERECO
+    WHERE	ID_ENDERECO = ?`;
+
+    const [resposta] = await con.query(comando, [id]);
+    return resposta.affectedRows;
+
+
+}
+
+
+export async function alterarEndereco(id, endereco){
+    const comando =
+    `UPDATE TB_ENDERECO
+         SET    DS_CEP				= ?,
+                DS_BAIRRO			= ?,
+                DS_CIDADE			= ?,
+                DS_ESTADO			= ?,
+                NM_RUA				= ?,
+                NR_ENDERECO			= ?,
+                DS_COMPLEMENTO		= ?
+            where ID_ENDERECO  = ? `
+
+    const [resposta] = await con.query(comando, [endereco.cep, endereco.bairro, endereco.cidade, endereco.estado, endereco.rua, endereco.numero, endereco.complemento, id]);
+    return resposta.affectedRows;
+
+}

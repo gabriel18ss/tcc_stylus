@@ -1,6 +1,7 @@
 import axios  from "axios";
+import { API_URL } from "./config";
 const api = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: API_URL
 })
 
 export async function cadastrarTenis(marca, genero, nome, quantidade, valor, lancamento, tamanho) {
@@ -53,8 +54,9 @@ export async function deletarProduto(id) {
 }
 
 
-export async function buscarPorId(id){
-    const resposta = await api.get(`/tenis/${id}`);
+export async function buscarPorId(ID){
+    const resposta = await api.get(`/tenis/${ID}`);
+    console.log(resposta);
     return resposta.data;
 }
 

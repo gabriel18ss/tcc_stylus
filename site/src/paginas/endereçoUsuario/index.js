@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Barra from "../../componentes/barra";
 import Menu2 from "../../componentes/menu-2";
 import './index.scss';
-import { listaEndereco} from "../../api/usuarioApi";
+import { listaEndereco, deletarEndereco, alterarEndereco} from "../../api/usuarioApi";
 
 export default function ListarEndereco() {
 
@@ -50,6 +50,10 @@ export default function ListarEndereco() {
                                     <td>{item.CIDADE}</td>
                                     <td>{item.CEP}</td>
                                     <td>{item.COMPLEMENTO}</td>
+                                    <td>
+                                        <img width="20px" src="/images/caderno.png" className="iconTable" alt="" /> 
+                                        <img width="20px"src="/images/lixo.png" alt=""  />
+                                    </td>
                                 </tr>
                                 )}
                         </tbody>
