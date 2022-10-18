@@ -10,7 +10,7 @@ import { buscarPorId, deletarProduto } from '../../api/produtoApi';
 export default function InfoTenis(){
 
     const [tenis,setTenis] = useState({nome:[], valor: [], genero: [] });
-    const [imagemPrincipal, setImagemPrincipal] = useState(0);
+   
 
 
     const {id} = useParams();
@@ -25,13 +25,7 @@ export default function InfoTenis(){
         carregarPagina();
     }, [])
 
-    function exibirImagemPrincipal(){
-        if (tenis.imagem.legth > 0){
-            return API_URL + '/' + produto.imagem[imagemPrincipal];
-        } else{
-            return '/';
-        }
-    }
+  
 
     return(
         <section>
