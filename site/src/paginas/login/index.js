@@ -35,7 +35,7 @@ export default function Index(){
         
         setTimeout(() => {
             navigate('/adm/cadastrar');
-        }, 3000)
+        }, 1500)
 
     }
 

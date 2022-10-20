@@ -5,12 +5,14 @@ import Rodapes from '../../componentes/rodape';
 
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { buscarPorId, deletarProduto } from '../../api/produtoApi';
+import storage from 'local-storage';
+
+import { buscarPorId, deletarProduto, buscarImagem} from '../../api/produtoApi';
 import { API_URL } from '../../api/config';
 
 export default function InfoTenis(){
 
-    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagens:[] });
+    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagem:[] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     const {ID} = useParams();
@@ -25,11 +27,29 @@ export default function InfoTenis(){
     }, [])
 
     function exibirImagemPrincipal(){
-        if (tenis.imagens.legth > 0){
+        if (tenis.IMAGEM.legth > 0){
             return API_URL + '/' + tenis.IMAGEM[imagemPrincipal];
         } else{
             return '/pngwing.com (1).png';
         }
+    }
+
+
+    function adicionarAoCarrinho() {
+        let carrinho = [];
+        if (storage('carrinho')) {
+            carrinho = storage('carrinho')
+        }
+
+        if(!carrinho.find(item => item.ID === ID)) {
+            carrinho.push({
+                ID: ID,
+                qtd: 1
+            })
+        storage('carrinho', carrinho);
+
+        }
+
     }
 
     return(
@@ -41,7 +61,7 @@ export default function InfoTenis(){
             <main className='pagina-tenis'>
 
             <div corpo-imagem>
-                <img src='' className='imagem-tenis' />
+                <img src={buscarImagem(tenis.IMAGEM)} className='imagem-tenis' />
             </div>
 
             <div className='informaçoes-tenis'>
@@ -64,7 +84,7 @@ export default function InfoTenis(){
                 </div>
 
                 <div className='button-carrinho'>
-                    <button className='carrinho'>adicionar ao carrinho</button>
+                    <button className='carrinho' onClick={adicionarAoCarrinho}>adicionar ao carrinho</button>
                 </div>
 
             </div>
