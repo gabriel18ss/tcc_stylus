@@ -16,6 +16,16 @@ export default function Barra(props){
         }
     }
 
+    async function carrinhoClick(){
+        try{
+            setTimeout(() => {
+                navigate('/carrinho')
+             }, 3000);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
 
     async function usuarioPng(){
         try{
@@ -46,7 +56,7 @@ export default function Barra(props){
                 
                 </div>
                 <div>
-                    <img className='sacola' src="/images/sacolabranca.png" alt='sacola'/>
+                    <img onClick={carrinhoClick} className='sacola' src="/images/sacolabranca.png" alt='sacola'/>
                 </div>
                 
                 <div>

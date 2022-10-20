@@ -1,0 +1,49 @@
+.main-1{
+    display: flex;
+}
+
+.titulo{
+    margin: 30px;
+    font-family: 'nosifer';
+}
+.PPT{
+    display: flex;
+    justify-content: space-evenly;
+
+    border: 1px solid #CE3737;
+    background-color: #CE3737;
+    border-radius: 10px;
+    width: 0em;
+
+    margin-left: 50px;
+}
+.info-tenis{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: 1px solid #E4E1E1;
+    border-radius: 13px;
+    background-color: #E4E1E1;
+    width: 60em;
+
+    margin-left: 50px ;
+    margin-top: 20px;
+    padding: 15px;
+}
+.ima-te{
+    height: 100px;
+}
+.lx{
+    height: 30px;
+    margin-left: 28em;
+}
+
+.preco {
+    margin-left: 5em;
+}
+
+.qtd{
+    font-family:  'changa' ;
+    margin-left: 2em;   
+}

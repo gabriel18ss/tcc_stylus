@@ -9,6 +9,7 @@ import storage from 'local-storage';
 
 import { buscarPorId, deletarProduto, buscarImagem} from '../../api/produtoApi';
 import { API_URL } from '../../api/config';
+import { ToastContainer,  toast } from 'react-toastify';
 
 export default function InfoTenis(){
 
@@ -46,14 +47,15 @@ export default function InfoTenis(){
                 ID: ID,
                 qtd: 1
             })
+            
         storage('carrinho', carrinho);
 
         }
-
+        toast.dark('Seu produto foi adicionado ao carrinho!')
     }
 
     return(
-        <section>
+        <section>!
 
             <div>
                 <Barras/>
