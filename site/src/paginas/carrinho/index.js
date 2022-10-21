@@ -12,6 +12,31 @@ export default function Carrinho(){
 
     const [itens, setItens] = useState([]);
 
+
+        function qtdItens(){
+           return itens.length;
+        }
+
+
+
+        function calcularValorTotal(){
+            let total = 0;
+            for (let item of itens){
+                total = total + item.tenis.info.valor * item.qtd
+            }
+            return total;
+        }
+
+
+
+        function removerItem(ID) {
+            let carrinho = storage('carrinho'); 
+            carrinho = carrinho.filter(item => item.ID != ID)
+
+            storage('carrinho', carrinho);
+            carregarCarrinho(); 
+        }
+
     async function carregarCarrinho() {
         let carrinho = storage('carrinho');
         if (carrinho) {
@@ -46,8 +71,14 @@ export default function Carrinho(){
                 <div className='menu'><MENU/></div>
                     <div className='itens'>
                        {itens.map(item =>
-                            <CarrinhoItem item={item}/>
+                            <CarrinhoItem item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho}/>
                         )}
+                    </div>
+
+                    <div className='resumo'>
+                        <h2>total</h2>
+                        <h5>({qtdItens()} produtos )</h5>
+                        <p> R$ {calcularValorTotal()}</p>
                     </div>
             
                 
