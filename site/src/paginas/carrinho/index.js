@@ -46,7 +46,7 @@ export default function Carrinho(){
                 <div className='menu'><MENU/></div>
                     <div className='itens'>
                        {itens.map(item =>
-                            <CarrinhoItem/>
+                            <CarrinhoItem item={item}/>
                         )}
                     </div>
             

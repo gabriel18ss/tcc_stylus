@@ -6,22 +6,25 @@ import { useState } from 'react';
 import Storage from 'local-storage';
 
 
-export default function CarrinhoItem(props){
+export default function CarrinhoItem({item: {tenis:{info}, qtd}}){
+
+   
+
     return(
         <div className='comp-carrinho-item'>
         
             <div className='info-tenis'>
                 <div>
-                     <img src="/images/nike-tenis.png" className='ima-te' alt="" />
+                     <img src='' className='ima-te' alt="" />
                 </div>
 
                <div>
                      <h3>Nome do Tênis</h3>
-                     <div></div>
+                     <div>{info.NOME}</div>
                </div>
               <div className='preco'>
                     <h3>Preço </h3>
-                     <div>{}</div>
+                     <div>{info.valor}</div>
               </div>
               <div className='qtd'>
                         <h3>Qtd</h3>

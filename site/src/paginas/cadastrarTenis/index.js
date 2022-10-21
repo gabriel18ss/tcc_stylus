@@ -36,15 +36,15 @@ export default function CTE (){
 
    async function carregarTenis() {
         const resposta = await buscarPorId(idParams);
-        setMarca(resposta.ID_PRODUTO_MARCA);
-        setGenero(resposta.DS_GENERO);
-        setNome(resposta.NOME);
-        setQuantidade(resposta.QUANTIDADE);
-        setValor(resposta.VALOR);
+        setMarca(resposta.info.ID_PRODUTO_MARCA);
+        setGenero(resposta.info.DS_GENERO);
+        setNome(resposta.info.NOME);
+        setQuantidade(resposta.info.QUANTIDADE);
+        setValor(resposta.info.VALOR);
       
-        setTamanho(resposta.NUMERO);
-        setImagem(resposta.IMAGEM);
-        setId(resposta.ID);
+        setTamanho(resposta.info.NUMERO);
+        setImagem(resposta.info.IMAGEM);
+        setId(resposta.info.ID);
        
     }
     

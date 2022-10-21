@@ -31,15 +31,15 @@ export default function Cards(props){
 
     return(
 
-        tenis.map(item =>
-        <div className='container' onClick={() => AbrirInformaçoes(item.ID)}>
+        tenis.map(tenis =>
+        <div className='container' onClick={() => AbrirInformaçoes(tenis.ID)}>
             <div className='cards-2'>
                 <div >
-                    <img src={buscarImagem(item.IMAGEM)} className='imagem-teni' alt=""/>
+                    <img src={buscarImagem(tenis.IMAGEM)} className='imagem-teni' alt=""/>
         
-                    <h1 className='nome-tenis'>{item.NOME}</h1>
+                    <h1 className='nome-tenis'>{tenis.NOME}</h1>
                     
-                    <h1 className='preço-tenis'>{item.VALOR}</h1>
+                    <h1 className='preço-tenis'>{tenis.VALOR}</h1>
         
                 </div>
             </div>

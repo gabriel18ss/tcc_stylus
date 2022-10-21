@@ -13,7 +13,7 @@ import { ToastContainer,  toast } from 'react-toastify';
 
 export default function InfoTenis(){
 
-    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagem:[] });
+    const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagem:[], info: {} });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     const {ID} = useParams();
@@ -56,24 +56,23 @@ export default function InfoTenis(){
 
     return(
         <section>!
-
             <div>
                 <Barras/>
             </div>
             <main className='pagina-tenis'>
 
             <div corpo-imagem>
-                <img src={buscarImagem(tenis.IMAGEM)} className='imagem-tenis' />
+                <img src={buscarImagem(tenis.info.IMAGEM)} className='imagem-tenis' />
             </div>
 
             <div className='informaçoes-tenis'>
                 <h1 className='tipo-tenis'>Casual</h1>
 
-                <h1>{tenis.NOME} 
-                    <br/> {tenis.GENERO}</h1>
+                <h1>{tenis.info.NOME} 
+                    <br/> {tenis.info.GENERO}</h1>
 
                 <h2 className='preco-tenis'>
-                    {tenis.valor} <br/> ou 12x de R$ 91,67
+                    {tenis.info.valor} <br/> ou 12x de R$ 91,67
                 </h2>
 
                 <div>

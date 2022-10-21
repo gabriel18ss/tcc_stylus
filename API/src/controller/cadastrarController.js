@@ -85,14 +85,14 @@ server.get('/tenis/busca',async (req,resp)=>{
 
 server.get('/tenis/:id',async (req,resp)=>{
     try {
-        const {id} = req.params;
+        const id = req.params.id;
 
-        const resposta = await buscarPorId(Number(id));
+        const tenis = await buscarPorId(Number(id));
 
-        if (!resposta)
-            throw new Error ('Produto não foi encontrado')
+        resp.send({
+            info: tenis
+        })
 
-        resp.send(resposta);
     } catch (err) {
         resp.status(400).send({
             erro: err.message
