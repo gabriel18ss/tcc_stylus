@@ -30,7 +30,7 @@ export default function appRoutes() {
             <Route path='/usuario/cadastrar/endereco' element={<Endereco/>}/>
             <Route path='/barra' element={<Barra/>}/>
             <Route path='/rodape' element={<Rodape/>}/>
-            <Route path='/listaProdutos' element={<ListarProdutos/>}/>
+            <Route path='/listar/produtos' element={<ListarProdutos/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/carrinho' element={<Carrinho/>}/>
