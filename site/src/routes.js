@@ -11,6 +11,7 @@ import CadastrarUsuario from './paginas/CadastrarUsuario';
 import Dados from './paginas/dadosUsuario';
 import ListarEndereco from './paginas/endereçoUsuario';
 import Carrinho from './paginas/carrinho';
+import TelaPagamento from './paginas/pagamento';
 
 import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
@@ -38,6 +39,7 @@ export default function appRoutes() {
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
+            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>
         </Routes>
         </BrowserRouter>
     )
