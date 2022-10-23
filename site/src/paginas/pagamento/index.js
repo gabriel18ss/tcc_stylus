@@ -1,9 +1,29 @@
 import './index.scss';
 import Barra from '../../componentes/barra'; 
 
+import { useState, useRef, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer,  toast } from 'react-toastify';
+import LoadingBar  from 'react-top-loading-bar'
+
 export default function TelaPagamento(){
+
+    const navigate = useNavigate();
+    const ref = useRef();  
+
+
+    async function clickNewEnd(){
+        try{
+            setTimeout(() => {
+                navigate('/usuario/cadastrar/endereco')
+             }, 3000);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
     return(
         <section className='page-pagamento'>
+              <LoadingBar color='#f11946' ref={ref} />   
             <Barra/>
             <h1 className='titulo-pag'>pagamento</h1>
 
@@ -30,8 +50,9 @@ export default function TelaPagamento(){
                     </div>
               </div>
 
-              <div>
+              <div className='botoens'>
                 <button className='botao-pag'>Continuar</button>
+                <button onClick={clickNewEnd} className='botao-pag-end'>Novo Endereço</button>
               </div>
         </section>
     )

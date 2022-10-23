@@ -60,7 +60,7 @@
 
     .botao-pag{
             margin-top: 3em;
-            margin-left: 590px;
+            margin-left: 538px;
 
             width:150px;
             height: 35px;
@@ -75,5 +75,28 @@
             color: white;
 
             font-family: 'Changa';
+    }
+
+    .botao-pag-end{
+        margin-top: 3em;
+        margin-left: 2em;
+
+        width:150px;
+        height: 35px;
+        
+        cursor: pointer;
+        animation: infinite;
+        
+        background-color: #F21616;
+        border-color: #F21616;
+        border-radius: 18px ;
+        border:none;
+        color: white;
+        font-family: 'Changa';
+    }
+
+    .botoens{
+        display:flex;
+        flex-direction: row;
     }
 }
