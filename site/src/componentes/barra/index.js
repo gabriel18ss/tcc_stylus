@@ -59,7 +59,7 @@ export default function Barra(props){
                     <img onClick={carrinhoClick} className='sacola' src="/images/sacolabranca.png" alt='sacola'/>
                 </div>
                 
-                <div>
+                <div className='caixa-3'>
                 <img onClick={usuarioPng} className='user' src="/images/user-branco.png" alt='usuario'/>
                 </div>
         

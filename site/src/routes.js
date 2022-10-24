@@ -11,6 +11,7 @@ import CadastrarUsuario from './paginas/CadastrarUsuario';
 import Dados from './paginas/dadosUsuario';
 import ListarEndereco from './paginas/endereçoUsuario';
 import Carrinho from './paginas/carrinho';
+import Pedidos from './paginas/PedidosUsuario';
 
 import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
@@ -34,6 +35,7 @@ export default function appRoutes() {
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/carrinho' element={<Carrinho/>}/>
+            <Route path='/pedidos' element={<Pedidos/>}/>
             <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
