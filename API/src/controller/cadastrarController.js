@@ -41,7 +41,7 @@ server.put('/:id/capa', upload.single('capa'), async (req, resp) => {
             throw new Error('A imagem não foi salva.');
     } 
     catch (err) {
-        resp.send(400).send({
+        resp.status(400).send({
             erro:err.message
         })
     }
@@ -123,14 +123,14 @@ server.delete('/tenis/:id', async (req, resp) => {
 
 server.put('/tenis/:id', async (req, resp) => {
     try{
-        const { id } = req.params;
+        const id  = req.params.id;
         const tenis = req.body;
 
         const resposta = await alterarProduto(id, tenis);
         if (resposta != 1)
             throw new Error ('produto não pode ser alterado');
         else
-            resp.status (204).send();
+            resp.status(204).send();
 
     } catch(err) {
         resp.status(400).send({

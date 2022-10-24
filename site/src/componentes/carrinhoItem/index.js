@@ -3,22 +3,48 @@ import { listarTenis } from '../../api/produtoApi';
 import './index.scss';
 import { API_URL } from '../../api/config';
 import { useState } from 'react';
-import Storage from 'local-storage';
+import storage from 'local-storage';
 
 
-export default function CarrinhoItem({item: {tenis:{info}, qtd}}){
+export default function CarrinhoItem({item: {tenis:{info}, qtd}, removerItem, carregarCarrinho}){
+    const [qtdProduto, setQtdProduto] = useState(qtd)
 
-   
+    function remover(){
+        alert('to aqui')
+        removerItem(info.ID)
+    }
+
+    function carregarImagem () {
+        return API_URL + '/' + info.IMAGEM
+    }
+
+    function calcularSubTotal(){
+        const subTotal = qtd * info.valor
+        return subTotal
+    }
+
+    function alteraQuantidade(novaQtd){
+        setQtdProduto(novaQtd)
+
+        let carrinho = storage('carrinho');
+        let itemStorage = carrinho.find(item => item.ID == info.ID);
+        itemStorage.qtd = novaQtd;
+
+        storage('carrinho', carrinho);
+        carregarCarrinho();
+    }
+
 
     return(
+        <div>
         <div className='comp-carrinho-item'>
         
             <div className='info-tenis'>
                 <div>
-                     <img src='' className='ima-te' alt="" />
+                     <img src={carregarImagem()} className='ima-te' alt="" />
                 </div>
 
-               <div>
+               <div className='nome'>
                      <h3>Nome do Tênis</h3>
                      <div>{info.NOME}</div>
                </div>
@@ -28,19 +54,24 @@ export default function CarrinhoItem({item: {tenis:{info}, qtd}}){
               </div>
               <div className='qtd'>
                         <h3>Qtd</h3>
-                        <select>
+                        <select onChange={e => alteraQuantidade(e.target.value)} value={qtdProduto}>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
                         </select>
-                    </div>
+                </div>
+                <div className='subTotal'>
+                     <h3>Subtotal</h3>
+                    <p>R$ {calcularSubTotal()}</p>
+                </div>
                
-                <img width='30' src="/images/lixo.png" className='lx' alt="" />
+                <img width='30' src="/images/remover.png" className='lx' alt=""  onClick={remover}/>
 
             </div>
-
+         
+        </div>
     </div>
     )
 }

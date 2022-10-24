@@ -36,6 +36,7 @@ export default function CTE (){
 
    async function carregarTenis() {
         const resposta = await buscarPorId(idParams);
+        console.log(resposta);
         setMarca(resposta.info.ID_PRODUTO_MARCA);
         setGenero(resposta.info.DS_GENERO);
         setNome(resposta.info.NOME);
@@ -67,7 +68,7 @@ export default function CTE (){
             else{
                 await alterarTenis(id,  marca, genero, nome, quantidade, valor, lancamento, tamanho, usuario);
                 const r = enviarImagem(id, imagem);
-
+                console.log(r)
                 toast.dark('tenis alterado   👟');
             }
            
@@ -81,6 +82,8 @@ export default function CTE (){
         }
 
     }
+
+    // imagem alt
 
     function escolherImagem() {
         document.getElementById('imagemCapa').click();
@@ -154,7 +157,7 @@ export default function CTE (){
                         <input className='input4' placeholder='informe a marca' type='text' value={marca} onChange={e => setMarca(e.target.value)}></input>
 
                         <h4 className='titulo-cad'>preço</h4>
-                        <input className='input4' placeholder='informe o' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
+                        <input className='input4' placeholder='informe o preço' type='text' value={valor} onChange={e => setValor(e.target.value)}></input>
 
                         
 

@@ -39,3 +39,18 @@
 .lx{
     height: 30px;
 }
+
+.resumo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #E4E1E1;
+    border-radius: 3px;
+    background-color: #E4E1E1;
+    width: 16em;
+    height: 134px;
+
+    margin-left: 15px ;
+    margin-top: 20px;
+}

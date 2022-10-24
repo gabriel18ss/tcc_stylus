@@ -1,6 +1,9 @@
-.main-1{
+.comp-carrinho-item{
     display: flex;
+    flex-direction: row;
 }
+
+
 
 .titulo{
     margin: 30px;
@@ -23,20 +26,28 @@
     align-items: center;
 
     border: 1px solid #E4E1E1;
-    border-radius: 13px;
+    border-radius: 3px;
     background-color: #E4E1E1;
-    width: 60em;
-
-    margin-left: 50px ;
+   
+    width: 44em;
     margin-top: 20px;
     padding: 15px;
+
 }
+
+.nome{
+    margin-left: 2em;
+}
+
 .ima-te{
     height: 100px;
+    border-radius: 3px;
 }
 .lx{
     height: 30px;
-    margin-left: 28em;
+    margin-left: 3em;
+
+    cursor: pointer;
 }
 
 .preco {
@@ -45,5 +56,10 @@
 
 .qtd{
     font-family:  'changa' ;
-    margin-left: 2em;   
+    margin-left: 4em;
+    margin-top: 12px;   
+}
+
+.subTotal{
+    margin-left: 3.5em;
 }

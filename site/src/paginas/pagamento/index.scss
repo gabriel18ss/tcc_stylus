@@ -1,0 +1,102 @@
+.page-pagamento{
+
+    .display-pagamento{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .titulo-pag{
+        text-align: center;
+        font-family: 'Nosifer';
+        font-size: 30px;
+        margin-top: 1em;
+
+    }
+
+    .info-end{
+        margin-left: 4em;
+        margin-top: 3em;
+
+        border:solid 3px black;
+        padding: 25px;
+        border-radius: 7px;
+        width: 17em;
+        height: 2em;
+    }
+
+    .info-cartão{
+        display: flex;
+        flex-direction: column;
+        margin-left: 2.5em;
+        margin-top: 3em;
+
+        font-family: 'Changa';
+        border-radius: 7px;
+        border:solid 3px black;
+
+       padding: 25px;
+      width: 30em;
+    }
+
+    .info-pedido{
+        margin-left: 3em;
+        margin-top: 3em;
+
+        border:solid 3px black;
+        border-radius: 7px;
+
+        padding: 25px;
+      width: 15em;
+    }
+
+    .input-pag{
+        border-radius: 4px;
+        width: 320px;
+        height: 30px;
+
+        border:solid 3px #D9D9D9;
+        background-color: #D9D9D9;
+    }
+
+    .botao-pag{
+            margin-top: 3em;
+            margin-left: 538px;
+
+            width:150px;
+            height: 35px;
+            
+            cursor: pointer;
+            animation: infinite;
+            
+            background-color: #F21616;
+            border-color: #F21616;
+            border-radius: 18px ;
+            border:none;
+            color: white;
+
+            font-family: 'Changa';
+    }
+
+    .botao-pag-end{
+        margin-top: 3em;
+        margin-left: 2em;
+
+        width:150px;
+        height: 35px;
+        
+        cursor: pointer;
+        animation: infinite;
+        
+        background-color: #F21616;
+        border-color: #F21616;
+        border-radius: 18px ;
+        border:none;
+        color: white;
+        font-family: 'Changa';
+    }
+
+    .botoens{
+        display:flex;
+        flex-direction: row;
+    }
+}
