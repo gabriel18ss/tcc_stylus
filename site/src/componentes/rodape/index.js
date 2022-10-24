@@ -32,6 +32,7 @@ export default function Rodape(){
                 <img className='redes-sociais' src="/images/facebook.png" alt="instagram" />
                 <img className='redes-sociais' src="/images/facebook.png" alt="tiweter" />
             </div>
+            
         </section>
     )
 }
