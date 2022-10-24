@@ -30,22 +30,32 @@ export default function Home(){
             </div>
 
                <div className='faixa4'>
-                  <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+
                 
-                <button className='botao4'>Veja</button>
+              < img className='imghome' src="/images/imgTenis.jpg" alt="tenis" />
+               
              </div>
 
              <div className='faixa5'>
                 <h1 className='titulo5'>Lançamento</h1>
+            
              </div>
 
              <div className='faixa6'>
-                <button className='botaoMarcas'></button>
-                <button className='botaoMarcas'></button>
-                <button className='botaoMarcas'></button>
-                <button className='botaoMarcas'></button>
+                <button className='botaoMarcas'>
+                    <img className='img10' src='/images/jordan.png' alt=''/>
+                </button>
+                <button className='botaoMarcas'>
+                     <img className='img11' src='/images/nike.png' alt=''/>
+                </button>
+                <button className='botaoMarcas'>
+                <img className='img12' src='/images/adidas.png' alt=''/>
+                </button>
+                <button className='botaoMarcas'>
+                <img className='img13' src='/images/puma.png' alt=''/>
+                </button>
                
              </div>
         </section>
     )
-}
+} 
