@@ -42,6 +42,7 @@ export default function appRoutes() {
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
             <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>
+            
         </Routes>
         </BrowserRouter>
     )
