@@ -1,10 +1,13 @@
 import './index.scss';
 import axios from 'axios'
-import { useState, useRef} from 'react';
+
+import { useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer,  toast } from 'react-toastify';
-import { loginU } from '../../api/usuarioApi';
+
+import { LoginU } from '../../api/usuarioApi';
 import LoadingBar  from 'react-top-loading-bar'
+import storage from 'local-storage' 
 
 import Barra from '../../componentes/barra'
 
@@ -29,25 +32,21 @@ export default function Index(){
     }
 
     async function entrarClick () {
-        ref.current.continuousStart()
+        try {
+            const r = await LoginU(email, senha);
+            storage('cliente-logado', r);
+            toast.dark('Usuário logado', { autoClose: 400, hideProgressBar: true });
 
-        const r = await axios.post('http://localhost:5000/usuario/login', {
-            email:email,
-            senha:senha
-        });
-
-        setTimeout(() => {
-            navigate('/');
-        }, 3000);
-        
-        if(r.status === 401 ){
-            setErro(r.data.erro);  
-        }else{  
-           
+            setTimeout(() => {
+                navigate('/');
+            }, 1500);
+            
         }
-    }
-    
-    
+        catch (err) {
+            toast.error(err.response.data.erro);
+        }
+    }    
+
     return(
         <section>
             <LoadingBar color='#f11946' ref={ref} />    

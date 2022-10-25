@@ -1,10 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.main-1{
+.comp-carrinho-item{
     display: flex;
+    flex-direction: row;
 }
+
+
 
 .titulo{
     margin: 30px;
@@ -17,25 +16,50 @@
     border: 1px solid #CE3737;
     background-color: #CE3737;
     border-radius: 10px;
-    width: 60em;
+    width: 0em;
 
     margin-left: 50px;
 }
 .info-tenis{
     display: flex;
+    flex-direction: row;
     align-items: center;
 
     border: 1px solid #E4E1E1;
-    border-radius: 13px;
+    border-radius: 3px;
     background-color: #E4E1E1;
-    width: 60em;
-
-    margin-left: 50px ;
+   
+    width: 44em;
     margin-top: 20px;
+    padding: 15px;
+
 }
+
+.nome{
+    margin-left: 2em;
+}
+
 .ima-te{
     height: 100px;
+    border-radius: 3px;
 }
 .lx{
     height: 30px;
+    margin-left: 3em;
+
+    cursor: pointer;
+}
+
+.preco {
+    margin-left: 5em;
+}
+
+.qtd{
+    font-family:  'changa' ;
+    margin-left: 4em;
+    margin-top: 12px;   
+}
+
+.subTotal{
+    margin-left: 3.5em;
 }

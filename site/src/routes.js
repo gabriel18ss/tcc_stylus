@@ -10,11 +10,14 @@ import Endereco from './paginas/cadastrar endereco';
 import CadastrarUsuario from './paginas/CadastrarUsuario';
 import Dados from './paginas/dadosUsuario';
 import ListarEndereco from './paginas/endereçoUsuario';
-import Carinho from './paginas/Carinho';
+import Carrinho from './paginas/carrinho';
+import TelaPagamento from './paginas/pagamento';
+import Pedidos from './paginas/PedidosUsuario';
 
 import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
 import InfoTenis from './paginas/informacoesTenis';
+import CarrinhoItem from './componentes/carrinhoItem';
 
 export default function appRoutes() {
     return(
@@ -29,13 +32,16 @@ export default function appRoutes() {
             <Route path='/usuario/cadastrar/endereco' element={<Endereco/>}/>
             <Route path='/barra' element={<Barra/>}/>
             <Route path='/rodape' element={<Rodape/>}/>
-            <Route path='/listaProdutos' element={<ListarProdutos/>}/>
+            <Route path='/listar/produtos' element={<ListarProdutos/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
-            <Route path='/carinho' element={<Carinho/>}/>
+            <Route path='/carrinho' element={<Carrinho/>}/>
+            <Route path='/pedidos' element={<Pedidos/>}/>
             <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
+            <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
+            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>
         </Routes>
         </BrowserRouter>
     )

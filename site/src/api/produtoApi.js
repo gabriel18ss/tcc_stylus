@@ -61,7 +61,7 @@ export async function buscarPorId(ID){
 }
 
 export async function alterarTenis(id, marca, genero, nome, quantidade, valor, lancamento, tamanho) {
-    const resposta = await api.put (`/tenis/${id}`, {
+    const resposta = await api.put ('/tenis/' + id, {
         marca:marca,
         genero:genero,
         nome:nome,
@@ -71,7 +71,7 @@ export async function alterarTenis(id, marca, genero, nome, quantidade, valor, l
         tamanho:tamanho,
 
     })
-    return resposta.data;
+
 }
 
 

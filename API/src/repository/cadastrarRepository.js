@@ -51,7 +51,7 @@ export async function listarTenis(){
 
 export async function buscarPorId(id){
     const comando=
-    `SELECT ID_PRODUTO			as id,
+    `SELECT ID_PRODUTO			as ID,
         TB_PRODUTO_MARCA.NM_MARCA as MARCA,
         TB_PRODUTO_GENERO.DS_GENERO as GENERO,
         QTD_PRODUTO    		as QUANTIDADE,
