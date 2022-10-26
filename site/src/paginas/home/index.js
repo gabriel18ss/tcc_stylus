@@ -1,6 +1,7 @@
 import './index.scss';
 import Barra from '../../componentes/barra';
 import Cards from '../../componentes/cards';
+import Rodape from '../../componentes/rodape';
 
 
 
@@ -29,12 +30,12 @@ export default function Home(){
               
             </div>
 
-               <div className='faixa4'>
-
+            <div className='faixa4'>
+                  <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
                 
-              < img className='imghome' src="/images/imgTenis.jpg" alt="tenis" />
-               
+                <button className='botao4'>Veja</button>
              </div>
+
 
              <div className='faixa5'>
                 <h1 className='titulo5'>Lançamento</h1>
@@ -53,9 +54,10 @@ export default function Home(){
                 </button>
                 <button className='botaoMarcas'>
                 <img className='img13' src='/images/puma.png' alt=''/>
-                </button>
-               
+                </button>            
              </div>
+
+             <Rodape/>
         </section>
     )
 } 

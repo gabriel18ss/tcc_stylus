@@ -38,7 +38,7 @@ export default function appRoutes() {
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
-            <Route path='/carrinho' element={<Carrinho/>}/>
+            <Route path='/usuario/carrinho' element={<Carrinho/>}/>
             <Route path='/pedidos' element={<Pedidos/>}/>
             <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
