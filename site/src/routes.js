@@ -44,8 +44,7 @@ export default function appRoutes() {
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
-            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>
-            
+            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>        
         </Routes>
         </BrowserRouter>
     )

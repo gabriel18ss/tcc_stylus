@@ -31,7 +31,6 @@ export async function enviarImagem(id, imagem){
             "Content-type": "multipart/form-data" 
         },
     });
-    console.log(resposta);
 
     return resposta.status;
 }
@@ -56,7 +55,6 @@ export async function deletarProduto(id) {
 
 export async function buscarPorId(ID){
     const resposta = await api.get(`/tenis/${ID}`);
-    console.log(resposta);
     return resposta.data;
 }
 

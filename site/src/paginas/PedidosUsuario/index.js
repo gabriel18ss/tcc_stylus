@@ -11,7 +11,7 @@ export default function Pedidos(){
             <main className='container-1'>
                 <div><Menu5/></div>
 
-                <div className='informacoes-pedidos'>
+            <div className='informacoes-pedidos'>
                 <h1 className='titulo'>SEUS PEDIDOS</h1>
 
                 <div className='ppsd'>

@@ -7,15 +7,17 @@ import { ToastContainer,  toast } from 'react-toastify';
 import LoadingBar  from 'react-top-loading-bar'
 import { listaEndereco } from '../../api/usuarioApi';
 import CardEndereco from '../../componentes/cadastrarEnd';
-import storage, { set } from 'local-storage';
+import storage, { set } from 'local-storage'
+import { buscarPorId } from '../../api/produtoApi';
 
 export default function TelaPagamento(){
-
+    const [itens, setItens] = useState([]);
     const [endereco, setEndereco] = useState([]);
 
     const navigate = useNavigate();
     const ref = useRef();  
 
+    
 
     async function carregarEnderecos(){
         const id = storage('cliente-logado').ID;
@@ -34,8 +36,31 @@ export default function TelaPagamento(){
         }
     }
 
+
+    async function carregarItens() {
+        let carrinho = storage('carrinho');
+        if (carrinho) {
+
+            let temp = [];  
+
+            for (let tenis of carrinho) {
+               let p = await buscarPorId(tenis.ID);
+
+               temp.push({
+                    tenis: p,
+                    qtd: tenis.qtd
+               })
+            }
+            console.log(temp);
+        }
+
+    }
+
+
     useEffect(()=> {
         carregarEnderecos();
+        carregarItens();
+      
     })
 
     return(
@@ -73,6 +98,26 @@ export default function TelaPagamento(){
                 <button className='botao-pag'>Continuar</button>
                 <button onClick={clickNewEnd} className='botao-pag-end'>Novo Endereço</button>
               </div>
+
+             
+                {itens.map(item =>
+                <div className='informacoes-pedidos'>
+                        <h1 className='titulo'>SEUS PEDIDOS</h1>
+        
+                        <div className='ppsd'>
+                            <h1 >Produto</h1>
+                            <h1 className='pr'></h1>
+                        </div>
+        
+                        <div className='pedidos-usuario'>
+                            <h1>  {item.NOME}</h1>
+                            <h1></h1>
+                            <h1></h1>
+                        </div>
+               </div>
+                )}
+                
+              
         </section>
     )
 }
