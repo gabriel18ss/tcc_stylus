@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import {cadastrarEnd} from '../../api/usuarioApi';
-
+import storage from 'local-storage'
 
 export default function Endereco(){
     
@@ -21,7 +21,8 @@ export default function Endereco(){
 
     async function salvarEndClick(){
         try{
-            const r = await cadastrarEnd(cep, bairro, cidade, estado, rua, numero, complemento);
+            const id = storage('cliente-logado').ID
+            const r = await cadastrarEnd(id, rua, cep, cidade, estado, numero, complemento);
             toast.dark('Endereço cadastrado com sucesso 🏘 ');
 
         }catch (err){

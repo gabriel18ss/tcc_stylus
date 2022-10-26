@@ -25,15 +25,42 @@ export async function LoginU (email, senha) {
         
 }
 
-export async function cadastrarEndereco(endereco){
-    const comando =
-    `insert into TB_ENDERECO(DS_CEP, DS_BAIRRO, DS_CIDADE, DS_ESTADO, NM_RUA, NR_ENDERECO, DS_COMPLEMENTO)
-                            values(?, ?, ?, ?, ?, ?, ?)`
+export async function listarEndereco(idUsuario) {
+    const comando = `
+    select ID_USUARIO_ENDERECO			ID,
+        NM_RUA					RUA,
+        DS_CEP					CEP,
+        DS_CIDADE			 CIDADE,
+        DS_ESTADO			 ESTADO,
+        DS_BAIRRO			 BAIRRO,
+        NR_ENDERECO			 NUMERO,
+        DS_COMPLEMENTO 		COMPLEMENTO
+    from TB_USUARIO_ENDERECO
+    where ID_USUARIO = ?;
+    `
 
-    const [resposta] = await con.query (comando, [endereco.cep, endereco.bairro, endereco.cidade, endereco.estado, endereco.rua, endereco.numero, endereco.complemento]);
-    endereco.id = resposta.insertId;
-    return endereco;
+    const [registros] = await con.query(comando, [idUsuario]);
+    return registros;
 }
+
+
+
+export async function cadastrarEndereco(idUsuario, endereco) {
+    const comando = `
+    insert into TB_USUARIO_ENDERECO (ID_USUARIO, NM_RUA, DS_CEP, DS_CIDADE, DS_ESTADO, DS_BAIRRO, NR_ENDERECO, DS_COMPLEMENTO)
+                                values (?, ?,?, ?, ?, ?, ?, ?);
+    `
+
+    const [info] = await con.query(comando, [idUsuario, endereco.rua, endereco.cep, endereco.cidade, endereco.estado, endereco.bairro,  endereco.numero, endereco.complemento]);
+    return info.insertId;
+}
+
+
+
+
+
+
+
 
 export async function listarDados(id){
     const comando=
@@ -49,20 +76,6 @@ export async function listarDados(id){
     return linhas[0];
 }
 
-export async function listarENDERECO(){
-    const comando=
-    `SELECT     ID_ENDERECO			ID,
-                NM_RUA				RUA,
-                DS_CEP				CEP,
-                DS_CIDADE			CIDADE,
-                DS_ESTADO			ESTADO,
-                DS_BAIRRO			BAIRRO,
-                NR_ENDERECO			NUMERO,
-                DS_COMPLEMENTO		COMPLEMENTO
-    FROM TB_ENDERECO`
-    const [linhas] =await con.query(comando);
-    return linhas;
-}
 
 
 export async function deletarEndereco(id){

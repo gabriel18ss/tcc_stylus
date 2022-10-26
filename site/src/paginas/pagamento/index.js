@@ -5,11 +5,23 @@ import { useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer,  toast } from 'react-toastify';
 import LoadingBar  from 'react-top-loading-bar'
+import { listaEndereco } from '../../api/usuarioApi';
+import CardEndereco from '../../componentes/cadastrarEnd';
+import storage, { set } from 'local-storage';
 
 export default function TelaPagamento(){
 
+    const [endereco, setEndereco] = useState([]);
+
     const navigate = useNavigate();
     const ref = useRef();  
+
+
+    async function carregarEnderecos(){
+        const id = storage('cliente-logado').ID;
+        const r = await listaEndereco(id);
+        setEndereco(r)
+    }
 
 
     async function clickNewEnd(){
@@ -21,6 +33,11 @@ export default function TelaPagamento(){
             toast.error(err.message);
         }
     }
+
+    useEffect(()=> {
+        carregarEnderecos();
+    })
+
     return(
         <section className='page-pagamento'>
               <LoadingBar color='#f11946' ref={ref} />   
@@ -28,9 +45,11 @@ export default function TelaPagamento(){
             <h1 className='titulo-pag'>pagamento</h1>
 
               <div className='display-pagamento'>
-                    <div className='info-end'>
-                        <h3>Endereços</h3>
-                    </div>
+                  <div className='end'>
+                  {endereco.map(item =>
+                       <CardEndereco item={item}/>
+                    )}
+                  </div>
 
                     <div className='info-cartão'>
                         numero do cartão<input className='input-pag'></input>

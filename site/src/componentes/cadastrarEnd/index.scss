@@ -1,0 +1,22 @@
+.info-end{
+    margin-left: 4em;
+    margin-top: 3em;
+
+    border:solid 3px black;
+   
+    border-radius: 7px;
+    width: 17em;
+    height: 2em;
+
+    display: flex;
+    flex-direction: column;
+}   
+
+.titulo-paga{
+   margin-left: 10px;
+}
+
+
+.end, .cep {
+    color: alpha($color: #5a5858);
+}

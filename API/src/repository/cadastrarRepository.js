@@ -124,3 +124,103 @@ export async function alterarProduto(id, tenis){
 
 }
 
+
+
+
+
+// listar por marca: Nike, Adidas, Puma e Jordam
+
+
+
+export async function listarTenisNike(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where NM_MARCA = 'nike';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
+export async function listarTenisAdidas(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where NM_MARCA = 'adidas';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
+export async function listarTenisPuma(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where NM_MARCA = 'puma';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
+export async function listarTenisJordan(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where NM_MARCA = 'jordan';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
