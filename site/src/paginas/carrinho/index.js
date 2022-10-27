@@ -51,11 +51,9 @@ export default function Carrinho(){
                     qtd: tenis.qtd
                })
             }
-            console.log(temp);
             setItens(temp);
         }
 
-        console.log(itens);
     }
 
         useEffect(() => {

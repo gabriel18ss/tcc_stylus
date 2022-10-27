@@ -18,10 +18,10 @@
         margin-top: 3em;
 
         border:solid 3px black;
-        padding: 25px;
+      
         border-radius: 7px;
         width: 17em;
-        height: 2em;
+        height: 5em;
     }
 
     .info-cartão{
@@ -36,6 +36,7 @@
 
        padding: 25px;
       width: 30em;
+      height: 300px;
     }
 
     .info-pedido{
@@ -47,6 +48,7 @@
 
         padding: 25px;
       width: 15em;
+      height: 120px;
     }
 
     .input-pag{
@@ -99,4 +101,20 @@
         display:flex;
         flex-direction: row;
     }
+
+    .end{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .informacoes-pedidos{
+        margin-top: 5em;
+        font-family: 'Changa';
+    }
+
+    .linha-01{
+        border: 3px solid rgb(204, 200, 200);  
+        width: 82vw;
+        
+      }
 }

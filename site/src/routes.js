@@ -18,6 +18,7 @@ import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
 import InfoTenis from './paginas/informacoesTenis';
 import CarrinhoItem from './componentes/carrinhoItem';
+import VitrineNike from './paginas/vitrine/nike';
 
 export default function appRoutes() {
     return(
@@ -33,15 +34,17 @@ export default function appRoutes() {
             <Route path='/barra' element={<Barra/>}/>
             <Route path='/rodape' element={<Rodape/>}/>
             <Route path='/listar/produtos' element={<ListarProdutos/>}/>
+            <Route path='/vitrine/nike' element={<VitrineNike/>}/>
+            <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
-            <Route path='/carrinho' element={<Carrinho/>}/>
+            <Route path='/usuario/carrinho' element={<Carrinho/>}/>
             <Route path='/pedidos' element={<Pedidos/>}/>
             <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
-            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>
+            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>        
         </Routes>
         </BrowserRouter>
     )

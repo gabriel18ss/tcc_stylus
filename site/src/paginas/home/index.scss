@@ -28,15 +28,15 @@
         background-size:100% ;
 
         width: 100%;
-        height: 60vh;
+        height: 90vh;
     }
     .text1{
         text-align: center;
         color:white;
         cursor:context-menu;
         margin-left: 1em;
-        font-size: 3em;
-        width: 4em;
+        font-size: 4em;
+        width: 8em;
 
         font-family: 'Nosifer';
     }
@@ -94,20 +94,19 @@
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    .imghome{
-        width: 300px;
-        height: 300px;
-        background-size: 300px;
-        border: solid 2px;
-        text-shadow: white 0px 0px 2px;
-        font-size: 16px;
-          
-    }
+   .faixa4{
+    background-image: url("../../../public/images/Rectangle\ 10.png");
+    background-size:100% ;
+    width:84em;
+    height: 60em;
+    text-align: center;
+   }
 
 
     .text4 {
         font-family: 'Changa';
         color:white;
+        
     }
     .botao4 {
         width: 15em;
@@ -116,7 +115,7 @@
         border-radius:5em;
         border:white;
         text-align:center;
-        margin-top:35em;
+        margin-top:50em;
         font-family: 'Changa';
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,9 +147,8 @@
         width:13em;
         height:12em;
       
-        margin: 10px 10em 20em 1em ;
-        left: 20%;/*posicionar a 20% para esquerda*/;
-        top: 20em;/*posicionar a 20em para baixo*/;
+        margin-top: 4em;
+        margin-left: 4em;
         
 
     }

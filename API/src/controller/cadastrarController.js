@@ -1,4 +1,4 @@
-import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto, alterarProduto } from '../repository/cadastrarRepository.js'
+import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto, alterarProduto, listarTenisNike, listarTenisAdidas, listarTenisPuma, listarTenisJordan} from '../repository/cadastrarRepository.js'
 
 import multer from 'multer'
 import { Router } from 'express'
@@ -140,6 +140,56 @@ server.put('/tenis/:id', async (req, resp) => {
 })
 
 
+
+// listar Marca: Nike, Adidas, Puma e Jordan
+
+
+server.get('/consultar/nike',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisNike();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.get('/consultar/adidas',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisAdidas();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.get('/consultar/puma',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisPuma();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.get('/consultar/jordan',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisJordan();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 

@@ -1,6 +1,7 @@
-import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarENDERECO, deletarEndereco, alterarEndereco} from '../repository/usuarioRepository.js'
+import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarEndereco, deletarEndereco, alterarEndereco} from '../repository/usuarioRepository.js'
 
 import {Router} from "express";
+
 const server = Router();
 
 
@@ -38,20 +39,40 @@ server.post('/usuario/login', async(req, resp) =>{
 
 
 
-server.post('/cadastrar/endereco', async(req, resp) =>{
+server.get('/usuario/:id/endereco', async (req, resp) => {
     try {
-        const novoEndereco = req.body;
-
-        const enderecoCadastrado = await cadastrarEndereco(novoEndereco);
-
-        resp.send(enderecoCadastrado)
-
-    } catch (err){
-        resp.status(401).send({
+        const id = req.params.id;
+        
+        const r = await listarEndereco(id);
+        
+        resp.send(r);
+    }
+    catch (err) {
+        resp.status(400).send({
             erro: err.message
-        });
+        })
     }
 })
+
+
+
+server.post('/usuario/:id/endereco', async (req, resp) => {
+    try {
+        const id = req.params.id;
+        const endereco = req.body;
+
+        const r = await cadastrarEndereco(id, endereco);
+        resp.status(204).send();
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
 
 server.get('/dados/:id',async (req,resp)=>{
     try {
@@ -68,16 +89,6 @@ server.get('/dados/:id',async (req,resp)=>{
 
 })
 
-server.get('/endereco',async (req,resp)=>{
-    try {
-        const resposta = await listarENDERECO();
-        resp.send(resposta)
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
 
 
 server.delete('/endereco/:id', async (req, resp) => {

@@ -48,10 +48,13 @@ export default function CarrinhoItem({item: {tenis:{info}, qtd}, removerItem, ca
                      <h3>Nome do Tênis</h3>
                      <div>{info.NOME}</div>
                </div>
+               
               <div className='preco'>
                     <h3>Preço </h3>
                      <div>{info.valor}</div>
               </div>
+
+
               <div className='qtd'>
                         <h3>Qtd</h3>
                         <select onChange={e => alteraQuantidade(e.target.value)} value={qtdProduto}>

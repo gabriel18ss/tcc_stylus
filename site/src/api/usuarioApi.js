@@ -29,22 +29,15 @@ export async function LoginU (email, senha){
 }
 
 
-export async function cadastrarEnd(cep, bairro, cidade, estado, rua, numero, complemento) {
-    const resposta = await api.post('cadastrar/endereco',{
-        cep:cep,
-        bairro:bairro,
-        cidade:cidade,
-        estado:estado,
-        rua:rua,
-        numero:numero,
-        complemento:complemento
-    })
-    return resposta.data;
+export async function cadastrarEnd(idUsuario,rua, cep, cidade, estado, bairro,  numero, complemento) {
+    const r = await api.post('/usuario/' + idUsuario + '/endereco', { rua, cep, cidade, estado, bairro, numero, complemento });
+    return r.data;
 }
 
-export async function listaEndereco(){
-    const resposta = await api.get ('/endereco');
-    return resposta.data;
+
+export async function listaEndereco(idUsuario) {
+    const r = await api.get('/usuario/' + idUsuario + '/endereco');
+    return r.data;
 }
 
 export async function deletarEndereco(id) {

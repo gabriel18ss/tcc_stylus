@@ -1,16 +1,17 @@
 import './index.scss';
 import {listarTenis, buscarImagem} from '../../api/produtoApi';
+import {listarTenisNike} from '../../api/listarApi';
 import {useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Cards(props){
+export default function CardsNike(props){
 
 
     const [tenis, setTenis] = useState([]); 
     
 
     async function carregarTodosTenis() {
-        const resp = await listarTenis(); 
+        const resp = await listarTenisNike(); 
         setTenis(resp);
     }
 
@@ -38,7 +39,7 @@ export default function Cards(props){
                     <img src={buscarImagem(tenis.IMAGEM)} className='imagem-teni' alt=""/>
         
                     <h1 className='nome-tenis'>{tenis.NOME}</h1>
-                    <h1 className=''>{tenis.GENERO}</h1>
+                    
                     <h1 className='preço-tenis'>{tenis.VALOR}</h1>
         
                 </div>
