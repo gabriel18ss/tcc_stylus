@@ -51,11 +51,18 @@ export default function TelaPagamento(){
                     qtd: tenis.qtd
                })
             }
-            console.log(temp);
+            setItens(temp);
         }
 
     }
 
+    function calcularTotal(){
+        let total = 0;
+        for(let item of itens){
+            total = total + item.qtd * item.tenis.info.valor;
+        }
+        return total;
+    }
 
     useEffect(()=> {
         carregarEnderecos();
@@ -68,6 +75,8 @@ export default function TelaPagamento(){
               <LoadingBar color='#f11946' ref={ref} />   
             <Barra/>
             <h1 className='titulo-pag'>pagamento</h1>
+            <div>Total: R$ {calcularTotal()}</div>
+             
 
               <div className='display-pagamento'>
                   <div className='end'>
@@ -102,17 +111,18 @@ export default function TelaPagamento(){
              
                 {itens.map(item =>
                 <div className='informacoes-pedidos'>
-                        <h1 className='titulo'>SEUS PEDIDOS</h1>
-        
-                        <div className='ppsd'>
-                            <h1 >Produto</h1>
-                            <h1 className='pr'></h1>
-                        </div>
+                    itens
+                    <hr className='linha-01'/>
         
                         <div className='pedidos-usuario'>
-                            <h1>  {item.NOME}</h1>
-                            <h1></h1>
-                            <h1></h1>
+                            <div className=''>
+                                <h1>  {item.tenis.info.NOME }</h1>
+                                <h1>{item.tenis.info.GENERO }</h1>
+                            </div>
+                            <div>
+                                <h1>{item.tenis.info.valor}</h1>
+                                <h1>{item.qtd }</h1>
+                            </div>
                         </div>
                </div>
                 )}
