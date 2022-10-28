@@ -74,7 +74,7 @@ server.post('/usuario/:id/endereco', async (req, resp) => {
 
 
 
-server.get('/dados/:id',async (req,resp)=>{
+server.get('/usuario/:id/dados',async (req,resp)=>{
     try {
         const {id} = req.params;
 

@@ -40,6 +40,11 @@ export async function listaEndereco(idUsuario) {
     return r.data;
 }
 
+export async function listaDados(idUsuario) {
+    const r = await api.get('/usuario/' + idUsuario + '/dados');
+    return r.data;
+}
+
 export async function deletarEndereco(id) {
     const resposta = await api.delete (`/endereco/${id}`);
     return resposta.status;

@@ -1,9 +1,22 @@
 import './index.scss'
 import Barra from '../../componentes/barra';
 import Menu2 from '../../componentes/menu-2'
-
+import { listaDados } from '../../api/usuarioApi';
+import { useEffect, useState } from 'react';
 
 export default function Dados(){
+
+    const [dados, setDados] = useState([]);
+
+    async function carregarTodosDados() {
+        const resp = await listaDados();
+        console.log(resp);
+        setItem(resp);
+    }
+
+    useEffect(() => {
+        carregarTodosDados();
+    }, [])
 
     return(
 
@@ -21,15 +34,13 @@ export default function Dados(){
                         <h1>Seus Dados </h1>
                         <hr/>
                     </div>
-
-                    <div>
-                        <h1>Nome</h1>
-                        <h1>Data</h1>
-                        <h1>E-mail</h1>
-                        <h1>CPF</h1>
-                        <h1>CEP</h1>
-                    </div>
                 </div>
+            </div>
+            <div>
+                {dados.map(item => 
+                        <div>{item.NOME}</div>
+                )}
+
             </div>
 
         </section>
