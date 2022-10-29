@@ -11,7 +11,7 @@ export default function Dados(){
     async function carregarTodosDados() {
         const resp = await listaDados();
         console.log(resp);
-        setItem(resp);
+        setDados(resp);
     }
 
     useEffect(() => {

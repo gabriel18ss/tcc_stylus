@@ -4,6 +4,7 @@ import 'dotenv/config'
 import adminController from './controller/adminController.js';
 import cadastrarController from './controller/cadastrarController.js';
 import UsuarioController from './controller/usuarioController.js';
+import pedidoController from './controller/pedidoController.js';
 
 
 import express from 'express'
@@ -21,6 +22,7 @@ server.use('/storage/capaTenis', express.static('storage/capaTenis'));
 server.use(adminController);
 server.use(cadastrarController);
 server.use(UsuarioController);
+server.use(pedidoController);
 
 
 
