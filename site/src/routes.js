@@ -18,7 +18,13 @@ import ListarProdutos from './paginas/listaTenis';
 import Rodape from './componentes/rodape';
 import InfoTenis from './paginas/informacoesTenis';
 import CarrinhoItem from './componentes/carrinhoItem';
-import VitrineNike from './paginas/vitrine/nike';
+import Menu3 from './componentes/menu-3';
+
+import VitrineNike from './paginas/nike'
+import VitrinePuma from './paginas/puma'
+import VitrineAdidas from './paginas/adidas';
+import VitrineJordan from './paginas/jordan';
+
 
 export default function appRoutes() {
     return(
@@ -35,7 +41,9 @@ export default function appRoutes() {
             <Route path='/rodape' element={<Rodape/>}/>
             <Route path='/listar/produtos' element={<ListarProdutos/>}/>
             <Route path='/vitrine/nike' element={<VitrineNike/>}/>
-            <Route path='/vitrine' element={<Vitrine/>}/>
+            <Route path='/vitrine/puma' element={<VitrinePuma/>}/>
+            <Route path='/vitrine/adidas' element={<VitrineAdidas/>}/>
+            <Route path='/vitrine/jordan' element={<VitrineJordan/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/usuario/carrinho' element={<Carrinho/>}/>
@@ -44,7 +52,8 @@ export default function appRoutes() {
             <Route path='/usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
-            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>        
+            <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>   
+            <Route path='/menu3' element={<Menu3/>}/>             
         </Routes>
         </BrowserRouter>
     )
