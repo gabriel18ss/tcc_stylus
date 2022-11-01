@@ -25,21 +25,19 @@ export default function Vitrine() {
 
     return(
         <section >
-            <div>
-                 <Barra/>
-            </div>
+                <div>
+                    <Barra/>
+                </div>
 
-          
+            <main className='vitrine'>
+                <div className='display-menu3'>
+                    <Menu3/>
+                </div>
+                <div className='cardes'>
+                    <CardsJordan/>
+                </div>
 
-        <main className='vitrine'>
-            <div className='display-menu3'>
-                <Menu3/>
-            </div>
-            <div className='cardes'>
-                <CardsJordan/>
-            </div>
-
-        </main>
+            </main>
         </section>
 
     )

@@ -29,7 +29,7 @@
         background-repeat: 100%;
 
         width: 100%;
-        height: 90vh;
+        height: 68vh;
     }
     .text1{
         text-align: center;
@@ -56,7 +56,7 @@
         border-radius: 5em ;
         position: absolute;
         left: 42.5%;
-        top: 175%;
+        top: 152%;
         border: none;
         cursor: pointer;
     }
@@ -74,7 +74,7 @@
         background-color:#E1E0E0 ;
 
         width: 100%;
-        height: 43em;
+        height: 55em;
         display: flex;
         flex-direction: row;
     }
@@ -101,6 +101,7 @@
     width:84em;
     height: 60em;
     text-align: center;
+    width: 100%;
    }
 
 
@@ -112,12 +113,17 @@
     .botao4 {
         width: 15em;
         height: 3.5em;
+        cursor: pointer;
 
         border-radius:5em;
         border:white;
         text-align:center;
         margin-top:50em;
         font-family: 'Changa';
+    }
+
+    .botao4:hover{    
+        margin-top: 655px; 
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     .faixa5{
@@ -147,16 +153,25 @@
         justify-content:center;
         width:13em;
         height:12em;
-      
-        margin-top: 4em;
-        margin-left: 4em;
         
+    
+        margin-top: 4em;
+        margin-left: 8em;
+        
+        cursor: pointer;
 
     }
+
+    .botaoMarcas:hover{
+        margin-top: 8px;
+        height: 160px;
+        
+        width: 192px;
+    }
+
     .img10{
 
         height: 10em;
-        width: 10em;
     }
 
     .img11{

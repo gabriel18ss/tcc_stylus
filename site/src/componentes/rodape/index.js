@@ -27,10 +27,10 @@ export default function Rodape(){
                 
             </div>
 
-            <div>
+            <div className='icones-sociais'>
                 <img className='redes-sociais' src="/images/facebook.png" alt="facebook" />
-                <img className='redes-sociais' src="/images/facebook.png" alt="instagram" />
-                <img className='redes-sociais' src="/images/facebook.png" alt="tiweter" />
+                <img className='redes-sociais' src="/images/instagram.png" alt="instagram" />
+                <img className='redes-sociais' src="/images/twitter.png" alt="tiweter" />
             </div>
             
         </section>

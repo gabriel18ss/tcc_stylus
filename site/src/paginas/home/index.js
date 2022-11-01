@@ -1,11 +1,74 @@
 import './index.scss';
 import Barra from '../../componentes/barra';
 import Cards from '../../componentes/cards';
+import CardsPuma from '../../componentes/cards puma';
 import Rodape from '../../componentes/rodape';
-
-
+import { useNavigate } from 'react-router-dom';
+import {  toast } from 'react-toastify';
 
 export default function Home(){
+
+    const navigate = useNavigate();
+
+
+    async function IrParaVitrine(){
+        try{
+            setTimeout(() => {
+                navigate('/vitrine')
+             }, );
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+
+    async function IrParaNike(){
+        try{
+            setTimeout(() => {
+                navigate('/vitrine/nike')
+             }, );
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+    async function IrParaAdidas(){
+        try{
+            setTimeout(() => {
+                navigate('/vitrine/adidas')
+             }, );
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+
+    async function IrParaPuma(){
+        try{
+            setTimeout(() => {
+                navigate('/vitrine/puma')
+             }, );
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+
+
+    async function IrParaJordan(){
+        try{
+            setTimeout(() => {
+                navigate('/vitrine/jordan')
+             }, );
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
+
+   
+
+
     return(
         <section className='pagina-home'>
             <Barra/>
@@ -16,7 +79,7 @@ export default function Home(){
                 <Cards/>
             </div>
             <div className='faixa2'>
-               <button className='botao1'>Outros</button>
+               <button className='botao1' onClick={IrParaVitrine}>Outros</button>
             </div>
 
             <div className='faixa3'>
@@ -33,28 +96,28 @@ export default function Home(){
             <div className='faixa4'>
                   <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
                 
-                <button className='botao4'>Veja</button>
+                <button className='botao4' onClick={IrParaJordan}>Veja</button>
              </div>
 
 
              <div className='faixa5'>
                 <h1 className='titulo5'>Lançamento</h1>
-            
+                <CardsPuma/>
              </div>
 
              <div className='faixa6'>
-                <button className='botaoMarcas'>
-                    <img className='img10' src='/images/jordan.png' alt=''/>
-                </button>
-                <button className='botaoMarcas'>
-                     <img className='img11' src='/images/nike.png' alt=''/>
-                </button>
-                <button className='botaoMarcas'>
-                <img className='img12' src='/images/adidas.png' alt=''/>
-                </button>
-                <button className='botaoMarcas'>
-                <img className='img13' src='/images/puma.png' alt=''/>
-                </button>            
+                    <button className='botaoMarcas'>
+                        <img className='img10' src='/images/jordan.png' onClick={IrParaJordan} alt=''/>
+                    </button>
+                    <button className='botaoMarcas' onClick={IrParaNike}>
+                        <img className='img11' src='/images/nike.png' alt=''/>
+                    </button>
+                    <button className='botaoMarcas' onClick={IrParaAdidas}>
+                    <img className='img12' src='/images/adidas.png' alt=''/>
+                    </button>
+                    <button className='botaoMarcas'>
+                    <img className='img13' src='/images/puma.png' onClick={IrParaPuma} alt=''/>
+                    </button>            
              </div>
 
              <Rodape/>
