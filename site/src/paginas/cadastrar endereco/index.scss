@@ -32,11 +32,11 @@ h3{
 
 .inputs{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border:solid 3px black;
     border-radius: 20px;
 
-    width: 60em;
+    width: 50em;
     margin-left: 5em;
     margin-right: 5em;
     padding:2em;
@@ -47,10 +47,10 @@ h3{
     flex-direction: row;
     background-color: #D9D9D9;
     height: 3em;
-    width: 40em;
+    width: 37em;
     border-radius: 7px;
     border: none;
-    margin-right: 7em;
+    margin-right: 3em;
     
 }
 
@@ -67,13 +67,13 @@ h3{
 .inputs3{
     display: flex;
     flex-direction: row;
-    margin-right: 6em;
+    margin-right: em;
 }
 
 .inputs-2   {
     display: flex;
     flex-direction: row;
-    margin-right: 12em;
+    margin-right: em;
 }
 
 .bnc-input{
@@ -90,6 +90,8 @@ h3{
     border: none;
     margin-top: 1.85em;
 }
+
+
 
 .input-bairro{
     background-color: #D9D9D9;

@@ -58,7 +58,7 @@ export default function Index(){
                 
                 <div className='login'>
                     
-                    <h1 className='titulo'>Iniciar Sessão</h1>
+                    <h1 className='titulo-lg-user'>Iniciar Sessão</h1>
 
                     <div className='dig'>
                     <input type='text' placeholder='E-Mail:' className='e-mail' value={email} onChange ={e => setEmail(e.target.value)} />

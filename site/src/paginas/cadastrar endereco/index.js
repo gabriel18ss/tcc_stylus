@@ -60,9 +60,7 @@ export default function Endereco(){
                    
                    <h3>Número</h3>
                    <input className='input-bairro' type='text' value={numero} onChange={e => setNumero(e.target.value)}/>
-                   
-                   <h3>Calcular frete</h3>
-                   <input className='input-bairro' type='text' />  
+                    
                 </div>
 
 
@@ -73,7 +71,7 @@ export default function Endereco(){
                    <h3>Complemento</h3>
                    <input className='input-bairro' type='text' value={complemento} onChange={e => setComplemento(e.target.value)}/>
                   
-                   <button className='butao-1'>Calcular</button>
+                  
                </div>
 
                <div className='ec-input'>

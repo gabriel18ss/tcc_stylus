@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom';
 import { cadastrarUsuario } from '../../api/usuarioApi.js';
 
 import { useState } from 'react';
+import Barra from '../../componentes/barra';
 
 export default function CadastrarUsuario (){
     const [nome, setNome] = useState('');
@@ -49,20 +50,20 @@ export default function CadastrarUsuario (){
     }
 
     return(
-      
+        <section>
+            <Barra/>
             <main className="pagina-cadastro">
-           
+              
                 <div>
+            
                     <img className="imagem-1" src="/images/tes.png" alt="imagem de fundo" />
                 </div>
 
                 <div className='pagina-principal'>
-
-                   <b className="voltar" onClick={voltarClick}>voltar</b>
                  
-                    <h1 className="titulo-1">Criar uma conta</h1>
+                    <h1 className="titulo-login">Criar uma conta</h1>
                    
-                    <div className='inputs'>
+                    <div className='inputs-cd'>
                     <input className="input-1" type='text' placeholder='Nome' value={nome} onChange={e => setNome(e.target.value)} />
                     <input className="input-1" type='text' placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)}/>
                     <input className="input-1" type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
@@ -79,6 +80,6 @@ export default function CadastrarUsuario (){
                 </div>
         
             </main>
-    
+            </section>
     )
 }
