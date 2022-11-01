@@ -55,7 +55,7 @@ export default function InfoTenis(){
     }
 
     return(
-        <section>!
+        <section>
             <div>
                 <Barras/>
             </div>
@@ -68,7 +68,7 @@ export default function InfoTenis(){
             <div className='informaçoes-tenis'>
                 <h1 className='tipo-tenis'>Casual</h1>
 
-                <h1>{tenis.info.NOME} 
+                <h1 className='info-nome'>{tenis.info.NOME} 
                     <br/> {tenis.info.GENERO}</h1>
 
                 <h2 className='preco-tenis'>

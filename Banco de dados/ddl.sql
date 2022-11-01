@@ -62,9 +62,17 @@ select  * from TB_USUARIO;
 
 select * from TB_PRODUTO;
 
-select * from TB_PEDIDO;
+select * from TB_PEDIDO;	
 
 select * from TB_PEDIDO_ITEM;
 
 select * from tb_pagamento_cartao;
+
+select * from tb_usuario_endereco;	
+
+
+
+
+	
+
 
