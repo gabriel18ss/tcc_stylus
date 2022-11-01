@@ -1,5 +1,5 @@
 import './index.scss';
-import {listarTenis, buscarImagem} from '../../api/produtoApi';
+import { buscarImagem} from '../../api/produtoApi';
 import {listarTenisNike} from '../../api/listarApi';
 import {useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

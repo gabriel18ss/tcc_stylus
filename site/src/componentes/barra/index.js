@@ -19,8 +19,8 @@ export default function Barra(props){
     async function carrinhoClick(){
         try{
             setTimeout(() => {
-                navigate('/carrinho')
-             }, 3000);
+                navigate('/usuario/carrinho')
+             }, );
         } catch (err){
             toast.error(err.message);
         }

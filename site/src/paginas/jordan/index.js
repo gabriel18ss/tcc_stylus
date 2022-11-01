@@ -1,9 +1,8 @@
-import {listarTenis} from '../../api/produtoApi';
 import {useState,useEffect } from 'react';
-
+import { listarTenisNike } from '../../api/listarApi';
 import './index.scss';
 import Barra from '../../componentes/barra'
-import Cards from '../../componentes/cards'
+import CardsJordan from '../../componentes/cards jordan';
 import Menu3 from '../../componentes/menu-3';
 
 
@@ -14,7 +13,7 @@ export default function Vitrine() {
     
 
     async function carregarTodosTenis() {
-        const resp = await listarTenis();
+        const resp = await listarTenisNike();
         console.log(resp);
         setTenis(resp);
     }
@@ -26,20 +25,24 @@ export default function Vitrine() {
 
     return(
         <section >
-            <div>
-                <Barra/>
-            </div>
+                <div>
+                    <Barra/>
+                </div>
 
             <main className='vitrine'>
                 <div className='display-menu3'>
                     <Menu3/>
                 </div>
                 <div className='cardes'>
-                    <Cards/>
+                    <CardsJordan/>
                 </div>
 
             </main>
-    </section>
+        </section>
 
     )
 }
+
+
+
+

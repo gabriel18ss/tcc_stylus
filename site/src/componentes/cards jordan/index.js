@@ -1,16 +1,17 @@
 import './index.scss';
-import {listarTenis, buscarImagem} from '../../api/produtoApi';
+import { buscarImagem} from '../../api/produtoApi';
 import {useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { listarTenisJordan } from '../../api/listarApi';
 
-export default function Cards(props){
+export default function CardsJordan(props){
 
 
     const [tenis, setTenis] = useState([]); 
     
 
     async function carregarTodosTenis() {
-        const resp = await listarTenis(); 
+        const resp = await listarTenisJordan(); 
         setTenis(resp);
     }
 
