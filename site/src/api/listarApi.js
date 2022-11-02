@@ -25,3 +25,8 @@ export async function listarTenisJordan(){
     const resposta = await api.get ('/consultar/jordan');
     return resposta.data;
 }
+
+export async function listarTenisLancamento(){
+    const resposta = await api.get ('/consultar/lancamentos');
+    return resposta.data;
+}

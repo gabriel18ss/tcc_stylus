@@ -5,6 +5,7 @@ import CardsPuma from '../../componentes/cards puma';
 import Rodape from '../../componentes/rodape';
 import { useNavigate } from 'react-router-dom';
 import {  toast } from 'react-toastify';
+import CardsLancamentos from '../../componentes/cards lancamentos';
 
 export default function Home(){
 
@@ -102,7 +103,7 @@ export default function Home(){
 
              <div className='faixa5'>
                 <h1 className='titulo5'>Lançamento</h1>
-                <CardsPuma/>
+                <CardsLancamentos/>
              </div>
 
              <div className='faixa6'>

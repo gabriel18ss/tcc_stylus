@@ -22,8 +22,8 @@ VALUES('Junior', 'junior@gmail.com', '1234', '111111','04849', '2004-10-10');
 
 
 -- inserir tamanho
-INSERT INTO TB_PRODUTO_TAMANHO (DS_TAMANHO)
-VALUES(41);
+INSERT INTO TB_TAMANHO (DS_TAMANHO)
+VALUES(45);
 
 -- inserir endereço
 INSERT INTO TB_ENDERECO(NM_RUA, DS_CEP, DS_CIDADE, DS_ESTADO, DS_BAIRRO, NR_ENDERECO, DS_COMPLEMENTO)
@@ -43,8 +43,17 @@ INSERT INTO TB_PAGAMENTO_CARTAO(ID_PEDIDO, NM_CARTAO, NR_CARTAO, DT_VENCIMENTO, 
 -- inserir pedido item
 INSERT INTO TB_PEDIDO_ITEM(ID_PEDIDO, ID_PRODUTO, QTD_ITENS, VL_PRODUTO)
 						VALUES(1, 4, 4, 20.00);
-            
-            
+-- inserir tamanhos em um produto
+
+insert into TB_PRODUTO_TAMANHO(ID_PRODUTO, ID_TAMANHO)
+                            values (1, 9);
+
+-- buscar produto tamanho
+ select ID_TAMANHO         			as ID,
+            DS_TAMANHO            	as TAMANHO
+        from TB_TAMANHO
+        where ID_TAMANHO = 1;
+
 -- alterar imagem
 UPDATE TB_PRODUTO
 		SET IMG_PRODUTO     = ''
@@ -55,12 +64,32 @@ WHERE  ID_PRODUTO			= 1;
 DELETE FROM TB_PRODUTO
 	WHERE ID_PRODUTO = 1;
     
-    
+-- listar Tamanho
+ select ID_TAMANHO     		as ID,
+          DS_TAMANHO			    	as TAMANHO
+    from TB_TAMANHO;
+
+-- LISTAR LANÇMENTOS
+SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where DS_LANCAMENTO = 1;
 
 
 select  * from TB_USUARIO; 
 
-select * from TB_PRODUTO;
+select * from TB_PRODUTO_TAMANHO;
 
 select * from TB_PEDIDO;	
 
@@ -70,6 +99,8 @@ select * from tb_pagamento_cartao;
 
 select * from tb_usuario_endereco;	
 
+
+drop table TB_PRODUTO_TAMANHI;
 
 
 
