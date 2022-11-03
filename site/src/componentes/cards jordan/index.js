@@ -39,7 +39,7 @@ export default function CardsJordan(props){
                     <img src={buscarImagem(tenis.IMAGEM)} className='imagem-teni' alt=""/>
         
                     <h1 className='nome-tenis'>{tenis.NOME}</h1>
-                    
+                    <p className='genero-produto'>{tenis.DS_GENERO}</p>
                     <h1 className='preço-tenis'>{tenis.VALOR}</h1>
         
                 </div>

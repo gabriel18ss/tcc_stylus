@@ -81,6 +81,7 @@ export default function Home(){
             </div>
             <div className='faixa2'>
                <button className='botao1' onClick={IrParaVitrine}>Outros</button>
+            
             </div>
 
             <div className='faixa3'>

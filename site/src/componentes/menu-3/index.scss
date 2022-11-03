@@ -12,14 +12,23 @@
     width: 200%;
 }
 .titulo-1{
-    font-size: 50px;
-    font-family: 'Nosifer';
+    font-size: 30px;
+    
 }
 .marcas-1{
     font-size: 25px;
     font-family: 'changa';
-    margin-top: 50px;
+    margin-top: 30px;
+
+    cursor: pointer;
 }
+
+.marcas-1:hover{
+    font-size: 28px;
+    color:antiquewhite;
+}
+
+
 .check{
      
     font-size: 25px;

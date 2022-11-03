@@ -1,4 +1,4 @@
-import {inserirPagamento, inserirPedido, inserirPedidoItem} from '../repository/pedidoRepository.js'
+import {alterarPedido, inserirPagamento, inserirPedido, inserirPedidoItem, listarPedido} from '../repository/pedidoRepository.js'
 import randomString from 'randomstring';
 
 import {Router} from "express";
@@ -27,6 +27,38 @@ server.post('/pedido/:idUsuario/', async (req, resp) => {
         console.log(err);
         resp.status(400).send({
             erro: err.message
+        })
+    }
+})
+
+
+
+server.get('/consultar/pedido',async (req,resp)=>{
+    try {
+        const resposta = await listarPedido();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.put('/pedido/:id', async (req, resp) => {
+    try{
+        const id  = req.params.id;
+        const pedido = req.body;
+
+        const resposta = await alterarPedido(id, pedido);
+        if (resposta != 1)
+            throw new Error ('Pedido não foi alterado');
+        else
+            resp.status(204).send();
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
         })
     }
 })

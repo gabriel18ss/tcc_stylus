@@ -76,3 +76,31 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, valor) {
     const [info] = await con.query(comando, [idPedido, idProduto, qtd, valor]);
     return info.affectedRows;
 }
+
+
+
+export async function listarPedido(){
+    const comando= `
+
+    SELECT 	ID_USUARIO		IDUSUARIO,
+		ID_PEDIDO		ID,
+        VL_FRETE		FRETE,
+        DS_STATUS		STATUS,
+        TP_PAGAMENTO	PAGAMENTO
+    FROM TB_PEDIDO;
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
+export async function alterarPedido(id, pedido){
+    const comando =`
+        UPDATE tb_pedido
+            SET DS_STATUS 		= ?	
+        where ID_PEDIDO = ?;
+    `
+
+    const [resposta] = await con.query(comando, [pedido.statu, id]);
+    return resposta.affectedRows;
+}
