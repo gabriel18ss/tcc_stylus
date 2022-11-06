@@ -3,15 +3,16 @@ import Barra from '../../componentes/barra';
 import Menu2 from '../../componentes/menu-2'
 import { listaDados } from '../../api/usuarioApi';
 import { useEffect, useState } from 'react';
+import storage, { set } from 'local-storage'
 
 export default function Dados(){
 
     const [dados, setDados] = useState([]);
 
-    async function carregarTodosDados() {
-        const resp = await listaDados();
-        console.log(resp);
-        setDados(resp);
+    async function carregarTodosDados(){
+        const id = storage('cliente-logado').ID;
+        const r = await listaDados(id);
+        setDados(r)
     }
 
     useEffect(() => {
@@ -33,13 +34,15 @@ export default function Dados(){
                     <div>
                         <h1>Seus Dados </h1>
                         <hr/>
+                        {dados.map(item => 
+                            <div>{item.NOME}/</div>
+                    
+                    )}
                     </div>
                 </div>
             </div>
             <div>
-                {dados.map(item => 
-                        <div>{item.NOME}</div>
-                )}
+                
 
             </div>
 

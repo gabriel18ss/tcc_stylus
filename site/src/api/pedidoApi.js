@@ -68,3 +68,12 @@ export function buscarImagem(imagem) {
     return `${api.getUri()}/${imagem}`
 }
 
+
+export async function buscarPedidoId(ID){
+    const resposta = await api.get(`/consultar/pedido/${ID}`);
+    return resposta.data;
+}
+
+
+
+

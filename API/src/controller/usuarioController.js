@@ -79,7 +79,7 @@ server.get('/usuario/:id/dados',async (req,resp)=>{
         const {id} = req.params;
 
         const resposta = await listarDados(id);
-
+       
         resp.send(resposta);
     } catch (err) {
         resp.status(400).send({

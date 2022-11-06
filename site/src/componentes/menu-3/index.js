@@ -67,12 +67,10 @@ export default function Menu3(props){
                 <b className='marcas-1' onClick={IrParaJordan}>Jordan</b>
 
             <div className='check'>
-                <input id='checkbox-1' type="checkbox" />
                 <label for="checkbox-1">Masculino</label>
             </div>
 
               <div className='check'>  
-                <input id='checkbox-2' type="checkbox" />
                 <label for="checkbox-2">Feminino</label>
                </div>
 

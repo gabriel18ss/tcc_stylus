@@ -108,3 +108,24 @@ export async function alterarPedido(id, pedido){
     const [resposta] = await con.query(comando, [pedido.status, id]);
     return resposta.affectedRows;
 }
+
+
+
+export async function buscarPedidoId(id){
+    const comando=
+    `
+    SELECT 	TB_USUARIO.ID_USUARIO	IDUSUARIO,
+        ID_PEDIDO				    ID,
+        TB_USUARIO.NM_USUARIO	    NOME,
+        ID_USUARIO_ENDERECO,
+        VL_FRETE				    FRETE,
+        DS_STATUS				    STATUS,
+        TP_PAGAMENTO			    PAGAMENTO
+    FROM TB_PEDIDO	
+    JOIN TB_USUARIO
+    ON TB_PEDIDO.ID_USUARIO = TB_USUARIO.ID_USUARIO
+    where ID_PEDIDO=?;
+    `
+    const [linhas] =await con.query(comando, [id]);
+    return linhas[0];
+}

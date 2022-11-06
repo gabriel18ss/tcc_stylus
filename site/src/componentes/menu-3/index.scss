@@ -1,18 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Nosifer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Changa:wght@300&family=Lacquer&family=Nosifer&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Shade&family=Changa:wght@300&family=Lacquer&family=Nosifer&family=Rye&display=swap');
 
 .page-1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(179.93deg, #EB1C1C 0.06%, rgba(145, 141, 141, 0.76) 57.28%);
+    background: linear-gradient(-45deg, #c74444, #da2626, #5d737a, #000000);
     height: 100vh;
-    width: 200%;
+    width: 250px;
+
+    background-size: 400% 200%;
+    animation: colors 2s ease infinite;
 }
+
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 .titulo-1{
     font-size: 30px;
+    font-family: 'Bungee Shade';
     
 }
 .marcas-1{
@@ -31,8 +52,12 @@
 
 .check{
      
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 20px;
+
+    color: aliceblue;
+    font-family: 'Bungee Shade';
+    cursor: pointer;
 }
 
 

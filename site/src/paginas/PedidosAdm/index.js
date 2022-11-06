@@ -1,22 +1,47 @@
 import './index.scss';
 import Menu1 from '../../componentes/menu';
 import Barra from '../../componentes/barra';
+
 import { useState, useEffect} from 'react';
 import { listarPedidos } from '../../api/listarApi';
+import { buscarPedidoId } from '../../api/pedidoApi';
+import { useParams } from 'react-router-dom'
+
 
 
 export default function PedidosAdm(){
 
+
     const [ped, setPed] = useState([]);
+    const [status, setStatus] = useState('');
+    const [id, setId] = useState('');
+
+    const { idParams } = useParams();
+
+    useEffect(() => {
+        if(idParams) {
+            carregarStatus();
+        }
+    }, [])
 
     async function carregarPedidos() {
         const resp = await listarPedidos();
         setPed(resp);
     }
 
+
+    async function carregarStatus() {
+        const resposta = await buscarPedidoId(idParams);
+        console.log(resposta);
+        setStatus(resposta.info.DS_STATUS);
+        setId(resposta.info.ID);
+       
+    }
+
     useEffect(() => {
         carregarPedidos();
     }, [])
+
 
     return(
         <section>
