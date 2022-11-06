@@ -6,6 +6,9 @@ VALUES('junior', '1234');
 INSERT INTO TB_PRODUTO_MARCA(NM_MARCA)
 VALUES('jordan');
 
+ insert into TB_PRODUTO_TAMANHO(ID_PRODUTO, ID_TAMANHO)
+                          values (150, 5);
+
 INSERT INTO TB_PRODUTO_GENERO (DS_GENERO)
 VALUES('feminino');
 
@@ -87,9 +90,63 @@ SELECT ID_PRODUTO			ID,
     where DS_LANCAMENTO = 1;
 
 
+-- LISTAR PEDIDO
+SELECT 	TB_USUARIO.ID_USUARIO	IDUSUARIO,
+		ID_PEDIDO				ID,
+        TB_USUARIO.NM_USUARIO	NOME,
+        ID_USUARIO_ENDERECO,
+        VL_FRETE				FRETE,
+        DS_STATUS				STATUS,
+        TP_PAGAMENTO			PAGAMENTO
+FROM TB_PEDIDO	
+JOIN TB_USUARIO
+ON TB_PEDIDO.ID_USUARIO = TB_USUARIO.ID_USUARIO;
+
+
+-- LISTAR PEDIDOS DO USUARIO
+SELECT 	TB_PRODUTO.NM_PRODUTO AS NOME, TB_PRODUTO.VL_PRODUTO AS VALOR, TB_PEDIDO.ID_PEDIDO, TB_PEDIDO.DT_PEDIDO AS DATA, TB_PEDIDO.DS_STATUS, tb_endereco.DS_CEP AS CEP, tb_endereco.NR_ENDERECO
+FROM TB_PRODUTO	
+LEFT JOIN TB_PEDIDO
+ON TB_PRODUTO.ID_PRODUTO = TB_PEDIDO.ID_PEDIDO
+LEFT JOIN tb_endereco
+ON TB_PRODUTO.ID_PRODUTO = tb_endereco.ID_ENDERECO;
+
+-- BUSCAR PEDIDO POR ID
+ SELECT 	TB_USUARIO.ID_USUARIO	IDUSUARIO,
+        ID_PEDIDO				    ID,
+        TB_USUARIO.NM_USUARIO	    NOME,
+        ID_USUARIO_ENDERECO,
+        VL_FRETE				    FRETE,
+        DS_STATUS				    STATUS,
+        TP_PAGAMENTO			    PAGAMENTO
+    FROM TB_PEDIDO	
+    JOIN TB_USUARIO
+    ON TB_PEDIDO.ID_USUARIO = TB_USUARIO.ID_USUARIO
+    where ID_PEDIDO=2;
+
+select *
+from tb_pedido, tb_usuario;
+
+
+
+
+-- ALTERAR STATUS PEDIDO
+
+UPDATE tb_pedido
+	SET DS_STATUS 		= "Pagamento Confirmado"	
+where ID_PEDIDO = 2;
+
+select ID_PRODUTO	ID,
+		ID_TAMANHO	IDTAMANHO
+FROM TB_PRODUTO
+INNER JOIN TB_PRODUTO_TAMANHO
+ON TB_PRODUTO.ID_PRODUTO_TAMANHO=tb_produto_tamanho.ID_PRODUTO_TAMANHO;
+
+
+
 select  * from TB_USUARIO; 
 
-select * from TB_PRODUTO_TAMANHO;
+select * from tb_produto;
 
 select * from TB_PEDIDO;	
 
@@ -97,12 +154,14 @@ select * from TB_PEDIDO_ITEM;
 
 select * from tb_pagamento_cartao;
 
-select * from tb_usuario_endereco;	
+select * from tb_endereco;	
+select * from tb_produto_tamanho;	
 
 
-drop table TB_PRODUTO_TAMANHI;
+drop table TB_;
 
 
+alter TABLE tb_pedido drop column NM_USUARIO;
 
 	
 
