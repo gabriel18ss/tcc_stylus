@@ -1,11 +1,10 @@
 import './index.scss';
 import Menu5 from '../../componentes/menu-2';
-import Barr6 from '../../componentes/barra';
+import Barra from '../../componentes/barra';
 export default function Pedidos(){
     return(
         <section>
-
-            <div><Barr6/></div>
+            <div><Barra/></div>
             
 
             <main className='container-1'>

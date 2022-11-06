@@ -24,6 +24,7 @@ import VitrineNike from './paginas/nike'
 import VitrinePuma from './paginas/puma'
 import VitrineAdidas from './paginas/adidas';
 import VitrineJordan from './paginas/jordan';
+import PedidosAdm from './paginas/PedidosAdm';
 
 
 export default function appRoutes() {
@@ -53,7 +54,8 @@ export default function appRoutes() {
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
             <Route path='/carrinho/item' element={<CarrinhoItem/>}/>
             <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>   
-            <Route path='/menu3' element={<Menu3/>}/>             
+            <Route path='/menu3' element={<Menu3/>}/>         
+            <Route path='/adm/pedidos' element={<PedidosAdm/>}/>         
         </Routes>
         </BrowserRouter>
     )

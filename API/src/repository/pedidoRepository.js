@@ -82,12 +82,16 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, valor) {
 export async function listarPedido(){
     const comando= `
 
-    SELECT 	ID_USUARIO		IDUSUARIO,
-		ID_PEDIDO		ID,
-        VL_FRETE		FRETE,
-        DS_STATUS		STATUS,
-        TP_PAGAMENTO	PAGAMENTO
-    FROM TB_PEDIDO;
+    SELECT 	TB_USUARIO.ID_USUARIO	IDUSUARIO,
+        ID_PEDIDO				    ID,
+        TB_USUARIO.NM_USUARIO	    NOME,
+        ID_USUARIO_ENDERECO,
+        VL_FRETE				    FRETE,
+        DS_STATUS				    STATUS,
+        TP_PAGAMENTO			    PAGAMENTO
+    FROM TB_PEDIDO	
+    JOIN TB_USUARIO
+    ON TB_PEDIDO.ID_USUARIO = TB_USUARIO.ID_USUARIO;
 `
     const [linhas] =await con.query(comando);
     return linhas;
@@ -101,6 +105,6 @@ export async function alterarPedido(id, pedido){
         where ID_PEDIDO = ?;
     `
 
-    const [resposta] = await con.query(comando, [pedido.statu, id]);
+    const [resposta] = await con.query(comando, [pedido.status, id]);
     return resposta.affectedRows;
 }

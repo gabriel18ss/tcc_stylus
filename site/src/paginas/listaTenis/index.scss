@@ -62,7 +62,7 @@
 
     th {
         padding: 15px;
-        background-color: #CE3737;
+        background-color: #EB1C1C;
         text-align: center;
         margin-left: 5em;
 
@@ -70,7 +70,7 @@
     }
 
     td {
-        background-color: #979797;
+        background-color: #dadada;
         text-align: center;
         padding: 16px;
     }
@@ -83,6 +83,16 @@
 
     .iconTable {
         margin-right:17px ;
+    }
+
+    .ponta-direita{
+        border-radius: 15px 0px 0px 0px;;
+        
+    }
+
+    .ponta-esquerda{
+        border-radius:0px 15px 0px 0px;;
+        
     }
     
 }

@@ -88,14 +88,14 @@ export default function ListarProdutos() {
                 <table>
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th className='ponta-direita'>id</th>
                         <th>nome</th>
                         <th>marca</th>
                         <th>genero</th>
                         <th>valor</th>
                         <th>tamanho</th>
                         <th>unidades</th>    
-                        <th>apagar e alterar</th>                 
+                        <th className='ponta-esquerda'>apagar e alterar</th>                 
                     </tr>
                 </thead>
 

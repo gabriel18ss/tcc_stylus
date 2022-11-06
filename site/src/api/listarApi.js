@@ -30,3 +30,9 @@ export async function listarTenisLancamento(){
     const resposta = await api.get ('/consultar/lancamentos');
     return resposta.data;
 }
+
+
+export async function listarPedidos(){
+    const resposta = await api.get ('/consultar/pedido');
+    return resposta.data;
+}
