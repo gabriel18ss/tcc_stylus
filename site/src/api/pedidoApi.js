@@ -75,5 +75,15 @@ export async function buscarPedidoId(ID){
 }
 
 
+export async function alterarPedido(id, status) {
+    const resposta = await api.put ('/pedido/' + id, {
+        status:status
+        
+
+    })
+
+}
+
+
 
 

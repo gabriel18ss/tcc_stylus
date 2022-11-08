@@ -6,6 +6,7 @@ import { useState, useEffect} from 'react';
 import { listarPedidos } from '../../api/listarApi';
 import { buscarPedidoId } from '../../api/pedidoApi';
 import { useParams } from 'react-router-dom'
+import { Modal } from '../../componentes/modal';
 
 
 
@@ -15,6 +16,9 @@ export default function PedidosAdm(){
     const [ped, setPed] = useState([]);
     const [status, setStatus] = useState('');
     const [id, setId] = useState('');
+
+    const [exibirModal,setExibirModal] = useState(false)
+
 
     const { idParams } = useParams();
 
@@ -40,12 +44,24 @@ export default function PedidosAdm(){
 
     useEffect(() => {
         carregarPedidos();
+        
     }, [])
 
 
+    function exibirModalInfo(){
+        setExibirModal(true)
+    }
+
+    function removerModalInfo(){
+        setExibirModal(false)
+    }
+
     return(
         <section>
+
             <Barra/>
+          
+
             <div className='page-cons-adm-pedido'>
                 <div>
                     <Menu1/>
@@ -77,6 +93,10 @@ export default function PedidosAdm(){
                     )}
 
                 </tbody>
+
+                <div className="container-botoes">
+                         <button onClick={exibirModalInfo}>Editar Informações</button>
+                            </div>
                 </table>
                 </div>
             </div>
