@@ -1,0 +1,63 @@
+.comp-modal-endereco {
+
+    .modal-endereco {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .form>div label {
+        min-width: 8em;
+    }
+
+    .form>div:last-child {
+        justify-content: flex-end;
+    }
+
+
+    visibility: hidden;
+
+    .exibir {
+        visibility: visible !important;
+    }
+
+    .conteudo {
+        position: relative;
+        top: -50px;
+        width: 600px;
+        padding: 20px 20px 35px 20px;
+        margin: 10px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+
+
+
+
+
+    @media (max-width: 425px) {
+        .form > div label {
+            min-width: auto;
+        }
+        .conteudo {
+            overflow: scroll;
+            height: 80vh;
+            top: 0px;
+        }
+    }
+
+
+}
+
