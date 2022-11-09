@@ -7,6 +7,9 @@ import { useState, useEffect} from 'react';
 import storage from 'local-storage';
 import { buscarPorId } from '../../api/produtoApi';
 
+import { useNavigate } from 'react-router-dom';
+import {  toast } from 'react-toastify';
+
 
 export default function Carrinho(){
 
@@ -60,6 +63,19 @@ export default function Carrinho(){
             carregarCarrinho();
         }, [])
 
+        
+    const navigate = useNavigate();
+    
+    async function IrParaPagamento(){
+        try{
+            setTimeout(() => {
+                navigate('/usuario/pagamento')
+             }, 300);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
     return(
         <section className='pagina'>
             <div><BARRA/></div>
@@ -77,6 +93,9 @@ export default function Carrinho(){
                         <h2>total</h2>
                         <h5>({qtdItens()} produtos )</h5>
                         <p> R$ {calcularValorTotal()}</p>
+
+                        <button className='botao-carrinho' onClick={IrParaPagamento}>Finalizar</button>
+                      
                     </div>
             
                 

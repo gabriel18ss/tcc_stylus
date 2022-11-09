@@ -6,7 +6,9 @@ import { useState, useEffect} from 'react';
 import { listarPedidos } from '../../api/listarApi';
 import { buscarPedidoId } from '../../api/pedidoApi';
 import { useParams } from 'react-router-dom'
-import { Modal } from '../../componentes/modal';
+
+import Modal from '../../componentes/modal';
+
 
 
 
@@ -61,7 +63,7 @@ export default function PedidosAdm(){
 
             <Barra/>
           
-
+            <Modal></Modal>
             <div className='page-cons-adm-pedido'>
                 <div>
                     <Menu1/>

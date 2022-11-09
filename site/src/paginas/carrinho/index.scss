@@ -54,3 +54,40 @@
     margin-left: 15px ;
     margin-top: 20px;
 }
+
+.botao-carrinho{
+    width: 70px;
+    height: 32px;
+    margin-top: 1em;
+    font-family: 'Changa';
+
+    border-radius: 15px;
+    border:none;
+    cursor: pointer;
+
+    background: linear-gradient(-45deg, #c74444, #da2626, #5d737a, #000000);
+    animation: colors 2s ease infinite;
+    color: white;
+    
+    background-size: 400% 200%;
+
+
+}
+
+.botao-carrinho:hover{
+    height: 42px;
+}
+
+
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

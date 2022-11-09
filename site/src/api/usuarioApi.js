@@ -35,6 +35,7 @@ export async function cadastrarEnd(idUsuario,rua, cep, cidade, estado, bairro,  
 }
 
 
+
 export async function listaEndereco(idUsuario) {
     const r = await api.get('/usuario/' + idUsuario + '/endereco');
     return r.data;

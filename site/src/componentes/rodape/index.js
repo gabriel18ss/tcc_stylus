@@ -1,6 +1,21 @@
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
+import {  toast } from 'react-toastify';
 
 export default function Rodape(){
+    
+    const navigate =useNavigate();
+
+    async function usuarioPng(){
+        try{
+            setTimeout(() => {
+                navigate('/adm/login')
+             }, 3000);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
+
     return(
         <section className='comp-rodape'>
             <div className='coluna1'>

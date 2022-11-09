@@ -22,8 +22,9 @@ export default function Endereco(){
     async function salvarEndClick(){
         try{
             const id = storage('cliente-logado').ID
-            const r = await cadastrarEnd(id, rua, cep, cidade, estado, numero, complemento);
+            const r = await cadastrarEnd(id, rua, cep, cidade, estado, bairro, numero, complemento);
             toast.dark('Endereço cadastrado com sucesso 🏘 ');
+            console.log(cadastrarEnd);
 
         }catch (err){
             toast.error(err.message);
