@@ -7,7 +7,7 @@ import storage, { set } from 'local-storage'
 
 export default function Dados(){
 
-    const [dados, setDados] = useState([]);
+    const [dados, setDados] = useState({nome:[], email:[], cpf:[], endereco:[], cep:[]});
 
     async function carregarTodosDados(){
         const id = storage('cliente-logado').ID;
@@ -34,10 +34,21 @@ export default function Dados(){
                     <div>
                         <h1>Seus Dados </h1>
                         <hr/>
-                        {dados.map(item => 
-                            <div>{item.NOME}/</div>
-                    
-                    )}
+                    </div>
+                    <div>
+                        <h2>
+                            Nome:{dados.NOME}
+                        </h2>                
+                        <h2>
+                            E-mail:{dados.EMAIL}
+                        </h2>   
+                        <h2>
+                            CPF:{dados.CPF}
+                        </h2>
+                        <h2>
+                            Endereço:{dados.ENDERECO}
+                        </h2>
+                        <h2>CEP:{dados.CEP}</h2>
                     </div>
                 </div>
             </div>
