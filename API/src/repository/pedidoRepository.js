@@ -98,14 +98,14 @@ export async function listarPedido(){
 }
 
 
-export async function alterarPedido(id, pedido){
+export async function alterarPedido(pedido,id){
     const comando =`
         UPDATE tb_pedido
             SET DS_STATUS 		= ?	
         where ID_PEDIDO = ?;
     `
 
-    const [resposta] = await con.query(comando, [pedido.status, id]);
+    const [resposta] = await con.query(comando, [pedido, id]);
     return resposta.affectedRows;
 }
 

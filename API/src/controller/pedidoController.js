@@ -45,22 +45,25 @@ server.get('/consultar/pedido',async (req,resp)=>{
 })
 
 
-server.put('/pedido/:id', async (req, resp) => {
-    try{
-        const id  = req.params.id;
-        const pedido = req.body;
+server.put('/status', async (req, resp) => {
+    try {
+        const info = req.body
+        console.log(info)
+        if(!info) {
+            throw new Error('Campos Obrigatorios')
+        }
 
-        const resposta = await alterarPedido(id, pedido);
-        if (resposta != 1)
-            throw new Error ('Pedido não foi alterado');
-        else
-            resp.status(204).send();
+        const alterarInfo = await alterarPedido(info.status, info.id)        
+        
+        resp.status(202).send();
 
-    } catch(err) {
+    } catch (err) {
         resp.status(400).send({
-            erro: err.messsage
+            erro: err.message
         })
     }
+
+
 })
 
 

@@ -3,7 +3,10 @@ import Barra from '../../componentes/barra';
 import Cards from '../../componentes/cards';
 import CardsPuma from '../../componentes/cards puma';
 import Rodape from '../../componentes/rodape';
+import AOS from 'aos';
+
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import {  toast } from 'react-toastify';
 import CardsLancamentos from '../../componentes/cards lancamentos';
 
@@ -67,13 +70,15 @@ export default function Home(){
     }
 
 
-   
+    useEffect(() => {
+        AOS.init({ duration: 2000 })
+    }, [])
 
 
     return(
         <section className='pagina-home'>
             <Barra/>
-            <div className='faixa1'>
+            <div data-aos="fade-up" className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
             <div className='card'>
@@ -96,7 +101,7 @@ export default function Home(){
             </div>
 
             <div className='faixa4'>
-                  <h2 className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+                  <h2 data-aos="fade-up" className='text4'>Conheça nossa coleção de tenis Jordan</h2>
                 
                 <button className='botao4' onClick={IrParaJordan}>Veja</button>
              </div>

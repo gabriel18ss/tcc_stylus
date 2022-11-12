@@ -75,13 +75,14 @@ export async function buscarPedidoId(ID){
 }
 
 
-export async function alterarPedido(id, status) {
-    const resposta = await api.put ('/pedido/' + id, {
-        status:status
+export async function alterarPedido(status, id) {
+    const resposta = await api.put ('/status', {
+        status:status,
+        id:id
         
 
     })
-
+    return resposta.data;
 }
 
 

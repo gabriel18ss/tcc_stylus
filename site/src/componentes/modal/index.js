@@ -13,15 +13,11 @@ export default function Modal({ exibir, fechar }) {
    
     
 
-    async function alterarStatus() {
+    async function alterarStatus(id, status) {
         try {
-            if (status) {
-                alert('')
-            } else {
-                const r = await alterarPedido(id, status)
-                alert('alterado com sucesso')
-            fechar();
-        }
+                let r = await alterarPedido(id, status)
+                alert('alterado com sucesso')   
+        
     }catch (err) {
             toast.error(err.response.data.erro);
         }
