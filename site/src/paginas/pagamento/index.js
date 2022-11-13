@@ -119,50 +119,75 @@ export default function TelaPagamento(){
               <LoadingBar color='#f11946' ref={ref} />   
             <Barra/>
             
-            <div>
-            
-            </div><h1 className='titulo-pag'>pagamento</h1>
+          
+            <h1 className='titulo-pag'>pagamento</h1>
              
 
               <div className='display-pagamento'>
-                  <div className='end'>
-                  {endereco.map(item =>
-                       <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.ID == idEndereco}/>
-                    )}
+                  <div className='corp-card-end'>
+                    <div className='end'>
+                        {endereco.map(item =>
+                            <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.ID == idEndereco}/>
+                            )}
+                    </div>
                   </div>
-
                     <div className='info-cartão'>
+                            
                        <div className='linha-NC'>
-                        Nome<input className='input-pag' type='text' value={nome} onChange={e => setNome(e.target.value)} ></input>
-                       Crédito <select className='input-pag2' type='text' value={tipo} onChange={e => setTipo(e.target.value)}>
-                                    <option disabled hidden selected>Selecione</option>
-                                    <option>Crédito</option>
-                                    <option>Débito</option>
-                                 </select>
+                        <div>
+                             <h1 className='tt-1'>Nome</h1>
+                            <input className='input-pag' placeholder='Nome do cartão' type='text' value={nome} onChange={e => setNome(e.target.value)} ></input>
+                        </div>
+
+                        <div>
+                        <h1 className='tt-1'>Tipo</h1>
+                        <select className='input-pag2' type='text' value={tipo} onChange={e => setTipo(e.target.value)}>
+                                        <option disabled hidden selected>Selecione</option>
+                                        <option>Crédito</option>
+                                        <option>Débito</option>
+                                    </select>
+                        </div>
                        </div>
 
+
                         <div className='Cred-input'>
-                            validade<input className='input-pag' type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}></input>
-                            cvv<input className='input-pag2' type='text' value={cvv} onChange={e => setCvv(e.target.value)}></input>
+                            <div>
+                                <h1 className='tt-1'>Vencimento</h1>
+                                <input className='input-pag' placeholder='Vencimento' type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}></input>
+                            </div>
+
+                            <div>
+                                <h1 className='tt-1'>CVV</h1>
+                                <input className='input-pag2' placeholder='cvv' type='text' value={cvv} onChange={e => setCvv(e.target.value)}></input>
+                            </div>
                         </div>
-                        
-                        Número do cartão<input className='input-pag'  type='text' value={numero} onChange={e => setNumero(e.target.value)}></input>
+
+                        <div className='linha-NM'>
+                        <h1 className='tt-1'>Numero do cartão</h1>
+                        <input className='input-pag' placeholder='Numero' type='text' value={numero} onChange={e => setNumero(e.target.value)}></input>
                       
+                        </div>
 
                         <div className='linha-PF'>
-                       Parcelas<select className='input-pag' type='text' value={parcelas} onChange={e => setParcelas(e.target.value)}>
-                            <option disabled hidden selected>Selecione</option>
-                            <option value={1}>01x à Vista</option>
-                            <option value={1}>01x sem Juros</option>
-                            <option value={2}>02x sem Juros</option>
-                            <option value={3}>03x sem Juros</option>
-                        </select>
+                            <div>
+                            <h1 className='tt-1'>Parcelas</h1>
+                            <select className='input-pag' type='text' value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                                    <option disabled hidden selected>Selecione</option>
+                                    <option value={1}>01x à Vista</option>
+                                    <option value={1}>01x sem Juros</option>
+                                    <option value={2}>02x sem Juros</option>
+                                    <option value={3}>03x sem Juros</option>
+                                </select>
+                            </div>
 
-                        Frete<select  className='input-pag' value={frete} onChange={e => setFrete(e.target.value)}  >
-                                        <option disabled hidden selected>Selecione</option>
-                                        <option value={'Normal'}>Normal - R$ 10,00</option>
-                                        <option value={'Sedex'}>Sedex - R$ 25,00</option>
-                            </select>
+                                <div>
+                                     <h1 className='tt-1'>Frete</h1>
+                                    <select  className='input-pag' value={frete} onChange={e => setFrete(e.target.value)}  >
+                                                    <option disabled hidden selected>Selecione</option>
+                                                    <option value={'Normal'}>Normal - R$ 10,00</option>
+                                                    <option value={'Sedex'}>Sedex - R$ 25,00</option>
+                                    </select>
+                                </div>
                         </div>
                     </div>
                     <div>

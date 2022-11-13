@@ -3,14 +3,18 @@
     margin-left: 4em;
     margin-top: 3em;
 
-    border:solid 3px black;
-   
+    
+   border: none;
+    background-color: #D9D9D9;
+
     border-radius: 7px;
     width: 17em;
     height: 2em;
 
     display: flex;
     flex-direction: column;
+
+    box-shadow: 5px 5px 5px #adadad;
 }   
 
 .titulo-paga{

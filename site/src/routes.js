@@ -26,6 +26,7 @@ import VitrineAdidas from './paginas/adidas';
 import VitrineJordan from './paginas/jordan';
 import PedidosAdm from './paginas/PedidosAdm';
 import Modal from './componentes/modal';
+import PedidosUser from './paginas/pedidosUser';
 
 
 export default function appRoutes() {
@@ -58,6 +59,7 @@ export default function appRoutes() {
             <Route path='/menu3' element={<Menu3/>}/>         
             <Route path='/adm/pedidos' element={<PedidosAdm/>}/>         
             <Route path='/modal' element={< Modal/>}/>         
+            <Route path='/usuario/pedidos' element={< PedidosUser/>}/>         
         </Routes>
         </BrowserRouter>
     )

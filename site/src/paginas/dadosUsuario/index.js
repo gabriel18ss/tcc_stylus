@@ -36,19 +36,19 @@ export default function Dados(){
                         <hr/>
                     </div>
                     <div>
-                        <h2>
-                            Nome:{dados.NOME}
+                        <h2 className='dados-nome'>
+                            Nome: {dados.NOME}
                         </h2>                
-                        <h2>
-                            E-mail:{dados.EMAIL}
+                        <h2 className='dados-email' >
+                            E-mail: {dados.EMAIL}
                         </h2>   
-                        <h2>
-                            CPF:{dados.CPF}
+                        <h2 className='dados-cpf' >
+                            CPF: {dados.CPF}
                         </h2>
-                        <h2>
-                            Endereço:{dados.ENDERECO}
-                        </h2>
-                        <h2>CEP:{dados.CEP}</h2>
+
+                        <h2 className='dados-cep'>CEP: {dados.CEP}</h2>
+
+                        <h2 className='dados-cep'>{dados.NASCIMENTO}</h2>
                     </div>
                 </div>
             </div>

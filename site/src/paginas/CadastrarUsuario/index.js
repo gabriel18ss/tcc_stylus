@@ -55,8 +55,7 @@ export default function CadastrarUsuario (){
             <main className="pagina-cadastro">
               
                 <div>
-            
-                    <img className="imagem-1" src="/images/tes.png" alt="imagem de fundo" />
+                    <img className="imagem-1" src="/images/caixas walpaper.jpg" alt="imagem de fundo" />
                 </div>
 
                 <div className='pagina-principal'>
