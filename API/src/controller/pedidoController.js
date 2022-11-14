@@ -71,7 +71,7 @@ server.get('/consultar/pedido/:id',async (req,resp)=>{
     try {
         const id = req.params.id;
 
-        const tenis = await buscarPedidoId(Number(id));
+        const tenis = await lis(Number(id));
 
         resp.send({
             info: tenis

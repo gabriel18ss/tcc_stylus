@@ -88,3 +88,13 @@ export async function alterarPedido(status, id) {
 
 
 
+
+export async function  listarPedidosUsuario(idUsuario) {
+    const r = await api.get('/usuario/' + idUsuario + '/pedidos');
+    return r.data;
+}
+
+
+
+
+

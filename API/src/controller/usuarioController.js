@@ -130,7 +130,7 @@ server.put('/endereco/:id', async (req, resp) => {
 
 server.get('/usuario/:id/pedidos', async (req, resp) => {
     try {
-        const id = req.params.id;
+        const {id} = req.params;
         
         const r = await listarPedidosUsuario(id);
         

@@ -16,9 +16,8 @@
     margin: 0;
     font-family: 'nosifer';
 
-    position: relative;
-    right: 8em;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-right: 550px;
 
 
 }
@@ -34,10 +33,19 @@
     height: 35px;
 
     font-size: 14px;
+    border:none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.pr{
-    margin-left: 3em;
+
+
+
+.container-pedidos{
+    overflow-y: scroll;
+    height: 500px;
+    
 }
+
+
 .pedidos-usuario{
     display: flex;
     justify-content: space-around;
@@ -46,24 +54,11 @@
     background-color: #E4E1E1;
     border-radius: 10px;
 
-    height: 5em;
-    width: 84%;
+    height: 68px;
+    width: 930px;
 
     font-size: 10px;
-
     margin-top: 15px;
-
     box-shadow: 5px 5px 5px #adadad;
-}
-.preco-pedido{
-    position: relative;
-    right: 0.7em;
-}
-.status{
-    position: relative;
-    right: 2em;
-}
-.data-entrega{
-    position: relative;
-    right: 1.8em;
+
 }

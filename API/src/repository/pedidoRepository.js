@@ -134,7 +134,7 @@ export async function buscarPedidoId(id){
 
 export async function listarPedidosUsuario(idUsuario) {
     const comando = `
-    select tb_pedido.ID_PEDIDO, tb_pedido.ID_USUARIO, TB_PRODUTO.NM_PRODUTO, tb_pedido.DS_STATUS,  tb_pedido.TP_PAGAMENTO, tb_pedido_item.VL_PRODUTO, tb_pedido.VL_FRETE, tb_pedido_item.QTD_ITENS
+    select tb_pedido.ID_USUARIO as ID, TB_PRODUTO.NM_PRODUTO AS TENIS, tb_pedido.DS_STATUS AS STATUS,  tb_pedido.TP_PAGAMENTO AS PAGAMENTO, tb_pedido_item.VL_PRODUTO AS VALOR, tb_pedido.VL_FRETE AS FRETE, tb_pedido_item.QTD_ITENS AS QUANTIDADE
         FROM TB_PEDIDO 
         LEFT JOIN TB_PRODUTO
         ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO

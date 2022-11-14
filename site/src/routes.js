@@ -26,7 +26,7 @@ import VitrineAdidas from './paginas/adidas';
 import VitrineJordan from './paginas/jordan';
 import PedidosAdm from './paginas/PedidosAdm';
 import Modal from './componentes/modal';
-import PedidosUser from './paginas/pedidosUser';
+
 
 
 export default function appRoutes() {
@@ -50,7 +50,7 @@ export default function appRoutes() {
             <Route path='/vitrine' element={<Vitrine/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/usuario/carrinho' element={<Carrinho/>}/>
-            <Route path='/pedidos' element={<Pedidos/>}/>
+            <Route path='/usuario/pedidos' element={<Pedidos/>}/>
             <Route path='/info/:ID/Tenis' element={<InfoTenis/>}/>
             <Route path='/usuario/dados' element={<Dados/>}/>
             <Route path='usuario/listar/endereco' element={<ListarEndereco/>}/>
@@ -59,7 +59,7 @@ export default function appRoutes() {
             <Route path='/menu3' element={<Menu3/>}/>         
             <Route path='/adm/pedidos' element={<PedidosAdm/>}/>         
             <Route path='/modal' element={< Modal/>}/>         
-            <Route path='/usuario/pedidos' element={< PedidosUser/>}/>         
+            
         </Routes>
         </BrowserRouter>
     )
