@@ -1,6 +1,7 @@
 import {LoginU, cadastrarUsuario, cadastrarEndereco, listarDados, listarEndereco, deletarEndereco, alterarEndereco} from '../repository/usuarioRepository.js'
 
 import {Router} from "express";
+import { listarPedidosUsuario } from '../repository/pedidoRepository.js';
 
 const server = Router();
 
@@ -123,6 +124,21 @@ server.put('/endereco/:id', async (req, resp) => {
     } catch(err) {
         resp.status(400).send({
             erro: err.messsage
+        })
+    }
+})
+
+server.get('/usuario/:id/pedidos', async (req, resp) => {
+    try {
+        const id = req.params.id;
+        
+        const r = await listarPedidosUsuario(id);
+        
+        resp.send(r);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
         })
     }
 })

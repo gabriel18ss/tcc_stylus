@@ -129,3 +129,19 @@ export async function buscarPedidoId(id){
     const [linhas] =await con.query(comando, [id]);
     return linhas[0];
 }
+
+
+
+export async function listarPedidosUsuario(idUsuario) {
+    const comando = `
+    select tb_pedido.ID_PEDIDO, tb_pedido.ID_USUARIO, TB_PRODUTO.NM_PRODUTO, tb_pedido.DS_STATUS,  tb_pedido.TP_PAGAMENTO, tb_pedido_item.VL_PRODUTO, tb_pedido.VL_FRETE, tb_pedido_item.QTD_ITENS
+        FROM TB_PEDIDO 
+        LEFT JOIN TB_PRODUTO
+        ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
+        LEFT JOIN tb_pedido_item
+        ON TB_PEDIDO.ID_PEDIDO = tb_pedido_item.ID_PEDIDO_ITEM;
+    `
+
+    const [registros] = await con.query(comando, [idUsuario]);
+    return registros;
+}

@@ -11,7 +11,7 @@ export default function Cards(props){
     console.log(tenis)
 
     async function carregarTodosTenis() {
-        const resp = await listarTenis(); 
+        const resp = await listarTenis();   
         setTenis(resp);
     }
 
@@ -32,7 +32,7 @@ export default function Cards(props){
 
     return(
 
-        tenis.map(tenis =>
+        tenis.map(tenis => 
         <div className='container' onClick={() => AbrirInformaçoes(tenis.ID)}>
             <div className='cards-2'>
                 <div >

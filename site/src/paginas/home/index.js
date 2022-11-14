@@ -6,13 +6,25 @@ import Rodape from '../../componentes/rodape';
 import AOS from 'aos';
 
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {  toast } from 'react-toastify';
 import CardsLancamentos from '../../componentes/cards lancamentos';
 
 export default function Home(){
 
     const navigate = useNavigate();
+
+    const [tenis, setTenis] = useState([]);
+    const [tenisFinal, setTenisFinal] = useState(4 );
+    const currentTenis = tenis.slice(0, tenisFinal);
+
+    const [exibirfaixa, setExibirFaixa] = useState('faixa-dois')
+    
+
+    function exibirMais() {
+        setExibirFaixa('faixa-dois-expandida')
+        setTenisFinal(10)
+    }
 
 
     async function IrParaVitrine(){
@@ -82,8 +94,11 @@ export default function Home(){
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
             <div className='card'>
-                <Cards/>
+                <Cards tenis={tenis} tenis={currentTenis}/>
             </div>
+
+            <button data-aos="zoom-in" onClick={exibirMais}><b>Mostrar mais</b></button>
+
             <div className='faixa2'>
                <button className='botao1' onClick={IrParaVitrine}>Outros</button>
             
