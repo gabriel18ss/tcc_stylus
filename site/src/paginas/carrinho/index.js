@@ -51,7 +51,8 @@ export default function Carrinho(){
 
                temp.push({
                     tenis: p,
-                    qtd: tenis.qtd
+                    qtd: tenis.qtd,
+                    tamanho: tenis.tamanho
                })
             }
             setItens(temp);

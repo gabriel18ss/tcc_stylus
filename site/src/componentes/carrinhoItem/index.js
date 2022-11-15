@@ -6,7 +6,7 @@ import { useState } from 'react';
 import storage from 'local-storage';
 
 
-export default function CarrinhoItem({item: {tenis:{info}, qtd}, removerItem, carregarCarrinho}){
+export default function CarrinhoItem({item: {tenis:{info}, qtd, tamanho}, removerItem, carregarCarrinho}){
     const [qtdProduto, setQtdProduto] = useState(qtd)
 
     function remover(){
@@ -54,6 +54,14 @@ export default function CarrinhoItem({item: {tenis:{info}, qtd}, removerItem, ca
                      <div>{info.valor}</div>
               </div>
 
+              <div className='preco'>
+                    <h3>Tamanho </h3>
+                 <div>{tamanho}</div>
+              </div>
+
+                
+           
+
 
               <div className='qtd'>
                         <h3>Qtd</h3>
@@ -65,10 +73,7 @@ export default function CarrinhoItem({item: {tenis:{info}, qtd}, removerItem, ca
                             <option>5</option>
                         </select>
                 </div>
-                <div className='subTotal'>
-                     <h3>Subtotal</h3>
-                    <p>R$ {calcularSubTotal()}</p>
-                </div>
+              
                
                 <img width='30' src="/images/remover.png" className='lx' alt=""  onClick={remover}/>
 

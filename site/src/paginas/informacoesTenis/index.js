@@ -15,6 +15,7 @@ export default function InfoTenis(){
 
     const [tenis,setTenis] = useState({nome:[], valor: [], genero: [], imagem:[], info: {} });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
+    const [tamProduto ,setTamProduto] = useState();
 
     const {ID} = useParams();
 
@@ -45,13 +46,26 @@ export default function InfoTenis(){
         if(!carrinho.find(item => item.ID === ID)) {
             carrinho.push({
                 ID: ID,
-                qtd: 1
+                qtd: 1,
+                
             })
             
         storage('carrinho', carrinho);
 
         }
         toast.dark('Seu produto foi adicionado ao carrinho!')
+    }
+
+
+    function alteraTamanho(novoTamanho){
+        setTamProduto(novoTamanho)
+
+        let carrinho = storage('carrinho');
+        let itemStorage = carrinho.find(item => item.ID );
+        itemStorage.tamanho = novoTamanho;
+
+        storage('carrinho', carrinho);
+      
     }
 
     return(
@@ -66,20 +80,33 @@ export default function InfoTenis(){
             </div>
 
             <div className='informaçoes-tenis'>
-                <h1 className='tipo-tenis'>Casual</h1>
+                <h1 className='tipo-tenis'>{tenis.info.MARCA}</h1>
 
                 <h1 className='info-nome'>{tenis.info.NOME} 
                     <br/> {tenis.info.GENERO}</h1>
 
                 <h2 className='preco-tenis'>
-                    {tenis.info.valor} <br/> ou 12x de R$ 91,67
+                   R$ {tenis.info.valor} <br/> 
                 </h2>
 
                 <div>
 
                 <label className='tamanho'>
-                    Numero do seu Tenis
-                <input  type='number' className='tamanho-tenis'/>
+                    <h3 className='titulo-number-sneaker'>Numero do seu Tenis</h3>
+                    <select className='tamanho-tenis' onChange={e => alteraTamanho(e.target.value)} value={tamProduto}>
+                            <option>34</option>
+                            <option>35</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>38</option>
+                            <option>39</option>
+                            <option>40</option>
+                            <option>41</option>
+                            <option>42</option>
+                            <option>43</option>
+                            <option>44</option>
+                            <option>45</option>
+                        </select>
                 </label>
 
                 </div>

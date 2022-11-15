@@ -2,12 +2,17 @@
     margin: 0%;
     padding: 0;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&family=Bungee+Shade&family=Changa:wght@300&family=Lacquer&family=Nosifer&family=Rye&display=swap');
+
+
 .pagina-tenis{
     display: flex;
 }
 .imagem-tenis{
     margin: 20px;
-    margin-left: 60px;
+    margin-left: 150px;
 
     height: 50vh;
 }
@@ -29,15 +34,15 @@
 
     font-size: 30px;
     color: rgb(63, 60, 60);
-    font-family: inter;
+    font-family: 'Bebas Neue';
 }
 .preco-tenis{
-    margin-right: 3em;
+    margin-right: 140px;
     margin-top: 1em;
 }
 
 .info-nome{
-    margin-right: 6em;
+    margin-right: 140px;
 
 }
 .tamanho{
@@ -50,6 +55,14 @@
 
     font-size: 15px;
 }
+
+
+.titulo-number-sneaker{
+    margin-left: 40px;
+}
+
+
+
 .tamanho-tenis{
     outline: 0;
     border: none;
@@ -58,8 +71,9 @@
     border-radius: 20px;
     color: rgba(255,0,0,0.89);
 
-    width: 35px;
+    margin-left: 40px;
     padding: 10px;
+    width: 70px;
 }
 .tamanho-tenis:hover{
     border: 2.5px solid rgba(255, 0, 0, 0.89);
@@ -79,6 +93,8 @@
     background-color: white;
     border-radius: 15px;
     padding: 12px;
+
+    margin-right: 110px;
 }
 .carrinho:hover{
     border: 2px solid rgba(255, 0, 0, 0.89);
@@ -90,7 +106,8 @@
 }
 .linha-01{
   border: 2px solid black;  
-  width: 98vw;
+  width: 97vw;
+  margin-left: 7px;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -102,4 +119,10 @@
 .cards-tenis{
     display: flex;
     flex-direction: row;
+}
+
+
+.seletor-tamanho{
+    border-radius:25px ;
+    
 }

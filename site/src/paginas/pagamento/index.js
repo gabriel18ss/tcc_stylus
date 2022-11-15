@@ -60,7 +60,8 @@ export default function TelaPagamento(){
 
                temp.push({
                     tenis: p,
-                    qtd: tenis.qtd
+                    qtd: tenis.qtd,
+                    tamanho: tenis.tamanho
                })
             }
             setItens(temp);
@@ -213,6 +214,7 @@ export default function TelaPagamento(){
                             
                                 <h1>{item.tenis.info.valor}</h1>
                                 <h1>{item.qtd }</h1>
+                                <h1>{item.tamanho }</h1>
                           
                         </div>
                </div>
