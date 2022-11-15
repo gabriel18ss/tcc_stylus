@@ -4,23 +4,48 @@
 }
 .pagina-cadastro{
    display: flex;
+   flex-direction: row;
 }
 .imagem-1{
     display: flex;
-    height: 100%;
-    width: 650px;
+    height: 350px;
+    width: 450px;
+
+    margin-left: 70px;
+    margin-top: 120px;
+    animation: go-back 2s infinite alternate;
     
+}
+
+  @keyframes go-back {
+        from {
+          transform: translateX(100px);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+.fundo-page-cadastrar{
+    background-color: #cc001a;
+    width: 650px;
+    height:100vh; 
+
 }
 
 
 
 
 .pagina-principal{
- display: flex;
- flex-direction: column;
- align-items: center;
- margin-left: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 65px;
+    height: 100vh;
+
 }
+
+
 .voltar{
     cursor: context-menu;
     position: absolute;
@@ -50,7 +75,7 @@
 }
 .inputs-cd{
     align-items: center;
-    margin-top: 20px;
+    margin-top: 8px;
     gap: 30px;
     width: 25em;
    
@@ -66,7 +91,7 @@
     padding:2em;
 }
 .button-cad{
-    margin-top: 2em;
+    margin-top: 10px;
     border-radius: 10px;
     width: 130px;
     height: 40px;
