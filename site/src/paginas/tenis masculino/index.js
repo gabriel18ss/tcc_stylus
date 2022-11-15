@@ -1,20 +1,21 @@
-import { listarTenisAdidas } from '../../api/listarApi';
 import {useState,useEffect } from 'react';
-
+import { listarTenisMasculino } from '../../api/listarApi';
 import './index.scss';
 import Barra from '../../componentes/barra'
-import CardsAdidas from '../../componentes/cards adidas'
+import CardsPuma from '../../componentes/cards puma';
 import Menu3 from '../../componentes/menu-3';
+import CardsMasculino from '../../componentes/cards masculino';
 
 
 
-export default function VitrineAdidas() {
+export default function VitrineMasculina() {
 
     const [tenis, setTenis] = useState([]); 
     
 
     async function carregarTodosTenis() {
-        const resp = await listarTenisAdidas();
+        const resp = await listarTenisMasculino();
+        console.log(resp);
         setTenis(resp);
     }
 
@@ -34,7 +35,7 @@ export default function VitrineAdidas() {
                 <Menu3/>
             </div>
             <div className='cardes'>
-                <CardsAdidas/>
+                <CardsMasculino/>
             </div>
 
          </main>
@@ -42,3 +43,7 @@ export default function VitrineAdidas() {
 
     )
 }
+
+
+
+

@@ -26,6 +26,8 @@ import VitrineAdidas from './paginas/adidas';
 import VitrineJordan from './paginas/jordan';
 import PedidosAdm from './paginas/PedidosAdm';
 import Modal from './componentes/modal';
+import VitrineFeminina from './paginas/tenis feminino';
+import VitrineMasculina from './paginas/tenis masculino';
 
 
 
@@ -48,6 +50,8 @@ export default function appRoutes() {
             <Route path='/vitrine/adidas' element={<VitrineAdidas/>}/>
             <Route path='/vitrine/jordan' element={<VitrineJordan/>}/>
             <Route path='/vitrine' element={<Vitrine/>}/>
+            <Route path='/vitrine/feminina' element={<VitrineFeminina/>}/>
+            <Route path='/vitrine/masculino' element={<VitrineMasculina/>}/>
             <Route path='/menu' element={<Menu/>}/>
             <Route path='/usuario/carrinho' element={<Carrinho/>}/>
             <Route path='/usuario/pedidos' element={<Pedidos/>}/>

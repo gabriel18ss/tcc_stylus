@@ -36,3 +36,15 @@ export async function listarPedidos(){
     const resposta = await api.get ('/consultar/pedido');
     return resposta.data;
 }
+
+
+export async function listarTenisFeminino(){
+    const resposta = await api.get ('/consultar/tenis/feminino');
+    return resposta.data;
+}
+
+
+export async function listarTenisMasculino(){
+    const resposta = await api.get ('/consultar/tenis/masculino');
+    return resposta.data;
+}

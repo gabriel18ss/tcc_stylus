@@ -247,3 +247,50 @@ export async function listarTenisLancamento(){
 }
 
 
+
+export async function listarTenisMasculino(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+    TB_PRODUTO_MARCA.NM_MARCA,
+    TB_PRODUTO_GENERO.DS_GENERO,
+    QTD_PRODUTO    		QUANTIDADE,
+    NM_PRODUTO       	NOME,
+    VL_PRODUTO       	VALOR,
+    DS_LANCAMENTO   	LANCAMENTO,
+    NR_PRODUTO			NUMERO,
+    IMG_PRODUTO			IMAGEM
+FROM TB_PRODUTO
+INNER JOIN TB_PRODUTO_MARCA
+ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+INNER JOIN TB_PRODUTO_GENERO
+ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+where DS_GENERO= 'masculino';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
+export async function listarTenisFeminino(){
+    const comando=
+    `SELECT ID_PRODUTO			ID,
+        TB_PRODUTO_MARCA.NM_MARCA,
+        TB_PRODUTO_GENERO.DS_GENERO,
+        QTD_PRODUTO    		QUANTIDADE,
+        NM_PRODUTO       	NOME,
+        VL_PRODUTO       	VALOR,
+        DS_LANCAMENTO   	LANCAMENTO,
+        NR_PRODUTO			NUMERO,
+        IMG_PRODUTO			IMAGEM
+    FROM TB_PRODUTO
+    INNER JOIN TB_PRODUTO_MARCA
+    ON TB_PRODUTO.ID_PRODUTO_MARCA=TB_PRODUTO_MARCA.ID_PRODUTO_MARCA
+    INNER JOIN TB_PRODUTO_GENERO
+    ON TB_PRODUTO.ID_PRODUTO_GENERO=TB_PRODUTO_GENERO.ID_PRODUTO_GENERO
+    where DS_GENERO= 'feminino';
+`
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+

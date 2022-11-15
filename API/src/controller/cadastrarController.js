@@ -1,4 +1,4 @@
-import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto, alterarProduto, listarTenisNike, listarTenisAdidas, listarTenisPuma, listarTenisJordan, listarTenisLancamento} from '../repository/cadastrarRepository.js'
+import {cadastrarTenis, alterarImagem, listarTenis, buscarPorId, buscarPorNome, deletarProduto, alterarProduto, listarTenisNike, listarTenisAdidas, listarTenisPuma, listarTenisJordan, listarTenisLancamento, listarTenisMasculino, listarTenisFeminino} from '../repository/cadastrarRepository.js'
 
 import multer from 'multer'
 import { Router } from 'express'
@@ -202,5 +202,32 @@ server.get('/consultar/lancamentos',async (req,resp)=>{
     }
 })
 
+
+// listar Tenis Masclino e Feminino
+
+
+server.get('/consultar/tenis/masculino',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisMasculino();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
+server.get('/consultar/tenis/feminino',async (req,resp)=>{
+    try {
+        const resposta = await listarTenisFeminino();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;

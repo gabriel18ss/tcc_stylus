@@ -55,6 +55,32 @@ export default function Menu3(props){
     }
 
 
+    async function IrParaMasculino(){
+        {
+            try{
+                setTimeout(() => {
+                    navigate('/vitrine/masculino')
+                 }, );
+            } catch (err){
+                toast.error(err.message);
+            }
+        }
+    }
+
+
+    async function IrParaFemininino(){
+        {
+            try{
+                setTimeout(() => {
+                    navigate('/vitrine/feminina')
+                 }, );
+            } catch (err){
+                toast.error(err.message);
+            }
+        }
+    }
+
+
     
     return(
         <main className='vitrine'>
@@ -66,12 +92,12 @@ export default function Menu3(props){
                 <b className='marcas-1'onClick={IrParaPuma}>Puma</b>
                 <b className='marcas-1' onClick={IrParaJordan}>Jordan</b>
 
-            <div className='check'>
-                <label for="checkbox-1">Masculino</label>
+            <div className='generos-route'>
+                <label onClick={IrParaMasculino} for="checkbox-1">Masculino</label>
             </div>
 
-              <div className='check'>  
-                <label for="checkbox-2">Feminino</label>
+              <div className='generos-route'>  
+                <label onClick={IrParaFemininino} for="checkbox-2">Feminino</label>
                </div>
 
             </div>
