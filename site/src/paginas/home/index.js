@@ -98,7 +98,7 @@ export default function Home(){
                 <Cards tenis={tenis} tenis={currentTenis}/>
             </div>
 
-            <button data-aos="zoom-in" onClick={exibirMais}><b>Mostrar mais</b></button>
+          <button data-aos="zoom-in" onClick={exibirMais}><b>Mostrar mais</b></button>
 
             <div className='faixa2'>
                <button className='botao1' onClick={IrParaVitrine}>Outros</button>

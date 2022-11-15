@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom';
 
 import { cadastrarUsuario } from '../../api/usuarioApi.js';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { useState } from 'react';
 import Barra from '../../componentes/barra';
