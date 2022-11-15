@@ -54,8 +54,8 @@ export default function CadastrarUsuario (){
             <Barra/>
             <main className="pagina-cadastro">
               
-                <div>
-                    <img className="imagem-1" src="/images/caixas walpaper.jpg" alt="imagem de fundo" />
+                <div className='fundo-page-cadastrar'>
+                    <img className="imagem-1" src="/images/sneakers-wallpaper (1).webp" alt="imagem de fundo" />
                 </div>
 
                 <div className='pagina-principal'>

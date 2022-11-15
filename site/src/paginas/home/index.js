@@ -4,6 +4,7 @@ import Cards from '../../componentes/cards';
 import CardsPuma from '../../componentes/cards puma';
 import Rodape from '../../componentes/rodape';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
