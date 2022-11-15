@@ -140,7 +140,7 @@ export async function listarPedidosUsuario(idUsuario) {
         ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
         LEFT JOIN tb_pedido_item
         ON TB_PEDIDO.ID_PEDIDO = tb_pedido_item.ID_PEDIDO_ITEM
-        WHERE ID_USUARIO =?; 
+        WHERE ID_USUARIO =?; P
     `
 
     const [registros] = await con.query(comando, [idUsuario]);

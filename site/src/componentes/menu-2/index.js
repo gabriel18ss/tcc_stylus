@@ -1,6 +1,8 @@
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import {  toast } from 'react-toastify';
+import storage from 'local-storage'
 
 export default function Menu2 (props) {
 
@@ -43,7 +45,19 @@ export default function Menu2 (props) {
             }
         }
     }
-    
+
+
+    useEffect(() => {
+        if (!storage('cliente-logado')){
+            navigate('/usuario/login');
+        }
+      }, [])
+
+ 
+        function sairUserClick(){
+        storage.remove('cliente-logado');
+        navigate('/usuario/login');
+    }
     return(
         <div className='menu-1'>
             <h1 className='h1-bemvindo'>BEM-VINDO</h1>
@@ -57,7 +71,7 @@ export default function Menu2 (props) {
 
             <h2 className='h2-menu'>Meus endereços</h2>
 
-            <h2 className='h2-menu'>Início</h2>
+            <h2 className='h2-menu' onClick={sairUserClick}>Sair da conta</h2>
         </div>
 
     )
