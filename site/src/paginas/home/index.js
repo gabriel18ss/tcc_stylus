@@ -98,7 +98,7 @@ export default function Home(){
                 <Cards teni={tenis} tenis={currentTenis}/>
             </div>
 
-          <button data-aos="zoom-in" onClick={exibirMais}><b>Mostrar mais</b></button>
+          
 
             <div className='faixa2'>
                <button className='botao1' onClick={IrParaVitrine}>Outros</button>
@@ -124,8 +124,13 @@ export default function Home(){
 
 
              <div className='faixa5'>
-                <h1 className='titulo5'>Lançamento</h1>
-                <CardsLancamentos/>
+                <div className='bloco-5'>
+                    <h1 className='titulo5'>Lançamentos</h1>
+                </div>
+                <div className='cards-5'>
+                     <CardsLancamentos/>
+                </div>
+               
              </div>
 
              <div className='faixa6'>

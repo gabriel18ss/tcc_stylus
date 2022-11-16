@@ -12,7 +12,7 @@ export default function CardsLancamentos(props){
 
     async function carregarTodosTenis() {
         const resp = await listarTenisLancamento(); 
-        setTenis(resp);
+        setTenis(resp.slice(0, 5))
     }
 
     useEffect(() => {

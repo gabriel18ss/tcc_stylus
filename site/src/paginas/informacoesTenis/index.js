@@ -1,6 +1,7 @@
 import './index.scss';
 import Barras from '../../componentes/barra';
 import Car from '../../componentes/cards';
+import CardsLancamentos from '../../componentes/cards lancamentos';
 import Rodapes from '../../componentes/rodape';
 
 import { useParams } from 'react-router-dom';
@@ -125,7 +126,7 @@ export default function InfoTenis(){
                 </div>
                 
                 <div className='cards-tenis'>
-                    <Car/>
+                    <CardsLancamentos/>
                 </div>
 
                 <div>

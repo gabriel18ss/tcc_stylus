@@ -8,11 +8,11 @@ export default function Cards(props){
 
     const [tenis, setTenis] = useState([]); 
     
-    console.log(tenis)
+    console.log(tenis.slice(2))
 
     async function carregarTodosTenis() {
         const resp = await listarTenis();   
-        setTenis(resp);
+        setTenis(resp.slice(1, 9));
     }
 
     useEffect(() => {

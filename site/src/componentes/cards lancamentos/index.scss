@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    align-items: center;
+   
+    flex-direction:row;
+    
+    padding: 10px ;
+}
+.container .cards-3{
+    text-align: center;
+    
+    padding: 10px;
+    width: 170px;
+    height: 250px;
+
+    border: 1px solid black;
+    border-radius: 30px;
+   margin-left: 25px;
+    margin-top: em;
+    margin-right: em;
+    
+   
+    cursor: pointer;
+    
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px   rgb(153, 148, 148);
+    
+    transition: 0.5s;
+}
+.container .cards-3{
+    background-color: #bcbcc2;
+    color: rgb(255, 255, 255);
+    box-shadow: 2px 20px 25px  #bcbcc2;
+    
+    margin-top: -5px;
+   
+    transform-origin: 1s;
+}
+
+
+
+.imagem-teni{
+    width: 152px;
+ 
+    border-radius: 17px;
+}
+.nome-tenis{
+    font-size: 15px;
+    font-family: 'Changa';
+}
+.preço-tenis{
+    font-size: 15px;
+    font-family: 'Changa';
+    color: #F00C0C;
+}
+
+.genero-produto{
+    font-size: 15px;
+    font-family: 'Changa';
+   
+}
