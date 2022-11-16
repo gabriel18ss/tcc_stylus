@@ -34,11 +34,11 @@ export default function Pedidos(){
                 <h1 className='titulo'>SEUS PEDIDOS</h1>
 
                 <div className='ppsd'>
-                    <h1 >Produto</h1>
-                    <h1>Preço</h1>
-                    <h1>Frete</h1>
+                   
                     <h1>Status</h1>
-                    <h1>Quantidade</h1>
+                    <h1>Frete</h1>
+                    <h1>nota fiscal</h1>
+                    <h1>Data</h1>
 
                 </div>
 
@@ -48,11 +48,10 @@ export default function Pedidos(){
                     {pedidos.map(item => 
                       
                         <div className='pedidos-usuario'>
-                                <h1>{item.TENIS}</h1>
-                                <h1>{item.VALOR}</h1>
-                                <h1>{item.FRETE}</h1>
-                                <h1>{item.STATUS}</h1>
-                                <h1>{item.QUANTIDADE}</h1>
+                                <h1>{item.situação ? item.situação.substr(0,12) : " "}</h1>
+                                <h1>{item.frete}</h1>
+                                <h1>{item.notafiscal}</h1>
+                                <h1>{item.datapedido ? item.datapedido.substr(0,10) : " "}</h1>
                         </div>
                     
                     )}

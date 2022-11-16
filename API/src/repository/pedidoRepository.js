@@ -134,13 +134,16 @@ export async function buscarPedidoId(id){
 
 export async function listarPedidosUsuario(idUsuario) {
     const comando = `
-    select tb_pedido.ID_USUARIO as ID, TB_PRODUTO.NM_PRODUTO AS TENIS, tb_pedido.DS_STATUS AS STATUS,  tb_pedido.TP_PAGAMENTO AS PAGAMENTO, tb_pedido_item.VL_PRODUTO AS VALOR, tb_pedido.VL_FRETE AS FRETE, tb_pedido_item.QTD_ITENS AS QUANTIDADE
-        FROM TB_PEDIDO 
-        LEFT JOIN TB_PRODUTO
-        ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
-        LEFT JOIN tb_pedido_item
-        ON TB_PEDIDO.ID_PEDIDO = tb_pedido_item.ID_PEDIDO_ITEM
-        WHERE ID_USUARIO =?; P
+    SELECT 	ID_PEDIDO		id_pedido,
+        ID_USUARIO			id,
+        DS_STATUS		 	situação,
+        VL_frete 		    frete,
+        COD_NOTA_FISCAL		notafiscal,
+        DT_PEDIDO			datapedido
+    FROM TB_PEDIDO 
+    JOIN tb_produto
+    ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
+    WHERE ID_USUARIO =?; 	
     `
 
     const [registros] = await con.query(comando, [idUsuario]);

@@ -218,7 +218,9 @@ foreign key(ID_USUARIO) REFERENCES TB_USUARIO(ID_USUARIO),
 foreign key(NM_USUARIO) REFERENCES TB_USUARIO(NM_USUARIO),
 FOREIGN KEY(ID_USUARIO_ENDERECO)references TB_USUARIO_ENDERECO(ID_USUARIO_ENDERECO)
 );
+ 
 
+ ---
 
 CREATE TABLE TB_PEDIDO_ITEM(
 	ID_PEDIDO_ITEM 		INT PRIMARY KEY AUTO_INCREMENT,
@@ -232,12 +234,26 @@ FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO(ID_PRODUTO)
 
 
 
-delete from TB_PEDIDO
-where ID_USUARIO_ENDERECO= 7;
-
-
-delete from TB_USUARIO_ENDERECO
-where ID_USUARIO_ENDERECO= 4;
+SELECT 	ID_PEDIDO			id_pedido,
+			ID_USUARIO			id,
+			DS_STATUS		 	situação,
+			VL_frete 		    frete,
+			COD_NOTA_FISCAL		notafiscal,
+			DT_PEDIDO			datapedido
+        FROM TB_PEDIDO 
+		JOIN tb_produto
+		ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
+        WHERE ID_USUARIO =1; 	
+        
+        
+        
+          select tb_pedido.ID_USUARIO as ID, TB_PRODUTO.NM_PRODUTO AS TENIS, tb_pedido.DS_STATUS AS STATUS,  tb_pedido.TP_PAGAMENTO AS PAGAMENTO, tb_pedido_item.VL_PRODUTO AS VALOR, tb_pedido.VL_FRETE AS FRETE, tb_pedido_item.QTD_ITENS AS QUANTIDADE
+        FROM TB_PEDIDO 
+        LEFT JOIN TB_PRODUTO
+        ON TB_PEDIDO.ID_PEDIDO = tb_produto.ID_PRODUTO
+        LEFT JOIN tb_pedido_item
+        ON TB_PEDIDO.ID_PEDIDO = tb_pedido_item.ID_PEDIDO_ITEM
+        WHERE ID_USUARIO =?; 
 
 
 

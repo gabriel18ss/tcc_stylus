@@ -16,8 +16,8 @@ export default function Home(){
     const navigate = useNavigate();
 
     const [tenis, setTenis] = useState([]);
-    const [tenisFinal, setTenisFinal] = useState(4 );
-    const currentTenis = tenis.slice(0, tenisFinal);
+    const [tenisFinal, setTenisFinal] = useState();
+    const currentTenis = tenis.slice(5, tenisFinal);
 
     const [exibirfaixa, setExibirFaixa] = useState('faixa-dois')
     
@@ -95,7 +95,7 @@ export default function Home(){
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
             <div className='card'>
-                <Cards tenis={tenis} tenis={currentTenis}/>
+                <Cards teni={tenis} tenis={currentTenis}/>
             </div>
 
           <button data-aos="zoom-in" onClick={exibirMais}><b>Mostrar mais</b></button>
