@@ -1,0 +1,13 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:40px;
+    margin-top: 15px;
+    margin-left: 70px;
+
+    overflow-y:scroll;
+    height: 590px;
+}
+
+

@@ -33,7 +33,7 @@ export default function VitrineAdidas() {
             <div className='display-menu3'>
                 <Menu3/>
             </div>
-            <div className='cardes'>
+            <div className='card'>
                 <CardsAdidas/>
             </div>
 

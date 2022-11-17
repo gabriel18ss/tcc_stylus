@@ -33,7 +33,7 @@ export default function VitrineFeminina() {
             <div className='display-menu3'>
                 <Menu3/>
             </div>
-            <div className='cardes'>
+            <div className='card'>
                 <CardsFeminino/>
             </div>
 

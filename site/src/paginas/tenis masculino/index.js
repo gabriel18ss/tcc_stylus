@@ -34,7 +34,7 @@ export default function VitrineMasculina() {
             <div className='display-menu3'>
                 <Menu3/>
             </div>
-            <div className='cardes'>
+            <div className='card'>
                 <CardsMasculino/>
             </div>
 

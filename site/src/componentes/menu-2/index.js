@@ -86,8 +86,6 @@ export default function Menu2 (props) {
 
             <h2 className='h2-menu' onClick={IrParaCarrinho}>Carrinho</h2>
 
-            <h2 className='h2-menu'>Meus endereços</h2>
-
             <h2 className='h2-menu' onClick={sairUserClick}>Sair da conta</h2>
         </div>
 

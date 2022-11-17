@@ -94,7 +94,7 @@ export default function Home(){
             <div data-aos="fade-up" className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
-            <div className='card'>
+            <div className='card-x'>
                 <Cards teni={tenis} tenis={currentTenis}/>
             </div>
 
