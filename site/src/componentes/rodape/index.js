@@ -6,11 +6,14 @@ export default function Rodape(){
     
     const navigate =useNavigate();
 
-    async function usuarioPng(){
+
+    
+
+    async function pagesAdm(){
         try{
             setTimeout(() => {
                 navigate('/adm/login')
-             }, 3000);
+             }, 300);
         } catch (err){
             toast.error(err.message);
         }
@@ -39,7 +42,7 @@ export default function Rodape(){
                 <h3> Ajuda</h3>
                 <h4>Suporte</h4>
                 <h4>Contatos</h4>
-                
+                <h4 onClick={pagesAdm} className='bot-secret'>Ir para parte adm</h4>
             </div>
 
             <div className='icones-sociais'>

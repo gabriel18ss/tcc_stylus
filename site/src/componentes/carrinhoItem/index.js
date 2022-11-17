@@ -83,3 +83,4 @@ export default function CarrinhoItem({item: {tenis:{info}, qtd, tamanho}, remove
     </div>
     )
 }
+

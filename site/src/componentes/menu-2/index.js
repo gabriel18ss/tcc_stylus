@@ -2,11 +2,28 @@ import './index.scss';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import {  toast } from 'react-toastify';
+import { listaDados } from '../../api/usuarioApi';
+import {  useState } from 'react';
+
+
 import storage from 'local-storage'
 
 export default function Menu2 (props) {
 
     const navigate = useNavigate();
+
+
+    const [dados, setDados] = useState({nome:[], email:[], cpf:[], endereco:[], cep:[]});
+
+    async function carregarTodosDados(){
+        const id = storage('cliente-logado').ID;
+        const r = await listaDados(id);
+        setDados(r)
+    }
+
+    useEffect(() => {
+        carregarTodosDados();
+    }, [])
 
     async function IrParaCompras(){
         {
@@ -61,7 +78,7 @@ export default function Menu2 (props) {
     return(
         <div className='menu-1'>
             <h1 className='h1-bemvindo'>BEM-VINDO</h1>
-            <h1 className='h1-nome'>MARCIO</h1>
+            <h1 className='h1-nome'>{dados.NOME}</h1>
 
             <h2 className='h2-menu' onClick={IrParaDados}>Seus dados</h2>
 
