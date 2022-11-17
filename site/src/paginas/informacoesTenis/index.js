@@ -10,6 +10,8 @@ import storage from 'local-storage';
 import { buscarPorId, deletarProduto, buscarImagem} from '../../api/produtoApi';
 import { API_URL } from '../../api/config';
 import { ToastContainer,  toast } from 'react-toastify';
+import Cards from '../../componentes/cards';
+import CardsLancamentos from '../../componentes/cards lancamentos';
 
 export default function InfoTenis(){
 
@@ -125,7 +127,7 @@ export default function InfoTenis(){
                 </div>
                 
                 <div className='cards-tenis'>
-                    <Car/>
+                    <CardsLancamentos/>
                 </div>
 
                 <div>

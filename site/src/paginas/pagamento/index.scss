@@ -93,7 +93,7 @@
 
     .botao-pag{
             margin-top: 3em;
-            margin-left: 538px;
+            margin-left: 515px;
 
             width:150px;
             height: 35px;
@@ -164,13 +164,21 @@
     }
 
     .informacoes-pedidos{
-        margin-top: 5em;
+        margin-top: em;
         font-family: 'Changa';
+    }
+
+    .itens-linha{
+      text-align: center;
+      margin-top: 2em;
+      
     }
 
     .linha-01{
         border: 3px solid rgb(204, 200, 200);  
         width: 82vw;
+        text-align: center;
+        margin-left: 95px;
         
       }
     
@@ -239,5 +247,6 @@
 
     .pedidos-usuario{
         margin-bottom: 25px;
+        overflow:auto;
     }
 }

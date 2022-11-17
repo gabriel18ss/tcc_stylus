@@ -201,11 +201,15 @@ export default function TelaPagamento(){
                 <button className='botao-pag' onClick={salvarPedido}>Continuar</button>
                 <button onClick={clickNewEnd} className='botao-pag-end'>Novo Endereço</button>
               </div>
-             
+              
+              <div className='itens-linha'>
+                    <h3>itens</h3>
+            
+              </div>
+                    <hr className='linha-01'/>
                 {itens.map(item =>
                 <div className='informacoes-pedidos'>
-                    itens
-                    <hr className='linha-01'/>
+                 
         
                         <div className='pedidos-usuario'>
                             
