@@ -94,18 +94,18 @@ export default function Home(){
             <div data-aos="fade-up" className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
-            <div className='card-x'>
+            <div data-aos = " flip-left " className='card-x'>
                 <Cards teni={tenis} tenis={currentTenis}/>
             </div>
 
           
 
-            <div className='faixa2'>
+            <div data-aos =" flip-left " className='faixa2'>
                <button className='botao1' onClick={IrParaVitrine}>Outros</button>
             
             </div>
 
-            <div className='faixa3'>
+            <div data-aos = " flip-left " className='faixa3'>
                 <div>
                     <img className='grafite' src="/images/pngwing.com (4).png" alt=""/>
                 </div>

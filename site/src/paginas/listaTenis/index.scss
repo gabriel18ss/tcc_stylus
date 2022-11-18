@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Lacquer&family=Nosifer&display=swap');
 
 .page-listaProd {
+        margin: 0%;
         
 
     .barra-lateral{
@@ -24,7 +25,7 @@
 
     .caixa-pesquisa{
         margin-top: 1.5em;
-        margin-left: 7em;
+        margin-left: 150px;
 
         width:18em;
         height:2em;
@@ -50,7 +51,10 @@
 
     }
 
-    
+    table{
+        width: 1000px;
+        margin-left: 150px;
+    }
     
     
 

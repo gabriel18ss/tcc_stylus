@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.comp-barra {
+display: flex;
+flex-direction: row;
+
+height: 4em;
+
+background-color: black;
+
+}
+.logo{
+    margin-left: 15px;
+
+    width: 8em;
+    height:3.5em;
+
+    cursor: pointer;
+}
+
+.search-box{
+   position: absolute;
+   left: 10%;
+   top: 10px;
+
+   background-color: rgb(255, 255, 255);
+   
+   height: 17px;
+   padding: 10px;
+   border-radius: 40px;
+}
+.search.bnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+
+    font-size: 14px;
+    line-height: 15px;
+    float: right;
+    text-align: center;
+
+    width: 0px;
+    padding: 0;
+
+    color: rgb(0, 0, 0);
+    
+    transition: 1s;
+    
+}
+.lupa{
+  height: 20px;
+}
+.search-box:hover > .search-txt{
+    width: 210px;
+    padding: 0 6px;
+}
+.sacola{
+    position: absolute;
+    left: 72em;
+    top: 15px;
+
+    height: 27px;
+
+    cursor: pointer;
+}
+.sacola:hover{
+    margin-top: -5px;
+    height: 30px;
+}
+.user{    
+    position: absolute;
+    left: 75em;
+    top: 15px;
+
+    height: 27px;
+
+    cursor: pointer;
+   
+}
+.user:hover{
+    margin-top: -5px;
+    height: 30px;    
+}
+
+.nome-user{
+    color: aliceblue;
+    margin-left:1098px ;
+    margin-top: 13.5px;
+
+    font-family: 'Changa';
+    font-size: 18px;
+
+    //box-shadow: 0 0 30px rgba(255, 0, 0, 0.64);
+   // border-radius: 10px;
+   // width: 80px;
+
+  //  text-align: center;
+}
+
+

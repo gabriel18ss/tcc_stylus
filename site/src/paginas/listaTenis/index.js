@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert'; 
+import Barra2 from '../../componentes/barra2';
 
 
 export default function ListarProdutos() {
@@ -74,7 +75,7 @@ export default function ListarProdutos() {
 
     return(
         <section className='page-listaProd'>
-            <Barra/>
+            <Barra2/>
         <div className='part-table'>
             <Menu/>
 

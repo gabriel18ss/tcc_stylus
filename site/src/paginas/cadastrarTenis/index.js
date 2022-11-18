@@ -11,6 +11,7 @@ import { cadastrarTenis, enviarImagem, alterarTenis, buscarPorId, buscarImagem} 
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import Barra2 from '../../componentes/barra2';
 
 export default function CTE (){
    
@@ -113,7 +114,7 @@ export default function CTE (){
     return(
         <section>
              <ToastContainer />
-            <Barra/>
+            <Barra2/>
            
             <main className='cadastrar-1'>
             <Menu/>

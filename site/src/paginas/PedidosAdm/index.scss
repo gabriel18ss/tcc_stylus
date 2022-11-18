@@ -2,9 +2,14 @@
     display: flex;
     flex-direction: row;
 
+    table{
+        width: 1070px;
+    }
+
 
     td{
         background-color: #dadada;
+        width: 60px;
     }
     
     th{
@@ -23,17 +28,7 @@
         
     }
 
-    .input-status{
-        background-color: #dadada;
-        border: none;
-        height: 4.7em;
-        width: 14em;
-       
-    }
 
-    .input-status:hover{
-        background-color: #fc9191;
-    }
 
     .icon-pedido{
         width: 25px;
@@ -45,7 +40,11 @@
      }
 
      .tr-ped{
-        width: 895px;
+        width: 856px;
+     }
+
+     .tbody-pedido{
+        height: 500px;
      }
 
     

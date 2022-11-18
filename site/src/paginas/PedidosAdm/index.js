@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom'
 
 
 import Modal from '../../componentes/modal';
+import Barra2 from '../../componentes/barra2';
 
 
 
@@ -77,7 +78,7 @@ export default function PedidosAdm(){
     return(
         <section>
 
-            <Barra/>
+            <Barra2/>
           
             <Modal/>
             <div className='page-cons-adm-pedido'>
@@ -86,6 +87,7 @@ export default function PedidosAdm(){
                 </div>
 
                 <div>
+                    <div></div>
                 <table className='table-ped'>
                 <thead>
                     <tr className='pd'>
@@ -98,7 +100,7 @@ export default function PedidosAdm(){
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody  className='tbody-pedido'>
 
                     {ped.map(item => 
                         <tr className='tr-ped'>
