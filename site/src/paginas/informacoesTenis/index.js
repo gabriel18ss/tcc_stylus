@@ -91,7 +91,7 @@ export default function InfoTenis(){
                    R$ {tenis.info.valor} <br/> 
                 </h2>
 
-                <div>
+            <div>
 
                 <label className='tamanho'>
                     <h3 className='titulo-number-sneaker'>Numero do seu Tenis</h3>

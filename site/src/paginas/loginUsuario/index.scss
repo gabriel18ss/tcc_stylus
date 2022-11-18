@@ -1,12 +1,20 @@
 *{
     padding: 0;
-    margin: 0;
+    margin: 0px;
 }
 .imagem{
     
     width: 100%;
-    height: 100vh;
+    height: 99.5vh;
+
+  
 }
+
+.background-login{
+    background-color: #000000;
+}
+
+
 .login{
     display: flex;
     flex-direction: column;
@@ -17,6 +25,8 @@
     left: 18em;
     width: 50em;
     height: 25em;
+    border-radius: 15px;
+    
 }
 
 .titulo-lg-user{

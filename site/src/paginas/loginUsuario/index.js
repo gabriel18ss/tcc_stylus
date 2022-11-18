@@ -51,10 +51,10 @@ export default function Index(){
         <section>
             <LoadingBar color='#f11946' ref={ref} />    
             <div>
-                <Barra/>
+              
             </div>
-            <div>
-                <img className="imagem" src="/images/tenisLog.png" alt="" />
+            <div className='background-login'>
+                <img className="imagem" src="/images/wallpaper site.jpg" alt="" />
                 
                 <div className='login'>
                     

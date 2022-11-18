@@ -73,6 +73,18 @@
     .botao1:hover{
       
     }
+
+    .titulo-pricipais{
+        font-family: 'Nosifer';
+        font-size: 50px;
+
+
+        margin-left: 60px;
+
+        margin-top: 25px;
+
+    }
+
     .card{
         display: flex;
         flex-direction: row;
@@ -159,6 +171,20 @@
     .botao4:hover{    
         margin-top: 655px; 
     }
+
+
+    .slide{
+        width:25px;
+        height: 5px;
+    }
+
+    .img-slides{
+        width:1160px;
+        height: 600px;
+
+        border-radius: 15px;
+        margin-left: 58px;
+       }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    
     .faixa5{
@@ -216,7 +242,7 @@
     }
 
     .botaoMarcas:hover{
-        margin-top: 8px;
+        margin-top: 30px;
         height: 160px;
         
        

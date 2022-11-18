@@ -246,7 +246,7 @@ SELECT 	ID_PEDIDO			id_pedido,
         WHERE ID_USUARIO =1; 	
         
         
-        
+-- select 
           select tb_pedido.ID_USUARIO as ID, TB_PRODUTO.NM_PRODUTO AS TENIS, tb_pedido.DS_STATUS AS STATUS,  tb_pedido.TP_PAGAMENTO AS PAGAMENTO, tb_pedido_item.VL_PRODUTO AS VALOR, tb_pedido.VL_FRETE AS FRETE, tb_pedido_item.QTD_ITENS AS QUANTIDADE
         FROM TB_PEDIDO 
         LEFT JOIN TB_PRODUTO

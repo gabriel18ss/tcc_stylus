@@ -94,9 +94,13 @@ export default function Home(){
             <div data-aos="fade-up" className='faixa1'>
                 <h1 className='text1'>Se destaque entre as ruas</h1>
             </div>
-            <div data-aos = " flip-left " className='card-x'>
-                <Cards teni={tenis} tenis={currentTenis}/>
-            </div>
+
+           <div>
+                <h1 className='titulo-pricipais'>Principais</h1>
+                <div data-aos = " flip-left " className='card-x'>
+                        <Cards teni={tenis} />
+                </div>
+           </div>
 
           
 
@@ -118,6 +122,7 @@ export default function Home(){
 
             <div className='faixa4'>
                   <h2 data-aos="fade-up" className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+                
                 
                 <button className='botao4' onClick={IrParaJordan}>Veja</button>
              </div>
