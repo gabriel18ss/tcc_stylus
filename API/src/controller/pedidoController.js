@@ -9,8 +9,10 @@ const server = Router();
 server.post('/pedido/:idUsuario/', async (req, resp) => {
     try {
         const { idUsuario } = req.params;
-        const info = req.body;
 
+        const info = req.body;
+    
+       
        const novoPedido = criarNovoPedido(idUsuario, info);
 
        const idPedidoCriado = await inserirPedido(novoPedido);
