@@ -78,7 +78,7 @@ export default function Menu2 (props) {
     return(
         <div className='menu-1'>
             <h1 className='h1-bemvindo'>BEM-VINDO</h1>
-            <h1 className='h1-nome'>{dados.NOME}</h1>
+            <h1 className='h1-nome'>{dados.NOME ? dados.NOME.substr(0,16) : " "}</h1>
 
             <h2 className='h2-menu' onClick={IrParaDados}>Seus dados</h2>
 

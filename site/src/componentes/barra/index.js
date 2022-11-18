@@ -28,7 +28,7 @@ export default function Barra(props){
         try{
             setTimeout(() => {
                 navigate('/')
-             }, 3000);
+             }, 500);
         } catch (err){
             toast.error(err.message);
         }

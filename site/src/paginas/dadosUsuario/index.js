@@ -48,7 +48,7 @@ export default function Dados(){
 
                         <h2 className='dados-cep'>CEP: {dados.CEP}</h2>
 
-                        <h2 className='dados-cep'>Nascimento:{dados.NASCIMENTO}</h2>
+                        <h2 className='dados-cep'>Nascimento:{dados.NASCIMENTO? dados.NASCIMENTO.substr(0,10) : " "}</h2>
                     </div>
                 </div>
             </div>
