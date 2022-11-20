@@ -1,4 +1,4 @@
-import {alterarPedido, buscarPedidoId, inserirPagamento, inserirPedido, inserirPedidoItem, listarPedido, verificarSituacao} from '../repository/pedidoRepository.js'
+import {alterarPedido, buscarPedidoId, inserirPagamento, inserirPedido, inserirPedidoItem, listarPedido, verificarConfirmados, verificarSituacao} from '../repository/pedidoRepository.js'
 import randomString from 'randomstring';
 
 import {Router} from "express";
@@ -104,6 +104,18 @@ server.get('/verificar/status',async (req,resp)=>{
     }
 })
 
+
+server.get('/consultar/pedidos/aprovados', async (req, resp)=>{
+    try{
+        const resposta = await verificarConfirmados();
+        resp.send(resposta);
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 export default server;

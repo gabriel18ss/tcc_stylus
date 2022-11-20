@@ -170,3 +170,24 @@ export async function verificarSituacao(situação){
     const [linhas] =await con.query(comando, [ `%${situação}%`]);
     return linhas;
 }
+
+
+export async function verificarConfirmados(){
+    const comando=
+    `
+    SELECT 	TB_USUARIO.ID_USUARIO	IDUSUARIO,
+        ID_PEDIDO				    ID,
+        TB_USUARIO.NM_USUARIO	    NOME,
+        ID_USUARIO_ENDERECO,
+        VL_FRETE				    FRETE,
+        DS_STATUS				    STATUS,
+        TP_PAGAMENTO			    PAGAMENTO
+    FROM TB_PEDIDO	
+    JOIN TB_USUARIO
+    ON TB_PEDIDO.ID_USUARIO = TB_USUARIO.ID_USUARIO
+    WHERE DS_STATUS = 'aprovado'; 	
+    `
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}

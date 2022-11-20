@@ -1,6 +1,8 @@
 import './index.scss';
 import axios from 'axios';
 import Barra from '../../componentes/barra'
+import Barra2 from '../../componentes/barra2'
+
 
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/adminapi';
@@ -60,7 +62,7 @@ useEffect(()=> {
        return(
         <section className='page-login'>
              <LoadingBar color='#f11946' ref={ref} />
-            <Barra/>
+            <Barra2/>
             <div className='faixa-l'>
                 <div className='fundo'>
                     <h1 className='titulo-adm'>administrador</h1>

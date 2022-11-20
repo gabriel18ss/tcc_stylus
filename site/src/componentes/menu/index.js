@@ -61,12 +61,24 @@ export default function Menu(props){
             toast.error(err.message);
         }
     }
+
+    async function IrParaPedidosAprovados(){
+        try{
+            setTimeout(() => {
+                navigate('/adm/pedidos/aprovados')
+             }, 300);
+        } catch (err){
+            toast.error(err.message);
+        }
+    }
     
     return(
         <div className='faixa-2'>
 
         <div className='inf'>
            <h1 onClick={IrParaPedidos}>Pedidos</h1>
+
+           <h1 onClick={IrParaPedidosAprovados}>Aprovados</h1>
 
            <h1 onClick={IrCadProduto}>Cadastrar</h1>
 

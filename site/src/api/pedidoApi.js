@@ -102,6 +102,10 @@ export async function filtrarStatus(situação){
 }
 
 
+export async function consultarPedAprovados(){
+    const r = await api.get('/consultar/pedidos/aprovados');
+    return r.data;
+}
 
 
 
