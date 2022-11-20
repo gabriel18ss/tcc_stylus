@@ -1,4 +1,4 @@
-import {alterarPedido, buscarPedidoId, inserirPagamento, inserirPedido, inserirPedidoItem, listarPedido} from '../repository/pedidoRepository.js'
+import {alterarPedido, buscarPedidoId, inserirPagamento, inserirPedido, inserirPedidoItem, listarPedido, verificarSituacao} from '../repository/pedidoRepository.js'
 import randomString from 'randomstring';
 
 import {Router} from "express";
@@ -79,6 +79,24 @@ server.get('/consultar/pedido/:id',async (req,resp)=>{
             info: tenis
         })
 
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.get('/verificar/status',async (req,resp)=>{
+    try {
+        const {situação} = req.query;
+
+        const resposta = await verificarSituacao(situação);
+
+        if (!resposta)
+            throw new Error ('Produto não foi encontrado')
+            
+        resp.send(resposta);
     } catch (err) {
         resp.status(400).send({
             erro: err.message

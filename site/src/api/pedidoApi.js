@@ -95,6 +95,13 @@ export async function  listarPedidosUsuario(idUsuario) {
 }
 
 
+export async function filtrarStatus(situação){
+    const r = await api.get(`verificar/status?situação=${situação}`);
+    return r.data;
+    
+}
+
+
 
 
 

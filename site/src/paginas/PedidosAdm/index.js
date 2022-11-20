@@ -5,7 +5,7 @@ import Barra from '../../componentes/barra';
 import { useState, useEffect} from 'react';
 import { toast } from 'react-toastify'
 import { listarPedidos } from '../../api/listarApi';
-import { alterarPedido } from '../../api/pedidoApi';
+import { alterarPedido, filtrarStatus } from '../../api/pedidoApi';
 import { useParams } from 'react-router-dom'
 
 
@@ -22,6 +22,7 @@ export default function PedidosAdm(){
     const [status, setStatus] = useState('');
 
     const [exibirModal,setExibirModal] = useState(false)
+    const [filtro, setFiltro] = useState([]);
 
 
     const { idParams } = useParams();
@@ -38,6 +39,13 @@ export default function PedidosAdm(){
     async function carregarPedidos() {
         const resp = await listarPedidos();
         setPed(resp);
+    }
+
+    async function filtrar(){
+        const r = await filtrarStatus(filtro);
+        console.log(r)
+        setPed(r);
+        
     }
 
 
@@ -87,7 +95,14 @@ export default function PedidosAdm(){
                 </div>
 
                 <div>
-                    <div></div>
+                            <div className='search-box-2'>
+                
+                            <input type='text' className='search-txt-2' placeholder='Pesquisar...' value={filtro} onChange={e => setFiltro(e.target.value)}/>
+
+                            <a className='search-bnt-2' href="#">
+                            <img className='lupa' src="/images/pesquisarAzul.png" alt="" onClick={filtrar} />
+                            </a>
+                    </div>
                 <table className='table-ped'>
                 <thead>
                     <tr className='pd'>

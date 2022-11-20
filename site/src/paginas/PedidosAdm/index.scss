@@ -47,5 +47,53 @@
         height: 500px;
      }
 
+     .bot-fitrar-status{
+        width: 25px;
+        height: 25px;
+     }
+
+
+     .search-box-2{
+        position: absolute;
+        left: 10%;
+        top: 20px;
+     
+        background-color: rgb(255, 255, 255);
+        
+        height: 17px;
+        padding: 10px;
+        border-radius: 40px;
+     }
+     .search.bnt-2{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+     .search-txt-2{
+         border: none;
+         background: none;
+         outline: none;
+     
+         font-size: 14px;
+         line-height: 15px;
+         float: right;
+         text-align: center;
+     
+         width: 0px;
+         padding: 0;
+     
+         color: rgb(0, 0, 0);
+         
+         transition: 1s;
+         
+     }
+     .lupa{
+       height: 20px;
+     }
+     .search-box-2:hover > .search-txt-2{
+         width: 210px;
+         padding: 0 6px;
+     }
+
     
 }
