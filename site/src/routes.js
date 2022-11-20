@@ -29,6 +29,7 @@ import Modal from './componentes/modal';
 import VitrineFeminina from './paginas/tenis feminino';
 import VitrineMasculina from './paginas/tenis masculino';
 import PedidosAdmAprovados from './paginas/PedidosAdm copy';
+import TelaFinalizacao from './paginas/tela de finalizacao';
 
 
 
@@ -63,7 +64,8 @@ export default function appRoutes() {
             <Route path='/usuario/pagamento' element={<TelaPagamento/>}/>   
             <Route path='/menu3' element={<Menu3/>}/>         
             <Route path='/adm/pedidos' element={<PedidosAdm/>}/>         
-            <Route path='/adm/pedidos/aprovados' element={<PedidosAdmAprovados/>}/>         
+            <Route path='/adm/pedidos/aprovados' element={<PedidosAdmAprovados/>}/> 
+            <Route path='/usuario/pedidos/finalizacao' element={<TelaFinalizacao/>}/> 
             <Route path='/modal' element={< Modal/>}/>         
             
         </Routes>

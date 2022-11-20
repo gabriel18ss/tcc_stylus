@@ -20,7 +20,25 @@ export default function Home(){
     const currentTenis = tenis.slice(5, tenisFinal);
 
     const [exibirfaixa, setExibirFaixa] = useState('faixa-dois')
+
     
+    let count = 0;
+    function nextImage() {
+        if (count > 4) {
+            count = 0;
+        }
+        count++
+        document.getElementById("radio" + count).checked = true;
+    }
+
+    useEffect(() => {
+        const interval = setInterval(function () {
+            nextImage();
+        }, 2500);
+
+        return () => clearInterval(interval);
+    }, [])
+
 
     function exibirMais() {
         setExibirFaixa('faixa-dois-expandida')
@@ -111,18 +129,60 @@ export default function Home(){
 
             <div data-aos = " flip-left " className='faixa3'>
                 <div>
-                    <img className='grafite' src="/images/pngwing.com (4).png" alt=""/>
+                    <img data-aos="fade-up" className='grafite' src="/images/pngwing.com (4).png" alt=""/>
                 </div>
                 <div>
-                    <h1 className='text3'>A combinação do estilo urbano e esportivo marca presença na Loja Online Oficial da stylus. A marca não se limita à prática de esportes. Conforto e tecnologia em calçados que navegam entre o esporte e o casual para contribuir
+                    <h1 data-aos="fade-up" className='text3'>A combinação do estilo urbano e esportivo marca presença na Loja Online Oficial da stylus. A marca não se limita à prática de esportes. Conforto e tecnologia em calçados que navegam entre o esporte e o casual para contribuir
                     diretamente com a cultura ao redor do mundo street disponíveis para você descobrir uma nova versão sua.</h1>
                 </div>
               
             </div>
 
             <div className='faixa4'>
-                  <h2 data-aos="fade-up" className='text4'>Conheça nossa coleção de tenis Jordan</h2>
-                
+
+            <h2 data-aos="fade-up" className='text4'>Conheça nossa coleção de tenis Jordan</h2>
+
+            <div className='slider'>
+
+                <div className='slides'>
+
+                    <input type='radio' name='radio-btn' id='radio1' />
+                    <input type='radio' name='radio-btn' id='radio2' />
+                    <input type='radio' name='radio-btn' id='radio3' />
+                    <input type='radio' name='radio-btn' id='radio4' />
+
+                    <div className='slide-frist'>
+                        <img className='img-slide' src="/images/img1.jpeg" alt='img1' />
+                    </div>
+
+                    <div className='slide'>
+                        <img className='img-slide' src='/images/img2.jpg' alt='img2' />
+                    </div>
+
+                    <div className='slide'>
+                        <img className='img-slide' src='/images/img3.jpg' alt='img3' />
+                    </div>
+
+                    <div className='slide'>
+                        <img className='img-slide' src='/images/img4.jpg' alt='img4' />
+                    </div>
+
+                    <div className='navigation-auto'>
+                        <div className='auto-btn1'></div>
+                        <div className='auto-btn2'></div>
+                        <div className='auto-btn3'></div>
+                        <div className='auto-btn4'></div>
+                    </div>
+                </div>
+
+                <div className='manual-navigation'>
+                    <label for='radio1' className='manual-btn'></label>
+                    <label for='radio2' className='manual-btn'></label>
+                    <label for='radio3' className='manual-btn'></label>
+                    <label for='radio4' className='manual-btn'></label>
+                </div>
+                <button className='botao4' onClick={IrParaJordan}>Veja</button>
+                </div>
                 
                 <button className='botao4' onClick={IrParaJordan}>Veja</button>
              </div>

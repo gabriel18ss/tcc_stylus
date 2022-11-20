@@ -142,10 +142,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
    .faixa4{
-    background-image: url("../../../public/images/Rectangle\ 10.png");
+   // background-image: url("../../../public/images/Rectangle\ 10.png");
+   background-color: #111;
     background-size:100% ;
     width:84em;
-    height: 60em;
+    height: 50em;
     text-align: center;
     width: 100%;
    }
@@ -154,6 +155,7 @@
     .text4 {
         font-family: 'Changa';
         color:white;
+      
         
     }
     .botao4 {
@@ -164,12 +166,12 @@
         border-radius:5em;
         border:white;
         text-align:center;
-        margin-top:50em;
+        margin-top:50px;
         font-family: 'Changa';
     }
 
     .botao4:hover{    
-        margin-top: 655px; 
+        margin-top: 43px; 
     }
 
 
@@ -271,5 +273,121 @@
         height: 8em;
         width: 8em;
     }
+
+    .slider{
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+        height: 900px;
+        overflow: hidden;
+        border-radius: 10px;
+        border: none;
+        margin-top: 15px;
+        
+     }
+
+     .slides{
+        width: 400%;
+        height: 500px;
+        display: flex;
+        cursor: pointer;
+        
+     }
+
+      input {
+      overflow: hidden;
+     }
+
+     .slide{
+        width: 25%;
+        position: relative;
+        transition: 3s;
+        
+     }
+
+     .slide img {
+        width: 800px;
+     }
+
+     
+     .manual-navigation{
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+     }
+
+     .manual-btn{
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+     }
+
+     .manual-btn:not(:last-child){
+        margin-right: 40px;
+     }
+
+     .manual-btn:hover{
+        background-color: white;
+     }
+
+     #radio1:checked  {
+        margin-left: 0;
+     }
+
+     #radio2:checked {
+        margin-left: -26.57%;
+     }
+
+     #radio3:checked {
+        margin-left: -51.6%;
+     }
+
+     #radio4:checked {
+        margin-left: -76.7%;
+     }
+
+     .navigation-auto div{
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+     }
+
+     .navigation-auto{
+        position: absolute;
+        width: 800px;
+        margin-top: 460px;
+        display: flex;
+        justify-content: center;
+     }
+
+     .navigation-auto div:not(:last-child){
+        margin-right: 40px;
+     }
+
+     #radio1:checked ~ .navigation-auto .auto-btn1{
+        background-color:white;
+     }
+     #radio2:checked ~ .navigation-auto .auto-btn2{
+        background-color: white;
+     }
+     #radio3:checked ~ .navigation-auto .auto-btn3{
+        background-color: white;
+     }
+     #radio4:checked ~ .navigation-auto .auto-btn4{
+        background-color: white;
+     }
+
+     .img-slide {
+        width: 800px;
+        height: 500px;
+        border-radius: 15px;
+}
+
 }
 
