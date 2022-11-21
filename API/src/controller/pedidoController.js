@@ -4,6 +4,8 @@ import randomString from 'randomstring';
 import {Router} from "express";
 import { criarNovoPedido } from '../service/novoProdutoService.js';
 import { buscarPorId } from '../repository/cadastrarRepository.js';
+import { ValidarCompra } from '../service/validacao.js';
+
 const server = Router();
 
 server.post('/pedido/:idUsuario/', async (req, resp) => {
@@ -12,7 +14,8 @@ server.post('/pedido/:idUsuario/', async (req, resp) => {
 
         const info = req.body;
     
-       
+        const validacao = await ValidarCompra(info)
+
        const novoPedido = criarNovoPedido(idUsuario, info);
 
        const idPedidoCriado = await inserirPedido(novoPedido);
